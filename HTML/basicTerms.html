@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/basicTerms.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/standalone/umd/vis-network.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="wrapper">
+        <div class="text">Teoria Grafów</div>
+        <nav class="navigation">
+            <ul class="navigation__item-list">
+                <li class="navigation__item"><a href="main.html">Strona Główna</a></li>
+                <li class="navigation__item"><a href="basicTerms.html">Podstawowa Terminologia</a></li>
+                <li class="navigation__item"><a href="timeline.html">Linia Czasu</a></li>
+                <li class="navigation__item"><a href="website.html">O stronie</a></li>
+                <li class="navigation__item"><a href="author.html">O autorze</a></li>
+                <li class="navigation__item"><a href="problems.html">Problemy</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <div class="container">
+                <div class="main__div-math-bg"></div>
+                <h1 class="main__math-bg-heading">
+                    Teoria grafów w informatyce algorytmicznej
+                </h1>
+            </div>
+            <div class="main__info">
+                <div class="main__graph-basics">
+                    <h1 class="main__h1">Czym jest <span class="main__span-blue">graf</span> ?</h1>
+                    <p>Jest on strukturą danych składającą się z wierzchołków i krawędzi (rozróżniamy krawędzie
+                        skierowane i nieskierowane) które moga być ze sobą połączone</p>
+                    <p>Po matematycznemu przedstawimy go jako para \(G = (V,E)\) gdzie: </p>
+                    <p class="math">\(V\) - jest zbiorem wierzchołków, ex. \(V = \{v_1, v_2, ...v_n\}\)</p>
+                    <p class="math">\(E\) - jest rodziną krawędzi, możemy też ją nazwać jako podzbiór \(V (E = V * V) \)
+                    </p>
+                    <img class="main__down-arrow" height="200px" src="../SVG/down-arrow-svgrepo-com.svg">
+                </div>
+                <div class="main__edges">
+                    <h3>Omawiamy narazie przykład grafu standardowego gdzie każda krawędź łączy 1 lub 2 punkty</h3>
+                    <p>Za chwilę omówimy typy krawędzi, ale zanim to, musisz poznać jeszcze jedną definicję czyli
+                        incydentność</p>
+                    <p>Krawędź grafu \(G\) jest incydentna do wierzchołka \(v\) jeśli ma ona w nim swój początek i swój
+                        koniec, a 2 krawędzie są incydentne jeśli mają wspólny koniec</p>
+                    <p>Teraz jesteś gotowy na poznanie 3 typów krawędzi: </p>
+                    <ul>
+                        <li>Krawędzie jednokrotne - f</li>
+                        <li>Krawędzie wielokrotne - \(a\)</li>
+                        <li>Pętle - krawędzie incydentne z jednym wierzchołkiem = \(h\)</li>
+                    </ul>
+                    <div id="graph"></div> <!--POGLĄDOWY GRAF (TO NIE TEN KTÓRY JEST ROZPISANY W INSTRUKCJI)-->
+                </div>
+            </div>
+
+            <div class="main__terms">
+                <h1>Rodzaje grafów</h1>
+                <ul class="main__item-list">
+                    <li class="main__item"><a class="scroll" href="">Graf nieskierowany/skierowany</a></li>
+                    <li class="main__item"><a class="scroll" href="">Graf spójny/niespójny</a></li>
+                    <li class="main__item"><a class="scroll" href="">Graf eulerowski/hamiltonowski</a></li>
+                    <li class="main__item"><a class="scroll" href="">Graf dwudzielny</a></li>
+                    <li class="main__item"><a class="scroll" href="">Graf planarny</a></li>
+                    <li class="main__item"><a class="scroll" href="">Drzewo</a></li>
+                </ul>
+            </div>
+
+            <!--OBA GRAFY RÓWNIEŻ POGLĄDOWE-->
+
+            <div class="main__graph-types">
+                <div class="main__directed-graph">
+                    <h1>Graf skierowany</h1>
+                    <iframe scrolling="no" title="Graf Skierowany"
+                        src="https://www.geogebra.org/material/iframe/id/ekvkmsax/width/450/height/450/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+                        width="450px" height="450px" style="border:0px;"> </iframe>
+                    <p>Nazwyany również digrafem </p>
+                </div>
+
+                <div class="main__not-directed-graph">
+                    <h1>Graf nieskierowany</h1>
+                    <iframe scrolling="no" title="Graf Skierowany"
+                        src="https://www.geogebra.org/material/iframe/id/ekvkmsax/width/450/height/450/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+                        width="450px" height="450px" style="border:0px;"> </iframe>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </footer>
+    </div>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="../JS/graphs.js"></script>
+    <script src="../JS/script.js"></script>
+    <script src="../JS/particles.js"></script>
+    <script src="../JS/app.js"></script>
+</body>
+
+</html>
