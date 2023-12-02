@@ -1,1 +1,1 @@
-﻿# Jest to wstępna wersja poglądowa i niekompletna mojego najważniejszego projektu który robię na konkurs **Zobaczyć matematykę** organizowany przez Akademię Górniczo-Hutniczą im. Stanisława Staszica w Krakowie
+﻿# Jest to wstępna wersja poglądowa i niekompletna mojego najważniejszego projektu który robię na konkurs "Zobaczyć matematykę" organizowany przez Akademię Górniczo-Hutniczą im. Stanisława Staszica w Krakowie
