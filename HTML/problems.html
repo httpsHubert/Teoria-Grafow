@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../CSS/problems.css" type="text/css" />
+    </head>
+
+    <body>
+        <div id="particles-js"></div>
+        <div class="wrapper">
+            <div class="text">Teoria Grafów</div>
+            <nav class="navigation">
+                <ul class="navigation__item-list">
+                    <li class="navigation__item">
+                        <a href="main.html">Strona Główna</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="basicTerms.html">Podstawowa Terminologia</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="timeline.html">Linia Czasu</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="website.html">O stronie</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="author.html">O autorze</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="problems.html">Problemy</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="main">
+                <div class="container">
+                    <div class="main__div-math-bg"></div>
+                    <h1 class="main__math-bg-heading">
+                        Teoria grafów w informatyce algorytmicznej
+                    </h1>
+                </div>
+
+                <!--KOD C++ I NIEKTORE INFORMACJE WSTEPNIE SA NIEPRAWIDLOWE NA OBECNA CHWILE-->
+
+                <div class="contents">
+                    <h1>Spis treści</h1>
+                    <ul class="contents__item-list">
+                        <li><h2>Reprezentacja grafu:<h2></li>
+                        <ul>
+                            <li class="contents__list-item">Lista krawędzi</li>
+                            <li class="contents__list-item">Lista sąsiedztwa</li>
+                            <li class="contents__list-item">Macierz sąsiedztwa</li>
+                        </ul>
+                        <li style="margin-top: 30px;"><h2>Algorytmy i Problemy:</h2></li>
+                        <ul>
+                            <li class="contents__list-item">Problem kojarzenia małżeństw</li>
+                            <li class="contents__list-item">Problem komiwojażera</li>
+                            <li class="contents__list-item">Problem znajdywania najkrótszej ścieżki</li>
+                            <li class="contents__list-item">BFS i DFS</li>
+                            <li class="contents__list-item">Znajdywanie cykli</li>
+                            <li class="contents__list-item">Sortowanie topologiczne</li>
+                            <li class="contents__list-item">System połączeń</li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="main__wrapper">
+                    <div class="main__graph-representation-basicInfo">
+                        <h1 class="main__h1-graph-representation">
+                            Reprezentacja
+                            <span class="main--colorFix">grafu</span>
+                        </h1>
+                        <p>
+                            Istnieje kilka sposobów reprezentowania grafów,
+                            każde z nich ma swoje wady i zalety, tutaj
+                            przedstawię trzy z nich. Każdą z nich opisze za
+                            pomocą paru kryteriów w kwestii pamięciowej i
+                            obliczeniowej:
+                        </p>
+                        <ul>
+                            <li>Zajęta ilość pamięci</li>
+                            <li>Dodanie krawędzi</li>
+                            <li>Dodanie wierzchołka</li>
+                            <li>Usunięcie krawędzi</li>
+                            <li>Usunięcie wierzchołka</li>
+                            <li>
+                                Sprawdzenie sąsiedztwa dwóch wierzchołków (czy
+                                są połączone krawędzią)
+                            </li>
+                        </ul>
+
+                        <h2>
+                            Pierwszym i najprostszym sposobem reprezentacji
+                            grafu będzie:
+                        </h2>
+
+                        <h1>Lista krawędzi</h1>
+                        <p>
+                            W tym sposobie każda krawędź grafu jest
+                            przedstawiana jako para wierzchołków, które są nią
+                            połączone. Cały graf jest zatem reprezentowany jako
+                            lista takich par.
+                        </p>
+                        <p>Na przykład rozważmy graf skierowany:</p>
+                        <div
+                            class="graph-representation-visualisation-list main__graph-visualisation-schema"></div>
+                        <p>Oraz jego reprezentacje jako model w c++</p>
+                        <pre class="main__code">
+                            <code class="language-cpp">
+                                    #include < iostream >
+                                    #include < vector >
+                                    
+                                    using namespace std;
+                                    
+                                    class Edge {
+                                    public:
+                                        int source, destination;
+                                    
+                                        Edge(int source, int destination) {
+                                            this->source = source;
+                                            this->destination = destination;
+                                        }
+                                    };
+                                    
+                                    class DirectedGraph {
+                                    public:
+                                        vector < Edge > edges;
+                                    
+                                        void addEdge(int source, int destination) {
+                                            Edge edge(source, destination);
+                                            edges.push_back(edge);
+                                        }
+                                    
+                                        void printGraph() {
+                                            for (const Edge& edge : edges) {
+                                                cout << edge.source << " -> " << edge.destination << endl;
+                                            }
+                                        }
+                                    };
+                                    
+                                    int main() {
+                                        DirectedGraph graph;
+                                    
+                                        // Dodawanie krawędzi
+                                        graph.addEdge(0, 1);
+                                        graph.addEdge(1, 2);
+                                        graph.addEdge(2, 0);
+                                        graph.addEdge(2, 1);
+                                        graph.addEdge(3, 2);
+                                    
+                                        // Wyświetlanie grafu
+                                        cout << "Graf skierowany:" << endl;
+                                        graph.printGraph();
+                                    
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                        <h5>
+                            W kwestii wydajności pamięciowej i obliczeniowej
+                            sposób ten wygląda następująco:
+                        </h5>
+                        <ul>
+                            <li>Zajęta ilość pamięci: \(O(∣E∣)\).</li>
+                            <li>
+                                Dodanie krawędzi: \(O(1)\), w najgorszym
+                                przypadku \(O(∣E∣)\)
+                            </li>
+                            <li>
+                                Dodanie wierzchołka: brak możliwości zapisania
+                                wierzchołka niepołączonego żadną krawędzią.
+                            </li>
+                            <li>Usunięcie krawędzi: \(O(∣E∣)\).</li>
+                            <li>
+                                Usunięcie wierzchołka: \(O(∣E∣)\) — należy
+                                przejść przez wszystkie krawędzie i usunąć te, w
+                                których występuje wierzchołek.
+                            </li>
+                            <li>Sprawdzenie sąsiedztwa: \(O(∣E∣)\)</li>
+                        </ul>
+                        <p>
+                            Podsumowując: Reprezentacja grafu za pomocą listy
+                            krawędzi jest często pomijana jako sposób
+                            reprezentacji lecz nie jest bardzo skomplikowana i
+                            ma zastosowanie chociażby w wizualizacji danych
+                            poprzez możliwość dodania więcej niż jednego
+                            wierzchołka do danej krawędzi. Posiada jednak jedną
+                            kluczową wadę - wydajnościowo bez optymalizacji w
+                            najgorszym przypadku musimy przebrnąć przez
+                            \(O(∣E∣)\) operacji przez co nie najlepiej wpisuję
+                            się w miano szybkiego sposobu.
+                        </p>
+
+                        <h1>Lista sąsiedztwa</h1>
+                        <p>
+                            Jest to jeden z fundamentalnych sposobów
+                            przedstawiania grafu. Najprościej powiemy że jest to
+                            połączenie macierzy sąsiedztwa i listy krawędzi w
+                            którym dla każdego wierzchołka przechowywana jest
+                            lista jego sąsiadów.
+                        </p>
+                        <div
+                            class="graph-representation-visualisation-adjacency-list main__graph-visualisation-schema"></div>
+                        <p>Implementacja w c++</p>
+                        <pre class="main__code">
+                            <code>
+                                    #include < iostream >
+                                    #include < list >
+                                    #include < unordered_map >
+                                    
+                                    using namespace std;
+                                    
+                                    class Graph {
+                                    public:
+                                        unordered_map< int, list< int > > adjacencyList;
+                                    
+                                        void addEdge(int source, int destination) {
+                                            // Dodaj destination do listy sąsiadów source
+                                            adjacencyList[source].push_back(destination);
+                                        }
+                                    
+                                        void printGraph() {
+                                            for (const auto& pair : adjacencyList) {
+                                                int source = pair.first;
+                                                const list< int >& neighbors = pair.second;
+                                    
+                                                cout << "Sąsiedzi wierzchołka " << source << ": ";
+                                                for (int neighbor : neighbors) {
+                                                    cout << neighbor << " ";
+                                                }
+                                                cout << endl;
+                                            }
+                                        }
+                                    };
+                                    
+                                    int main() {
+                                        Graph graph;
+                                    
+                                        // Dodawanie krawędzi
+                                        graph.addEdge(0, 1);
+                                        graph.addEdge(1, 2);
+                                        graph.addEdge(2, 0);
+                                        graph.addEdge(2, 1);
+                                        graph.addEdge(3, 2);
+                                    
+                                        // Wyświetlanie listy sąsiedztwa
+                                        cout << "Lista sąsiedztwa:" << endl;
+                                        graph.printGraph();
+                                    
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                        <h5>
+                            W kwestii wydajności pamięciowej i obliczeniowej
+                            sposób ten wygląda następująco:
+                        </h5>
+                        <ul>
+                            <li>Zajęta ilość pamięci: \(O(|V|+|E|)\).</li>
+                            <li>Dodanie krawędzi: \(O(1)\)</li>
+                            <li>Dodanie wierzchołka: \(O(1)\)</li>
+                            <li>Usunięcie krawędzi: \(O(∣E∣)\).</li>
+                            <li>Usunięcie wierzchołka: \(O(∣V∣)\)</li>
+                            <li>Sprawdzenie sąsiedztwa: \(O(∣V∣)\)</li>
+                        </ul>
+
+                        <h1>Macierz sąsiedztwa</h1>
+                        <h3>
+                            Macierz - Układ (w tym przypadku) liczb zapisanych w
+                            tablicy dwuwymiarowej
+                        </h3>
+                        <h3>
+                            Macierzą sąsiedztwa grafu nazywamy macierz \(A\) w
+                            którym przedstawiamy liczbę krawędzi łączących
+                            poszczególne wierzchołki. Wypełniamy go od lewej do prawej z góry na dół.
+                        </h3>
+                        <p>Wymiary takiego macierza to \(|V| * |V|\).</p>
+                        <p>
+                            Rozpatrzmy taką sytuację - mamy graf skierowany i
+                            chcemy przedstawić go w macierzy sąsiedztwa, jakie
+                            są kolejne kroki?
+                        </p>
+                        <ol>
+                            <li>Wybieramy jeden dowolny wierzchołek i oznaczamy go sobie jako pierwszy i patrzymy czy łączy się z następnymi.</li>
+                            <ul>
+                                <li>Wierzchołek pierwszy z pierwszym się nie łączy więc dajemy 0 (żeby dać tutaj 1 musiałaby być w danym wierzchołku pętla)</li>
+                                <li>Wierzchołek pierwszy łączy się z drugim więc obok 0 dajemy 1</li>
+                                <li>Wierzchołek pierwszy łączy się z trzecim więc obok 1 dajemy znowu 1</li>
+                                <li>Wierzchołek pierwszy nie łączy się z czwartym więc obok 1 dajemy 0</li>
+                                <li>Wierzchołek pierwszy łączy się z piątym więc obok 0 dajemy 1</li>
+                            </ul>
+                            <li>Gdy skończymy porównywać pierwszy wierzchołek z kolejnymi powtarzamy czynność dopóki nie skończą nam się możliwe wierzchołki</li>
+                        </ol>
+                        <div class="graph-representation-visualisation-adjacency-list main__graph-visualisation-schema"></div>
+                        <p>
+                            \[ A = \begin{bmatrix} 
+                               0 & 1 & 1 & 0 & 1
+                            \\ 1 & 0 & 1 & 1 & 1
+                            \\ 1 & 1 & 0 & 1 & 0
+                            \\ 0 & 1 & 1 & 0 & 1
+                            \\ 1 & 0 & 0 & 1 & 0
+                            \\ \end{bmatrix}
+                            \]
+                        </p>
+                        <p>Implementacja w c++</p>
+                        <pre class="main__code">
+                            <code>
+                                    #include < iostream >
+                                    #include < list >
+                                    #include < unordered_map >
+                                    
+                                    using namespace std;
+                                    
+                                    class Graph {
+                                    public:
+                                        unordered_map< int, list< int > > adjacencyList;
+                                    
+                                        void addEdge(int source, int destination) {
+                                            // Dodaj destination do listy sąsiadów source
+                                            adjacencyList[source].push_back(destination);
+                                        }
+                                    
+                                        void printGraph() {
+                                            for (const auto& pair : adjacencyList) {
+                                                int source = pair.first;
+                                                const list< int >& neighbors = pair.second;
+                                    
+                                                cout << "Sąsiedzi wierzchołka " << source << ": ";
+                                                for (int neighbor : neighbors) {
+                                                    cout << neighbor << " ";
+                                                }
+                                                cout << endl;
+                                            }
+                                        }
+                                    };
+                                    
+                                    int main() {
+                                        Graph graph;
+                                    
+                                        // Dodawanie krawędzi
+                                        graph.addEdge(0, 1);
+                                        graph.addEdge(1, 2);
+                                        graph.addEdge(2, 0);
+                                        graph.addEdge(2, 1);
+                                        graph.addEdge(3, 2);
+                                    
+                                        // Wyświetlanie listy sąsiedztwa
+                                        cout << "Lista sąsiedztwa:" << endl;
+                                        graph.printGraph();
+                                    
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                        <h5>
+                            W kwestii wydajności pamięciowej i obliczeniowej
+                            sposób ten wygląda następująco:
+                        </h5>
+                        <ul>
+                            <li>Zajęta ilość pamięci: \(O(|V|^2)\).</li>
+                            <li>Dodanie krawędzi: \(O(1)\)</li>
+                            <li>Dodanie wierzchołka: \(O(V)^2\)</li>
+                            <li>Usunięcie krawędzi: \(O(1)\).</li>
+                            <li>Usunięcie wierzchołka: \(O(|V|^2)\)</li>
+                            <li>Sprawdzenie sąsiedztwa: \(O(1)\)</li>
+                        </ul>
+                    </div>
+
+                    <div class="main__div-algorithm-about-wrapper">
+                        <div class="main__div-algorithm-about">
+                            <h1 class="main__div-algorithm-about-heading">
+                                Ale czym tak naprawdę jest algorytm?
+                            </h1>
+                            <p class="main__div-algorithm-about-paragraph">
+                                Najprościej możemy powiedzieć że jest to sposób
+                                rozwiązania danego problemu
+                            </p>
+                        </div>
+
+                        <img
+                            class="arrow"
+                            src="../SVG/down-arrow-svgrepo-com.svg" />
+
+                        <div class="main__div-algorithm-about">
+                            <p class="main__div-algorithm-about-paragraph">
+                                Co za tym idzie, algorytm grafowy będzie
+                                rozwiązaniem danego problemu za pomocą grafu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <svg
+                    class="waves"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28"
+                    preserveAspectRatio="none"
+                    shape-rendering="auto">
+                    <defs>
+                        <path
+                            id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use
+                            xlink:href="#gentle-wave"
+                            x="48"
+                            y="0"
+                            fill="rgba(255,255,255,0.7)" />
+                        <use
+                            xlink:href="#gentle-wave"
+                            x="48"
+                            y="3"
+                            fill="rgba(255,255,255,0.5)" />
+                        <use
+                            xlink:href="#gentle-wave"
+                            x="48"
+                            y="5"
+                            fill="rgba(255,255,255,0.3)" />
+                        <use
+                            xlink:href="#gentle-wave"
+                            x="48"
+                            y="7"
+                            fill="#fff" />
+                    </g>
+                </svg>
+            </footer>
+        </div>
+
+        <script src="../JS/script.js"></script>
+        <script src="../JS/particles.js"></script>
+        <script src="../JS/app.js"></script>
+        <script src="../JS/connectedGraph.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
