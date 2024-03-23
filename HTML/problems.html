@@ -48,19 +48,19 @@
                     <ul class="contents__item-list">
                         <li><h2>Reprezentacja grafu:<h2></li>
                         <ul>
-                            <li class="contents__list-item">Lista krawędzi</li>
-                            <li class="contents__list-item">Lista sąsiedztwa</li>
-                            <li class="contents__list-item">Macierz sąsiedztwa</li>
+                            <li class="contents__list-item">Lista krawędzi <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">Lista sąsiedztwa  <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">Macierz sąsiedztwa <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                         <li style="margin-top: 30px;"><h2>Algorytmy i Problemy:</h2></li>
                         <ul>
-                            <li class="contents__list-item">Problem kojarzenia małżeństw</li>
-                            <li class="contents__list-item">Problem komiwojażera</li>
-                            <li class="contents__list-item">Problem znajdywania najkrótszej ścieżki</li>
-                            <li class="contents__list-item">BFS i DFS</li>
-                            <li class="contents__list-item">Znajdywanie cykli</li>
-                            <li class="contents__list-item">Sortowanie topologiczne</li>
-                            <li class="contents__list-item">System połączeń</li>
+                            <li class="contents__list-item">Problem kojarzenia małżeństw <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">Problem komiwojażera <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">Problem znajdywania najkrótszej ścieżki <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">BFS i DFS <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">Znajdywanie cykli <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">Sortowanie topologiczne <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li class="contents__list-item">System połączeń <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                     </ul>
                 </div>
@@ -102,61 +102,19 @@
                             połączone. Cały graf jest zatem reprezentowany jako
                             lista takich par.
                         </p>
-                        <p>Na przykład rozważmy graf skierowany:</p>
+                        <p>Na przykład rozważmy graf skierowany(ten sam graf będzie w każdym przykładzie reprezentacji aby pokazać jego wady i zalety oraz podobieństwa i różnice):</p>
                         <div
                             class="graph-representation-visualisation-list main__graph-visualisation-schema"></div>
-                        <p>Oraz jego reprezentacje jako model w c++</p>
-                        <pre class="main__code">
-                            <code class="language-cpp">
-                                    #include < iostream >
-                                    #include < vector >
-                                    
-                                    using namespace std;
-                                    
-                                    class Edge {
-                                    public:
-                                        int source, destination;
-                                    
-                                        Edge(int source, int destination) {
-                                            this->source = source;
-                                            this->destination = destination;
-                                        }
-                                    };
-                                    
-                                    class DirectedGraph {
-                                    public:
-                                        vector < Edge > edges;
-                                    
-                                        void addEdge(int source, int destination) {
-                                            Edge edge(source, destination);
-                                            edges.push_back(edge);
-                                        }
-                                    
-                                        void printGraph() {
-                                            for (const Edge& edge : edges) {
-                                                cout << edge.source << " -> " << edge.destination << endl;
-                                            }
-                                        }
-                                    };
-                                    
-                                    int main() {
-                                        DirectedGraph graph;
-                                    
-                                        // Dodawanie krawędzi
-                                        graph.addEdge(0, 1);
-                                        graph.addEdge(1, 2);
-                                        graph.addEdge(2, 0);
-                                        graph.addEdge(2, 1);
-                                        graph.addEdge(3, 2);
-                                    
-                                        // Wyświetlanie grafu
-                                        cout << "Graf skierowany:" << endl;
-                                        graph.printGraph();
-                                    
-                                        return 0;
-                                    }
-                            </code>
-                        </pre>
+                        <p style="text-align: center; font-size: larger">Oraz jego reprezentację: </p>
+
+                        <ul style="margin-top: 50px; margin-bottom: 50px; text-align: center; font-size: larger; list-style-type: none;">
+                            <li style="margin-top: 15px;">\((A, B)\)</li>
+                            <li style="margin-top: 15px;">\((B, C)\)</li>
+                            <li style="margin-top: 15px;">\((B, D)\)</li>
+                            <li style="margin-top: 15px;">\((C, A)\)</li>
+                            <li style="margin-top: 15px;">\((D, A)\)</li>
+                        </ul>
+                        
                         <h5>
                             W kwestii wydajności pamięciowej i obliczeniowej
                             sposób ten wygląda następująco:
@@ -180,9 +138,7 @@
                             <li>Sprawdzenie sąsiedztwa: \(O(∣E∣)\)</li>
                         </ul>
                         <p>
-                            Podsumowując: Reprezentacja grafu za pomocą listy
-                            krawędzi jest często pomijana jako sposób
-                            reprezentacji lecz nie jest bardzo skomplikowana i
+                            Reprezentacja grafu za pomocą listy krawędzi jest prosta i
                             ma zastosowanie chociażby w wizualizacji danych
                             poprzez możliwość dodania więcej niż jednego
                             wierzchołka do danej krawędzi. Posiada jednak jedną
@@ -190,6 +146,9 @@
                             najgorszym przypadku musimy przebrnąć przez
                             \(O(∣E∣)\) operacji przez co nie najlepiej wpisuję
                             się w miano szybkiego sposobu.
+                        </p>
+                        <p>
+                            Ciekawostka - do stworzenia grafów na tej stronie właśnie użyłem tego sposobu
                         </p>
 
                         <h1>Lista sąsiedztwa</h1>
@@ -202,56 +161,15 @@
                         </p>
                         <div
                             class="graph-representation-visualisation-adjacency-list main__graph-visualisation-schema"></div>
-                        <p>Implementacja w c++</p>
-                        <pre class="main__code">
-                            <code>
-                                    #include < iostream >
-                                    #include < list >
-                                    #include < unordered_map >
-                                    
-                                    using namespace std;
-                                    
-                                    class Graph {
-                                    public:
-                                        unordered_map< int, list< int > > adjacencyList;
-                                    
-                                        void addEdge(int source, int destination) {
-                                            // Dodaj destination do listy sąsiadów source
-                                            adjacencyList[source].push_back(destination);
-                                        }
-                                    
-                                        void printGraph() {
-                                            for (const auto& pair : adjacencyList) {
-                                                int source = pair.first;
-                                                const list< int >& neighbors = pair.second;
-                                    
-                                                cout << "Sąsiedzi wierzchołka " << source << ": ";
-                                                for (int neighbor : neighbors) {
-                                                    cout << neighbor << " ";
-                                                }
-                                                cout << endl;
-                                            }
-                                        }
-                                    };
-                                    
-                                    int main() {
-                                        Graph graph;
-                                    
-                                        // Dodawanie krawędzi
-                                        graph.addEdge(0, 1);
-                                        graph.addEdge(1, 2);
-                                        graph.addEdge(2, 0);
-                                        graph.addEdge(2, 1);
-                                        graph.addEdge(3, 2);
-                                    
-                                        // Wyświetlanie listy sąsiedztwa
-                                        cout << "Lista sąsiedztwa:" << endl;
-                                        graph.printGraph();
-                                    
-                                        return 0;
-                                    }
-                            </code>
-                        </pre>
+                            <p style="text-align: center; font-size: larger">Oraz jego reprezentację: </p>
+
+                        <ul style="margin-top: 50px; margin-bottom: 50px; text-align: center; font-size: larger; list-style-type: none;">
+                            <li style="margin-top: 5px;">\(A ---> [B] \)</li>
+                            <li style="margin-top: 5px;">\(B ---> [C, D]\)</li>
+                            <li style="margin-top: 5px;">\(C ---> [A]\)</li>
+                            <li style="margin-top: 5px;">\(D ---> [A]\)</li>
+                        </ul>
+                        
                         <h5>
                             W kwestii wydajności pamięciowej i obliczeniowej
                             sposób ten wygląda następująco:
@@ -273,7 +191,7 @@
                         <h3>
                             Macierzą sąsiedztwa grafu nazywamy macierz \(A\) w
                             którym przedstawiamy liczbę krawędzi łączących
-                            poszczególne wierzchołki. Wypełniamy go od lewej do prawej z góry na dół.
+                            poszczególne wierzchołki.
                         </h3>
                         <p>Wymiary takiego macierza to \(|V| * |V|\).</p>
                         <p>
@@ -286,73 +204,24 @@
                             <ul>
                                 <li>Wierzchołek pierwszy z pierwszym się nie łączy więc dajemy 0 (żeby dać tutaj 1 musiałaby być w danym wierzchołku pętla)</li>
                                 <li>Wierzchołek pierwszy łączy się z drugim więc obok 0 dajemy 1</li>
-                                <li>Wierzchołek pierwszy łączy się z trzecim więc obok 1 dajemy znowu 1</li>
-                                <li>Wierzchołek pierwszy nie łączy się z czwartym więc obok 1 dajemy 0</li>
-                                <li>Wierzchołek pierwszy łączy się z piątym więc obok 0 dajemy 1</li>
+                                <li>Wierzchołek pierwszy nie łączy się z trzecim więc obok 1 dajemy 0</li>
+                                <li>Wierzchołek pierwszy nie łączy się z czwartym więc obok 0 dajemy znów 0</li>
                             </ul>
                             <li>Gdy skończymy porównywać pierwszy wierzchołek z kolejnymi powtarzamy czynność dopóki nie skończą nam się możliwe wierzchołki</li>
                         </ol>
-                        <div class="graph-representation-visualisation-adjacency-list main__graph-visualisation-schema"></div>
+                        <div class="graph-representation-visualisation-adjacency-matrix main__graph-visualisation-schema"></div>
                         <p>
                             \[ A = \begin{bmatrix} 
-                               0 & 1 & 1 & 0 & 1
-                            \\ 1 & 0 & 1 & 1 & 1
-                            \\ 1 & 1 & 0 & 1 & 0
-                            \\ 0 & 1 & 1 & 0 & 1
-                            \\ 1 & 0 & 0 & 1 & 0
+                               0 & 1 & 0 & 0
+                            \\ 0 & 0 & 1 & 1
+                            \\ 1 & 0 & 0 & 0
+                            \\ 1 & 0 & 0 & 0
                             \\ \end{bmatrix}
                             \]
                         </p>
-                        <p>Implementacja w c++</p>
-                        <pre class="main__code">
-                            <code>
-                                    #include < iostream >
-                                    #include < list >
-                                    #include < unordered_map >
-                                    
-                                    using namespace std;
-                                    
-                                    class Graph {
-                                    public:
-                                        unordered_map< int, list< int > > adjacencyList;
-                                    
-                                        void addEdge(int source, int destination) {
-                                            // Dodaj destination do listy sąsiadów source
-                                            adjacencyList[source].push_back(destination);
-                                        }
-                                    
-                                        void printGraph() {
-                                            for (const auto& pair : adjacencyList) {
-                                                int source = pair.first;
-                                                const list< int >& neighbors = pair.second;
-                                    
-                                                cout << "Sąsiedzi wierzchołka " << source << ": ";
-                                                for (int neighbor : neighbors) {
-                                                    cout << neighbor << " ";
-                                                }
-                                                cout << endl;
-                                            }
-                                        }
-                                    };
-                                    
-                                    int main() {
-                                        Graph graph;
-                                    
-                                        // Dodawanie krawędzi
-                                        graph.addEdge(0, 1);
-                                        graph.addEdge(1, 2);
-                                        graph.addEdge(2, 0);
-                                        graph.addEdge(2, 1);
-                                        graph.addEdge(3, 2);
-                                    
-                                        // Wyświetlanie listy sąsiedztwa
-                                        cout << "Lista sąsiedztwa:" << endl;
-                                        graph.printGraph();
-                                    
-                                        return 0;
-                                    }
-                            </code>
-                        </pre>
+
+                        <!--MACIERZ DO SPRAWDZENIA-->
+                        
                         <h5>
                             W kwestii wydajności pamięciowej i obliczeniowej
                             sposób ten wygląda następująco:
@@ -366,29 +235,228 @@
                             <li>Sprawdzenie sąsiedztwa: \(O(1)\)</li>
                         </ul>
                     </div>
+                </div>
 
-                    <div class="main__div-algorithm-about-wrapper">
-                        <div class="main__div-algorithm-about">
-                            <h1 class="main__div-algorithm-about-heading">
-                                Ale czym tak naprawdę jest algorytm?
-                            </h1>
-                            <p class="main__div-algorithm-about-paragraph">
-                                Najprościej możemy powiedzieć że jest to sposób
-                                rozwiązania danego problemu
-                            </p>
-                        </div>
+                <div class="main__algo_start">
+                    <h1 class="main__h1-graph-representation"><span class="main--colorFix">Algorytmy</span> i <span class="main--colorFix">problemy</span></h1>
+                </div>
 
-                        <img
-                            class="arrow"
-                            src="../SVG/down-arrow-svgrepo-com.svg" />
-
-                        <div class="main__div-algorithm-about">
-                            <p class="main__div-algorithm-about-paragraph">
-                                Co za tym idzie, algorytm grafowy będzie
-                                rozwiązaniem danego problemu za pomocą grafu.
-                            </p>
-                        </div>
+                <div class="main__div-algorithm-about-wrapper">
+                    <div class="main__div-algorithm-about">
+                        <h1 class="main__div-algorithm-about-heading">
+                            Ale czym tak naprawdę jest algorytm?
+                        </h1>
+                        <p class="main__div-algorithm-about-paragraph">
+                            Najprościej możemy powiedzieć że jest to sposób
+                            rozwiązania danego problemu
+                        </p>
                     </div>
+
+                    <img
+                        class="arrow"
+                        src="../SVG/down-arrow-svgrepo-com.svg" />
+
+                    <div class="main__div-algorithm-about">
+                        <p class="main__div-algorithm-about-paragraph">
+                            Co za tym idzie, algorytm grafowy będzie
+                            rozwiązaniem danego problemu za pomocą grafu.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="title">
+
+                </div>
+                <div class="main__inside-layout-pattern problem-div">
+                    <h1 class="marriage-h1"><span class="main--colorFix">Twierdzenie o kojarzeniu małrzeństw</span></h1>
+                    
+                    <div class="marriage-div1">
+                        <p>Twierdzenie to przypisywane jest Phillipowi Hallowi, który sformułował je w 1935r. </p>
+                        <p>Problem polega na tym, że mamy: \(n\) panien i \(n\) kawalerów których chcemy dobrać w pary małżeńskie</p>
+                        <h4>Warunkiem koniecznym oraz wystarczającym aby istniało takie skojarzenie jest to że dla dowolnej grupy chłopców \(k ∈ \{1, 2, . . . , n\}\) oni wspólnie znają co najmniej \(k\) dziewczyn</h4>
+                    </div>
+
+                    <div class="marriage-div2">
+                        <img src="../IMG/philip.jpg">
+                        <p><b>Philip Hall</b> - brytyjski matematyk</p>
+                    </div>
+
+                    <div class="marriage-div3">
+                        <h3>Problem będziemy rozwiązywali na życiowym przykładzie takim jaki przedstawiłem poyżej czyli:</h3>
+                        
+                            <div style="display: flex; justify-content: space-evenly;">
+                                <div>
+                                    <p style="text-align: center;">Mamy 5 panien: </p>
+                                    <ul>
+                                        <!--<li>Aleksandra</li>
+                                        <li>Zosia</li>
+                                        <li>Melania</li>
+                                        <li>Barbara</li>
+                                        <li>Asia</li>-->
+                                        <li>Anna - 0</li>
+                                        <li>Beata - 1</li>
+                                        <li>Celina - 2</li>
+                                        <li>Dorota - 3</li>
+                                        <li>Ewa - 4</li>
+                                    </ul>
+                                </div>
+                                
+
+                                <div>
+                                    <p style="text-align: center;">I 5 kawalerów</p>
+                                    <ul>
+                                        <!--<li>Piotrek</li>
+                                        <li>Bartek</li>
+                                        <li>Timothee</li>
+                                        <li>Zbyszek</li>
+                                        <li>Mateusz</li>-->
+                                        <li>Fryderyk - 5</li>
+                                        <li>Grzegorz - 6</li>
+                                        <li>Henryk - 7</li>
+                                        <li>Igor - 8</li>
+                                        <li>Jan - 9</li>
+                                    </ul>
+                                </div>
+                               
+                            </div>
+                        
+
+                        <h4>Używając listy sąsiedztwa wytłumaczonej w sekcji interpretacji przedstawię teraz wygląd grafu</h4>
+                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                            <ul>
+                                <!--<li>Aleksandra   Timothee, Zbyszek</li>
+                                <li>Zosia ->  Piotrek, Bartek, Zbyszek</li>
+                                <li>Melania ->  Piotrek</li>
+                                <li>Barbara ->  Bartek, Zbyszek, Mateusz</li>
+                                <li>Asia ->  Zbyszek, Mateusz</li>-->
+                                <li>Anna ---->   Henryk, Igor</li>
+                                <li>Beata ---->  Fryderyk, Grzegorz, Igor</li>
+                                <li>Celina ---->  Fryderyk</li>
+                                <li>Dorota ---->  Grzegorz, Igor, Jan</li>
+                                <li>Ewa ---->  Henryk, Igor</li>
+                            </ul>
+    
+                            <img height="200px" src="../IMG/right-arrow-svgrepo-com.svg">
+    
+                            <ul>
+                                <li>\(0 -> 7,8\)</li>
+                                <li>\(1 -> 5,6,8\)</li>
+                                <li>\(2 -> 5\)</li>
+                                <li>\(3 -> 6,8,9\)</li>
+                                <li>\(4 -> 7,8\)</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 style="text-align: center;">Na podstawie tej listy tworzymy graf dwudzielny</h3>
+                       
+                        <div style="text-align: center;">
+                            <div class="graph graph-marriage-first-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Pierwszym naszym krokiem będzie połączenie pierwszej panny (Anny) z pierwszym akceptowanym przez nią kawalerem (Henrykiem), i tak naprawdę ten krok będzie naszą podstawą którą wykonujemy do momentu napotkania problemu</h3>
+                            <div class="graph graph-marriage-second-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Następnie bierzemy kolejną pannę (Beatę) i łączymy ją z akceptowanym przez nią kawalerem (Fryderykiem)</h3>
+                            <div class="graph graph-marriage-third-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Gdy spróbujemy połaczyć Celinę z Fryderykiem, okaże się, że jest on już zajęty. Lecz nic straconego, Beata lubi również Grzegorza i Igora. Więc jak się okazuję istnieje dla Celiny szansa. W tym celu zastosujemy <i>ścieżkę naprzemienną</i> - a jest to taka któa w grafie dwudzielnym przebiega naprzemian przez krawędzie skojarzone i nieskojarzone. Ścieżkę rozpoczynamy zawsze od krawędzi nieskojarzonej</h3>
+                            <div class="graph graph-marriage-fourth-step"></div>
+                            <h3>Ścieżka (czerwona linia) idzię od Celiny do Grzegorza przez Fryderyka oraz Beatę. Krawędzie czerwone są wolne, a zielone skojarzone</h3>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Ścieżkę naprzemienną gdzie występują krawędzie wolne nazywamy ścieżką rozszerzającą, ponieważ za ich pomocą będziemy mogli rozszerzyć graf o kolejne skojarzenia. Aby to zrobić usuwamy krawędzie skojarzone w ścieżce rozszerzającej, a krawędzie wolne czynimy krawędziami skojarzonymi. W ten sposób Celina została zeswatana z Fryderykiem który wcześniej był już zajęty.</h3>
+                            <div class="graph graph-marriage-fifth-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Wracamy do naszego początkowego algorytmu, patrzymy na następną pannę, Dorotę i widzimiy że lubi Igora który wciąż jest wolny, więc bez problemów łączymy </h3>
+                            <div class="graph graph-marriage-sixth-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Pozostała jedynie para Ewa -> Igor jednak ewa nie chce za niego wyjść. Szukamy i tworzymy więc ścieżkę rozszerzającą od Ewy do Jana.</h3>
+                            <div class="graph graph-marriage-seventh-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg">
+                            <h3>Ścieżka przebiega przez Igora oraz Dorotę. Teraz musimy tylko zamienić krawędzie wolne na skojarzone i skojarzone na wolne</h3>
+                            <div class="graph graph-marriage-eighth-step"></div>
+                            <h2>Tak wygląda skojarzenie zupełne w tym grafie dwudzielnym</h3>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div style="margin-top: 100px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h1 style="font-size:330%;">A teraz prawdopodobnie najważniejszy z problemów czyli...</h1>
+                    <img height="200px" style="margin-top: 50px;" src="../IMG/down-arrow-svgrepo-com.svg">
+                </div>
+
+                <!--TEKST NA BORDERZE-->
+                <!--BORDER 1PX WIEKSZY Z GRADIENTEM-->
+                <div class="main__inside-layout-pattern problem-div">
+                    <div style="flex-basis: 100%;">
+                        <h1><span class="main--colorFix">Problem komiwojażera</span></h1>
+                    </div>
+                    
+                    <div style="flex-basis: 50%;">
+                        <p>Jest to zagadnienie polegające na optymalizacji drogi/ścieżki pod względem odległości, ceny, czasu podróży. Eksplorując ten problem będziemy chcieli znaleźć odpowiedź na pytanie: Jaka jest najkrótsza droga która przechodzi przez każde miasto i wraca do punktu wyjścia?</p>
+                        <p>A gdy spojrzymy na to jako graf będziemy chcieli znaleźć minimalny cykl Hamiltona w pełnym grafie ważonym</p>
+                        <p>Problem podróży sprzedawców po miastach był już rozważany w pierwszej połowie XIX w. przez Williama Rowana Hamilltona jednak wtedy problem nie zawierał żadnych matematycznych uzasadnień. Problem szczegółowo został opisany dopiero w 1930r. przez austriackiego matematyka Karla Mengera. Zdawał on sobie wtedy również sprawę ze złożoności tego problemu</p>
+                    </div>
+                    <div style="flex-basis: 50%; display: flex; align-items: center; justify-content: space-around;">
+                        <div style="text-align: center;">
+                            <img height="250px" src="../IMG/menger.jpg">
+                            <p>Karl Menger</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img height="250px" src="../IMG/hamillton.jpeg"">
+                            <p>William Rowan Hamillton</p>
+                        </div>
+                        
+                    </div>
+                    <div style="flex-basis: 100%; margin-top: 50px;">
+                        <p>Zagadnienie należy do typu problemów NP-trudnych czyli - nie istnieje dla niego rozwiązanie ze złożonością wielomianową i niestety nie istnieje dla niego ogólny i efektywny algorytm dający optymalne rozwiązanie.</p>
+                        <h3>Rozłóżmy ten problem na 2 podproblemy</h3>
+                        <ul>
+                            <li>Symetryczny problem komiwojażera polega na tym, że dla dowolnych miast A i B odległość między nimi jest zawsze taka sama niezależnie od wierzchołka początkowego</li>
+                            <li>Asymetryczny problem komiwojażera polega na tym że odległość z A do B jest różna od odległości z B do A</li>
+                        </ul>
+                        <p>Podczas próby rozwiązania problemu symetrycznego natrafiamy na oczywisty problem - złożoność czasowa na poziomie \(O(n!)\)</p>
+                        <p>Niewielki przyrost liczby miast powoduje duży przyrost potencjalnych przypadków do rozważenia</p>
+                        <h3 style="text-align: center; margin-top: 60px;">Dla n miast liczba kombinacji wynosi</h3>
+                        <p style="text-align: center; font-size: xx-large">\({{(n-1)!} \over 2}\)</p>
+
+                        <h3 style="text-align: center; margin-top: 60px;">Dla 20 miast liczba cykli hamilltona wynosi</h3>
+                        <p style="text-align: center; font-size: xx-large">\({{(20-1)!} \over 2} = {19! \over 2} = 6 * 10^{16}\)</p>
+
+                        <h2 style="text-align: center; margin-top: 100px;">Sposoby rozwiązywania problemu komiwojażera</h2>
+                        <ul>
+                            <li>Algorytm Helda-Karpa</li>
+                            <li>Algorytm najbliższego sąsiada:</li>
+                            <li>Algorytm mrówkowy</li>
+                            <li>Symulowane wyżarzanie</li>
+                            <li>Algorytm Christofidesa</li>
+                        </ul>
+                        <!--WYJASNIENIE PO KROTCE ALGORYTMOW-->
+                    </div>
+                </div>
+
+                <div class="problem-div">
+                    <h1><span class="main--colorFix">Problem znajdywania najkrótszej ścieżki </span></h1>
+
+                    <p>Autorem tego twierdzenia jest ...</p>
+                </div>
+
+                <div class="main__marriage_problem problem-div">
+                    <h1><span class="main--colorFix">BFS i DFS</span></h1>
+
+                    <p>Autorem tego twierdzenia jest ...</p>
+                </div>
+
+                <div class="main__marriage_problem problem-div">
+                    <h1><span class="main--colorFix">Znajdywanie cykli</span></h1>
+
+                    <p>Autorem tego twierdzenia jest ...</p>
+                </div>
+
+                <div class="main__marriage_problem problem-div">
+                    <h1><span class="main--colorFix">Sortowanie topologiczne</span></h1>
+
+                    <p>Autorem tego twierdzenia jest ...</p>
                 </div>
             </main>
             <footer class="footer">
@@ -434,10 +502,22 @@
         <script src="../JS/particles.js"></script>
         <script src="../JS/app.js"></script>
         <script src="../JS/connectedGraph.js"></script>
+        <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
             async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../JS/graphs/marriage/marriage-first.js"></script>
+        <script src="../JS/graphs/marriage/marriage-second.js"></script>
+        <script src="../JS/graphs/marriage/marriage-third.js"></script>
+        <script src="../JS/graphs/marriage/marriage-fourth.js"></script>
+        <script src="../JS/graphs/marriage/marriage-fifth.js"></script>
+        <script src="../JS/graphs/marriage/marriage-sixth.js"></script>
+        <script src="../JS/graphs/marriage/marriage-seventh.js"></script>
+        <script src="../JS/graphs/marriage/marriage-eighth.js"></script>
+        <script src="../JS/graphs/representation/edgeList.js"></script>
+        <script src="../JS/graphs/representation/adjacencyList.js"></script>
+        <script src="../JS/graphs/representation/adjacencyMatrix.js"></script>
     </body>
 </html>

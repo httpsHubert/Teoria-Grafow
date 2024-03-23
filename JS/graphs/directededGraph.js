@@ -18,26 +18,26 @@ var options = {
         arrows: 'to',
         labelHighlightBold: true,
         color: {
-            color: '#ffffff',  // Kolor krawędzi
-            highlight: '#ffffff',  // Kolor krawędzi po najechaniu
-            hover: '#ffffff',  // Kolor krawędzi po najechaniu
+            color: '#ffffff',  
+            highlight: '#ffffff',  
+            hover: '#ffffff',  
         }
     },
     nodes: {
         color: {
-            background: '#00030e',  // Kolor tła wierzchołków
-            border: '#ffffff',  // Kolor obramowania wierzchołków
+            background: '#00030e', 
+            border: '#ffffff', 
             highlight: {
-                background: '#ffffff',  // Kolor tła wierzchołków po najechaniu
-                border: '#ffffff'  // Kolor obramowania wierzchołków po najechaniu
+                background: '#ffffff', 
+                border: '#ffffff' 
             },
             hover: {
-                background: '#ffffff',  // Kolor tła wierzchołków po najechaniu
-                border: '#ffffff'  // Kolor obramowania wierzchołków po najechaniu
+                background: '#ffffff', 
+                border: '#ffffff' 
             },
         },
         font: {
-            color: '#ffffff'  // Kolor liter w wierzchołkach
+            color: '#ffffff'
         },
         size: 10,
     },
@@ -55,11 +55,12 @@ var options = {
     },
     interaction: {
         dragView: false,
-        dragNodes: true
+        dragNodes: true,
+        zoomView: false
     },
 };
 
-var container = document.getElementById('graph-representation-visualisation-list');
+var container = document.querySelector('.main__directed-graph-vis');
 
 var data = { nodes: nodes, edges: edges };
 
