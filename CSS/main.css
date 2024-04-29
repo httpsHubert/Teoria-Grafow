@@ -18,6 +18,7 @@ html, body {
     scroll-behavior: smooth;
     font-family: Montserrat;
     color: var(--color-white);
+    background-color: rgba(0, 3, 14, 0.8);
 }
 a {
     color: var(--color-white);
@@ -66,6 +67,7 @@ a:hover {
     flex-basis: 100%;
     display: flex;
     justify-content: space-between;
+
 }
 .main__left-column {
     padding: 240px 0 0 140px;
@@ -97,7 +99,7 @@ a:hover {
     transform: rotate(-45deg);
 }
 .footer {
-    flex-basis: 100%;
+    flex-basis: 100%; 
 }
 .waves {
     position:relative;
@@ -107,6 +109,7 @@ a:hover {
     min-height:100px;
     max-height:150px;
     top: 14vh;
+    background-color: rgba(0, 3, 14, 0.8);
 }
 canvas {
     z-index: -1;

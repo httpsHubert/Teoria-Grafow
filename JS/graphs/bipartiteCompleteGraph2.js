@@ -52,7 +52,8 @@ var options = {
     },
     interaction: {
         dragView: false,
-        dragNodes: false
+        dragNodes: false,
+        zoomView: false
     },
 };
 

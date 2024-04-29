@@ -5,12 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="../CSS/basicTerms.css" type="text/css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
     <body>
         <div id="particles-js"></div>
         <div class="wrapper">
-            <div class="text">Teoria Grafów</div>
+            <div class="typewriter">
+                <h1>Teoria Grafów</h1>
+            </div>
+  
             <nav class="navigation">
                 <ul class="navigation__item-list">
                     <li class="navigation__item">
@@ -40,6 +44,40 @@
                         Podstawowa terminologia w Teorii Grafów
                     </h1>
                 </div>
+
+                <div class="contents">
+                    <h1 style="font-size: 450%;">
+                        <span class="main__span-blue">Spis treści</span>
+                    </h1>
+                    <ul class="contents__item-list">
+                        <li><h2>Podstawowe informacje: <h2></li>
+                        <ul>
+                            <li data-target="main__info" class="contents__list-item">Czym jest graf? <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__terms-before-euler" class="contents__list-item">Przydatne pojęcia <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__edges" class="contents__list-item">Krawędzie, Wierzchołki<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                        </ul>
+                        <li style="margin-top: 30px;"><h2>Rodzaje Grafów: </h2></li>
+                        <ul>
+                            <li data-target="main__directed-graph" class="contents__list-item">Graf nieskierowany/skierowany<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__consistent-graph" class="contents__list-item">Graf spójny/niespójny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__eulerian-graph" class="contents__list-item">Graf eulerowski/hamiltonowski<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__bipartite-graph" class="contents__list-item">Graf dwudzielny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__complete-graph" class="contents__list-item">Graf pełny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__bipartite-complete-graph" class="contents__list-item">Graf pełny dwudzielny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__planar-graph" class="contents__list-item">Graf planarny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__terms-before-euler" class="contents__list-item">Graf acykliczny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__isomorphic-graph" class="contents__list-item">Graf izomorficzny<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__tree" class="contents__list-item">Drzewo<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                        </ul>
+                        <li style="margin-top: 30px;"><h2>I dodatkowo:</h2></li>
+                        <ul>
+                            <li data-target="main__operations" class="contents__list-item">Operacje na grafach<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__useof" class="contents__list-item">Zastosowania grafów<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__tree" class="contents__list-item">Grafowe sieci neuronowe<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                        </ul>
+                    </ul>
+                </div>
+
                 <div class="main__info">
                     <div class="divPattern">
                         <h1 class="main__h1">
@@ -56,22 +94,21 @@
                             Po matematycznemu przedstawimy go jako para \(G =
                             (V,E)\) gdzie:
                         </p>
-                        <p class="math">
+                        <p>
                             \(V\) - jest zbiorem wierzchołków, \(V = \{v_1, v_2,
                             ...v_n\}\)
                         </p>
-                        <p class="math">
-                            \(E\) - jest rodziną krawędzi, możemy też ją nazwać
-                            jako podzbiór \(V (E = V * V) \)
+                        <p>
+                            \(E\) - jest rodziną krawędzi, \(E = \{e_1, e_2, ...e_n\}\)
                         </p>
-                        <h3>
+                        <p>
                             Oprócz tych symboli w sukcesywnym eksplorowaniu tej
                             strony przyda nam się ich jeszcze parę:
-                        </h3>
+                        </p>
                         <ul>
-                            <li>\(|V|\) - Liczba wierzchołków</li>
-                            <li style="padding-bottom: 50px">
-                                \(|E|\) - Liczba krawędzi
+                            <li>\(|V|\) lub \(V(G)\) - Liczba wierzchołków</li>
+                            <li style="padding-bottom: 30px">
+                                \(|E|\) lub \(E(G)\) - Liczba krawędzi
                             </li>
                             <li>
                                 \(O(n)\) - Notacja dużego O która mówi nam o
@@ -81,7 +118,7 @@
                         </ul>
                     </div>
 
-                    <div class="main__terms-before-euler">
+                    <div style="font-size: 110%;" class="theorem">
                         <h1>Parę przydatnych pojęć:</h1>
                         <ul>
                             <li>
@@ -104,16 +141,26 @@
                             </li>
                         </ul>
                         <br />
-                        <p style="font-weight: bold">
+                        <p>
                             Podpowiedź:
                             <i
                                 >Jak klikniesz na dany wierzchołek grafu
                                 zobaczysz z jakimi innymi się łączą</i
                             >
                         </p>
+
+                        <h1>Elementy logiki: </h1>
+                        <ul style="text-align: left;">
+                            <li><span class="math-bigger logic">\(∈\)</span> - \(A ∈ B\) - A "należy do" zbioru B</li>
+                            <li><span class="math-bigger logic">\(∉\)</span> - \(A ∉ B\) - A "nie należy do" zbioru B</li>
+                            <li><span class="math-bigger logic">\(⊂\)</span> - \(A ⊂ B\) - A "zawiera się" w zbiorze B</li>
+                            <li style="max-width: 600px"><span class="math-bigger logic">\(∪\)</span> - \(A ∪ B = \{1, 2\}\) - "sumą zbiorów" A i B jest zbiór \(\{1, 2\}\) gdzie liczby mogą być zastąpione oznaczeniami wierzchołków czy też krawędzi np. \(\{e_1, e_2, e_3\}\)</li>
+                            <li><span class="math-bigger logic">\</span> - \(A \) \ \(B = \{1\}\) - "różnicą zbiorów" A i B jest jednoelementowy zbiór \(\{1\}\&bsol; \)</li>
+                            <li><span class="math-bigger logic">\(⇔\)</span> - \(x + 2 = 0 ⇔ x = -2\) \(x + 2 = 0\) - "wtedy i tylko wtedy" gdy \(x = -2\)</li>
+                        </ul>
                     </div>
 
-                    <div class="divPattern">
+                    <div class="divPattern main__edges">
                         <h1 class="main__h1">
                             <span class="main__span-blue"
                                 >Krawędzie, Wierzchołki</span
@@ -179,12 +226,12 @@
                         <p>
                             Czasami możemy spotkać również sytuację, że w grafie
                             zamiast jednego wierzchołka izolowanego mogą być
-                            wszystkie, wtedy graf nazywamy <i>pustym</i>
+                            wszystkie, innymi słowy - nie będzie krawędzi, wtedy graf nazywamy <i>pustym</i>
                         </p>
                     </div>
                 </div>
 
-                <div class="main__terms">
+                <!--<div class="main__terms">
                     <h1 class="main__h1">Rodzaje grafów</h1>
                     <ul class="main__item-list">
                         <li class="main__item">
@@ -231,7 +278,7 @@
                             >
                         </li>
                     </ul>
-                </div>
+                </div>-->
 
                 <div class="main__graph-types">
                     <div class="main__directed-graph">
@@ -240,8 +287,10 @@
                         <p>
                             W grafie skierownym krawędzie oznaczane strzałkami
                             pokazują nam konkretny kierunek, w którym możemy
-                            poruszać się po grafie.
+                            poruszać się po grafie. Nazywany jest również digrafem. Jest to para: 
                         </p>
+                        <p style="font-size: 140%;">$$D = (V, E)$$</p>
+                        <p>\(E ⊂ V * V\)</p>
                     </div>
 
                     <div class="main__not-directed-graph">
@@ -279,7 +328,7 @@
                     </div>
                 </div>
 
-                <div class="divPattern">
+                <div class="divPattern main__eulerian-graph">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
@@ -288,13 +337,13 @@
 
                     <ul>
                         <li>
-                            <h3>
+                            <p>
                                 Ścieżka(Łańcuch) Eulera - ścieżka w grafie która
                                 przechodzi przez każdą jego krawędź dokładnie
                                 jeden raz. Jeżeli w danym grafie możliwe jest
                                 utworzenie takiej drogi, to jest on nazywany
                                 grafem półeulerowskim.
-                            </h3>
+                            </p>
                         </li>
                         <div class="euler-graph main__eulerian-path">
                             Graf posiadający ścieżkę eulera:
@@ -303,13 +352,13 @@
                             Graf nieposiadający ścieżki eulera:
                         </div>
                         <li>
-                            <h3>
+                            <p>
                                 Cykl Eulera - ścieżka w grafie która przechodzi
                                 przez każdą jedną krawędź i kończy się w miejscu
                                 zaczęcia podróży. Jeżeli w danym grafie możliwe
                                 jest utworzenie takiego cyklu, to jest on
                                 nazywany grafem eulerowskim.
-                            </h3>
+                            </p>
                         </li>
                         <div class="euler-graph main__eulerian-cycle">
                             Graf posiadający cykl eulera:
@@ -348,12 +397,12 @@
 
                     <ul>
                         <li>
-                            <h3>
+                            <p>
                                 Ścieżka Hamiltona - ścieżka w grafie która
                                 przechodzi przez wszystkie wierzchołki grafu
                                 dokładnie jeden raz. Graf zawierający w sobie
                                 taką ścieżkę nazwiemy Grafem Półhamiltonowskim.
-                            </h3>
+                            </p>
                         </li>
                         <div class="euler-graph main__hamiltonian-path">
                             Graf posiadający ścieżkę hamiltona:
@@ -362,13 +411,13 @@
                             Graf nieposiadający ścieżki hamiltona:
                         </div>
                         <li>
-                            <h3>
+                            <p>
                                 Cykl Hamiltona - cykl przechodzący przez
                                 wszystkie wierzchołki grafu dokładnie jeden raz.
                                 Dodatkowo zaczyna się i kończy w tym samym
                                 wierzchołku. Graf zawierający ten cykl nazywamy
                                 Grafem Hamiltonowskim.
-                            </h3>
+                            </p>
                         </li>
                         <div class="euler-graph main__hamiltonian-cycle">
                             Graf posiadający cykl hamiltona:
@@ -400,7 +449,7 @@
                     </p>
                 </div>
 
-                <div class="divPattern">
+                <div class="divPattern main__bipartite-graph">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
@@ -408,7 +457,7 @@
                     </h1>
                     <div style="display: flex; width: 100%">
                         <div style="flex-basis: 70%; padding: 30px">
-                            <h3>
+                            <p>
                                 Grafem dwudzielnym będziemy nazywać graf \(G =
                                 (V, E)\) w którym zbiór wierzchołków da się
                                 podzielić na dwa rozłączone zbiory \(V_1\) i
@@ -416,11 +465,11 @@
                                 w obrębie tego samego podzbioru nie były
                                 sąsiadami których łaczy krawędź, będziemy go
                                 oznaczać jako \((V_1 ∪ V_2, E)\)
-                            </h3>
-                            <h3>
+                            </p>
+                            <p>
                                 Twierdzenie: Graf jest dwudzielny wtedy i tylko
                                 wtedy gdy każdy cykl ma w nim parzystą długość
-                            </h3>
+                            </p>
                         </div>
 
                         <div
@@ -429,35 +478,35 @@
                     </div>
                 </div>
 
-                <div class="divPattern">
+                <div class="divPattern main__complete-graph">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
                         Graf pełny
                     </h1>
-                    <h3>
+                    <p>
                         Graf pełny to graf w którym każde dwa wierzchołki są
                         połączone krawędziami
-                    </h3>
-                    <h3>
+                    </p>
+                    <p>
                         Graf pełny o n wierzchołkach posiada \({n(n-1)} \over
                         {2}\) krawędzi i oznaczamy go jako \(K_n\)
-                    </h3>
+                    </p>
                     <p>Przykłady:</p>
                     <div style="display: flex; gap: 10px">
                         <div style="flex-basis: 33%; text-align: center">
                             <div
-                                class="graph-smaller main__complete-graph1"></div>
+                                class="graph main__complete-graph1"></div>
                             <h2>\(K_1\)</h2>
                         </div>
                         <div style="flex-basis: 33%; text-align: center">
                             <div
-                                class="graph-smaller main__complete-graph2"></div>
+                                class="graph main__complete-graph2"></div>
                             <h2>\(K_4\)</h2>
                         </div>
                         <div style="flex-basis: 40%; text-align: center">
                             <div
-                                class="graph-smaller main__complete-graph3"></div>
+                                class="graph main__complete-graph3"></div>
                             <h2>\(K_8\)</h2>
                         </div>
                     </div>
@@ -468,23 +517,23 @@
                     </p>
                 </div>
 
-                <div class="divPattern">
+                <div class="divPattern main__bipartite-complete-graph">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
                         Graf pełny dwudzielny
                     </h1>
 
-                    <h3>
+                    <p>
                         Specjalny przypadek grafu dwudzielnego który posiada
                         wszystkie możliwe krawędzie pomiędzy dwoma podzbiorami
                         wierzchołków.
-                    </h3>
-                    <h3>
+                    </p>
+                    <p>
                         Takowy graf którego zbiór wierzchołków jest podzielony
                         na zbiory \(m\) elementowe i \(n\) elementowe oznaczamy
                         jako \(K_{m, n}\)
-                    </h3>
+                    </p>
                     <p>Przykłady:</p>
                     <div
                         style="
@@ -495,18 +544,18 @@
                         ">
                         <div style="flex-basis: 33%; text-align: center">
                             <div
-                                class="graph-smaller main__bipartiteComplete-graph1"></div>
+                                class="graph main__bipartiteComplete-graph1"></div>
                             <h2>\(K_{1, 3}\)</h2>
                         </div>
                         <div style="flex-basis: 33%; text-align: center">
                             <div
-                                class="graph-smaller main__bipartiteComplete-graph2"></div>
+                                class="graph main__bipartiteComplete-graph2"></div>
                             <h2>\(K_{3, 3}\)</h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="divPattern">
+                <div class="divPattern main__planar-graph">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
@@ -526,51 +575,48 @@
                         <div class="main__planar-graph1 euler-graph"></div>
                         <div class="main__planar-graph2 euler-graph"></div>
                     </div>
-                    <div
-                        style="
-                            text-align: center;
-                            border: 2px solid white;
-                            padding: 20px;
-                        ">
-                        <h1>Wzór eulera dla spójnych grafów planarnych</h1>
-                        <p>\(|V| - |E| + |F| = 2\)</p>
-                        <ul>
-                            <li>gdzie: \(|F|\) - to liczba ścian w grafie</li>
-                            <li>oraz \(|V| \geq 3\)</li>
+
+                    <div class="theorem">
+                        <h1 style="color: #fff; margin-bottom: 20px;">Wzór Eulera dla spójnych grafów planarnych</h1>
+                    
+                        <p style="color: #fff; margin-bottom: 10px;">\(|V| - |E| + |F| = 2\)</p>
+                        <p style="margin-bottom: 20px;">gdzie:</p>
+                    
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">
+                                \(|F|\) to ilość ścian w grafie
+                            </li>
+                            <li>
+                                \(|V| \geq 3\)
+                            </li>
                         </ul>
-                        <p>
+                        <p style="color: #ccc;">
                             Ścianą nazywamy obszar podzielony przez krawędzie
                             grafu płaskiego
                         </p>
-                    </div>
-
-                    <div
-                        style="
-                            text-align: center;
-                            padding: 20px;
-                            margin-top: 40px;
-                        ">
-                        <h1>Wnioski ze wzoru eulera</h1>
-                        <ul style="line-height: 50px">
-                            <li>
-                                Jeżeli Graf \(G\) jest planarny i posiada \(k\)
-                                składowych, to \(|V| - |E| + |F| = k + 1\)
+                    
+                        <h2 style="color: #fff; margin-top: 30px; margin-bottom: 10px;">Wnioski</h2>
+                        <ul style="list-style-type: none; padding: 0; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <li style="font-size: 20px; margin-bottom: 10px; line-height: 1.5;">
+                                Jeżeli Graf \(G\) jest planarny i posiada \(k\) składowych, to \(|V| - |E| + |F| = k + 1\)
                             </li>
-                            <li>
-                                Jeżeli Graf \(G\) jest planarny i \(|V| \geq
-                                3\), to \(|E| \leq 3|V| - 6\)
+                            <li style="font-size: 20px; line-height: 1.5;">
+                                Jeżeli Graf \(G\) jest planarny i \(|V| \geq 3\), to \(|E| \leq 3|V| - 6\)
                             </li>
                         </ul>
                     </div>
+                    
+
+
                     <div
                         style="margin: 50px auto"
                         class="graph main__planar-graph-eulerF"></div>
-                    <p style="text-align: center; font-size: larger">
+                    <p style="text-align: center">
                         Mamy dany taki graf. Teraz zbierzmy o nim informacje
                         podstawmy do wzoru i zobaczmy czy ani euler ani my się
                         nie pomyliliśmy rysując ten graf.
                     </p>
-                    <ul style="font-size: larger; padding-top: 20px">
+                    <ul style="padding-top: 20px">
                         <li>\(|V|\) - 9</li>
                         <li>\(|E|\) - 15</li>
                         <li style="padding-top: 20px">
@@ -599,7 +645,7 @@
                         <p>
                             Grafy \(G_1\) i \(G_2\) są
                             <i>Homeomorficzne</i> \(\leftrightarrow\) gdy można
-                            je uzyskać z zastępowania krawędzi Grafu \(G\)
+                            je oba uzyskać z zastępowania krawędzi Grafu \(G\)
                             łańcuchami prostymi
                         </p>
                     </div>
@@ -630,7 +676,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="divPattern">
+
+                <div class="divPattern main__isomorphic-graph">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
@@ -638,7 +685,7 @@
                     </h1>
 
                     <p>
-                        Graf \(G\) jest izomorficzny z grafem \(H\) jeżeli
+                        Graf \(G = (V_G, E_G)\) jest izomorficzny z grafem \(H = (V_H, E_H)\) jeżeli
                         istnieje podobieństwo zwane bijekcją wierzchołków \(H\)
                         wierzchołkom \(G\), czyli jeżeli dwa wierzchołki są
                         połączone krawędzią w grafie \(G\) to w grafie \(H\)
@@ -676,8 +723,34 @@
                     <p style="text-align: center; font-size: larger">
                         \(s \leftrightarrow s'\)
                     </p>
+
+                    <div class="theorem">
+                        <h1>Twierdzenie</h1>
+                        <p>
+                            Jeżeli grafy \(G = (V_G, E_G)\) i \(H = (V_H, E_H)\) są izomorficzne to: 
+                        </p>
+                
+                        <ul
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+                                text-align: left;
+                            ">
+                            <li>
+                                \(a)\) \(G\) i \(H\) mają tyle samo wierzchołków \(|V_G| = |V_H|\)
+                            </li>
+                            <li>
+                                \(b)\) \(G\) i \(H\) mają tyle samo krawędzi \(|E_G| = |E_H|\)
+                            </li>
+                            <li>
+                                \(c)\) Dla każdego \(k\), \(G\) i \(H\) mają tyle samo wierzchołków stopnia \(k\)
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-                <div class="divPattern">
+                <div class="divPattern main__tree">
                     <h1
                         class="main__h1 main__span-blue"
                         style="text-align: center">
@@ -691,8 +764,7 @@
                         między nimi dając Graf.
                     </p>
                     <p>
-                        Zaś las jest to Graf niespójny i acykliczny. A jego
-                        składowe nazywane są drzewem
+                        Drzewo jest również nazywane, w matematyce, jak i w prawdziwym życiu - składową lasu. Zaś las jest to Graf niespójny i acykliczny.
                     </p>
                     <p>
                         Drzewo możemy przedstawić jako zbiór prostych odcinków
@@ -703,34 +775,137 @@
                         Wierzchołki drzewa mające stopień wierzchołka równe 1
                         nazywamy liśćmi
                     </p>
-                    <div style="text-align: center; border: 2px solid white">
+                    <div class="theorem">
                         <h1>Twierdzenie</h1>
                         <p>
                             Rozważmy Graf prosty \(G = (V, E)\) gdzie \(V ∉ ∅\)
                         </p>
-                        <ul style="display: flex; flex-direction: column; gap: 20px; text-align: left;">
-                            <li>\(a)\) Jeżeli Graf jest drzewem i \(|V| \geq 2\) to posiada on liść</li>
-                            <li>\(b)\) Jeżeli Graf jest drzewem to \(|E| = |V| - 1\)</li>
-                            <li>\(c)\) Jeżeli \(|E| = |V| - 1\) i Graf nie zawiera cykli to jest on spójny, a więc jest drzewem</li>
+                        <p>Warunek \(k\) = \(|E| = |V| -
+                            1\)</p>
+                        <ul>
+                            <li>
+                                \(a)\) Jeżeli Graf jest drzewem i \(|V| \geq 2\)
+                                to posiada on liść
+                            </li>
+                            <li>
+                                \(b)\) Jeżeli Graf jest drzewem to warunek \(k\) jest spełniony
+                            </li>
+                            <li>
+                                \(c)\) Jeżeli warunek \(k\) jest spełniony i Graf nie
+                                zawiera cykli to jest on spójny, a więc jest
+                                drzewem
+                            </li>
                         </ul>
                     </div>
-                    <h2>Przykłady drzew: </h2>
-                    <div style="display: flex;">
+                    <h2>Przykłady drzew:</h2>
+                    <div style="display: flex">
                         <div class="euler-graph tree__graph-1"></div>
                         <div class="euler-graph tree__graph-2"></div>
                         <div class="euler-graph tree__graph-3"></div>
                     </div>
-                    <p>Często możemy się spotkać z hierarchiczną strukturą drzewa, wtedy mają one jeden wyróżniony wierzchołek - <b>korzeń</b> z którego rozchodzą się następne. </p>
-                    <p>W takim drzewie zwykłe wierzchołki nazywamy węzłami wewnętrznymi a liście - węzłami zewnętrznymi.</p>
-                    <p>Każdy węzeł znajdujący się o jedną krawędź grafu więcej od danego węzła nazywany jest dzieckiem </p>
+                    <h1 style="text-align: center; padding: 35px">
+                        Drzewo z wyróżnionym korzeniem
+                    </h1>
+                    <p>
+                        Często możemy się spotkać z hierarchiczną strukturą
+                        drzewa, wtedy mają one jeden wyróżniony wierzchołek -
+                        <b>korzeń</b> z którego rozchodzą się następne. Nazywane
+                        jest również <b>drzewem ukorzenionym</b>
+                    </p>
+                    <p>
+                        W takim drzewie zwykłe wierzchołki nazywamy węzłami
+                        wewnętrznymi a liście - węzłami zewnętrznymi.
+                    </p>
+                    <p>
+                        Każdy węzeł znajdujący się o jedną krawędź grafu więcej
+                        od danego węzła nazywany jest dzieckiem
+                    </p>
                     <!--TUTAJ BEDZIE DRZEWO HIERARCHICZNE I WYTLUMACZENIE POTOMKOW DZIECI LEPIEJ, POTEM WAGI Z TYM WZOREM, DRZEWO BINARNE, I NA KONCU DRZEWO ROZPINAJACE I SPINAJACE-->
+                    <div class="graph tree__graph-4"></div>
+                    <p style="color: #999999; text-align: center">
+                        *Każdy wierzchołek poza korzeniem ma dokładnie jednego
+                        rodzica
+                    </p>
+                    <p style="color: #999999; text-align: center">
+                        *Rodzic może mieć kilkoro dzieci
+                    </p>
+                    <h1 style="text-align: center; padding: 35px">
+                        Drzewo z wagami
+                    </h1>
+                    <p style="text-align: center">
+                        Drzewo z wagami jest strukturą gdzie każdemu liściowi
+                        drzewa przypisuję się wagę
+                    </p>
+                    <div style="text-align: center; margin-top: 70px">
+                        <h1>Definicja</h1>
+                        <p style="padding: 20px">
+                            Powiedzmy, że drzewo \(T\) ma \(t\) liści oraz ich
+                            wagami są liczby \(w_1, w_2, ..., w_t\) i niech
+                            \(I_1, I_2, ..., I_t\) oznaczają numery poziomów
+                            liści. Wtedy wagę drzewa \(T\) oznaczamy jako
+                        </p>
+                        <p style="font-size: 115%">
+                            $$W(T) = \sum_{i=0}^t w_iI_i$$
+                        </p>
+                    </div>
+                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: row;">
+                        <div style="width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div class="euler-graph tree__graph-5" style="width: 75% !important;"></div>
+                            <p>\(W(T_1) = 40\)</p>
+                        </div>
+                        <div style="width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div class="euler-graph tree__graph-6" style="width: 75% !important;"></div>
+                            <p>\(W(T_2) = 55\)</p>
+                        </div>
+                    </div>
+
+                    <h1 style="text-align: center;">Drzewo binarne</h1>
+                    <p style="padding: 3px;">Jest to specjalny rodzaj drzewa które ma maksymalny stopień wierzchołka 2, dodatkowo wszystkie liście mają ten sam numer poziomu równy wysokości drzewa. ????????</p>
+                    <p style="padding: 3px;">Maksymalna liczba wierzchołków w drzewie binarnym o \(k\) poziomach wynosi: </p>
+                    <p style="padding: 3px;">$$n_{max} = 2^0 + 2^1 + ... + 2^k = 2^{k+1} - 1$$</p>
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;"">
+                        <div class="graph tree__graph-7" style="height: 400px""></div>
+                        <p>\(n_{max} = 2^0 + 2^1 + 2^2 + 2^3 = 1 + 2 + 4 + 8 = 15\)</p>
+                    </div>
                 </div>
-                <div class="divPattern">
-                    <h1>Operacje na grafach</h1>
+
+                <div class="divPattern main__useof">
+                    <h1
+                        class="main__h1 main__span-blue"
+                        style="text-align: center">
+                        Graf regularny
+                    </h1>
+
                 </div>
-                <div class="divPattern">
-                    <h1>Zastosowania grafów</h1>
+
+                <div class="divPattern main__operations">
+                    <h1
+                        class="main__h1 main__span-blue"
+                        style="text-align: center">
+                        Operacje na grafach
+                    </h1>
+
+                    <h3>Dla grafów prostych \(G_1 = (V_1, E_1)\) i \(G_2 = (V_2, E_2)\) definiujemy następujące pojęcia </h3>
+                    <ul>
+                        <li><b>Sumą grafów</b> \(G_1\) oraz \(G_2\) jest graf którego zbiór wierzchołków i krawędzi tworzy każda krawędź i każdy wierzchołek z obu grafów.</li>
+                        <span class="math-bigger">$$G_1 ∪ G_2 = (V_1 ∪ V_2, E_1 ∪ E_2)$$</span>
+                        <li><b>Przecięcie grafów</b> jest definiowane jako iloczyn zbiorów krawędzi i wierzchołków z obu grafów. Jeżeli mamy dwa grafy \(G_1\) oraz \(G_2\), to ich przecięciem będzie graf którego wierzchołki i krawędzie wchodzą w skład obu grafów. </li>
+                        <span class="math-bigger">$$G_1 ∩ G_2 = (V_1 ∩ V_2, E_1 ∩ E_2)$$</span>
+                        <li><b>????????Zespolenie grafów</b> jest definiowane jako operacja mająca na celu połączenie krawędziami wierzchołków \(G_1\) i \(G_2\)</li>
+                        <span class="math-bigger">$$G_1 + G_2 = (V_1 ∪ V_2, E_1 ∪ E_2 ∪ \{\{v_1, v_2\} : v_1 ∈ V_1, v_2 ∈ V_2\})$$</span>
+                    </ul>
                 </div>
+
+                <div class="divPattern main__useof">
+                    <h1
+                        class="main__h1 main__span-blue"
+                        style="text-align: center">
+                        Zastosowania grafów
+                    </h1>
+
+                </div>
+
+                
             </main>
             <footer class="footer">
                 <svg
@@ -806,5 +981,11 @@
         <script src="../JS/graphs/trees/tree-1.js"></script>
         <script src="../JS/graphs/trees/tree-2.js"></script>
         <script src="../JS/graphs/trees/tree-3.js"></script>
+        <script src="../JS/graphs/trees/tree-4.js"></script>
+        <script src="../JS/graphs/trees/tree-5.js"></script>
+        <script src="../JS/graphs/trees/tree-6.js"></script>
+        <script src="../JS/graphs/trees/tree-7.js"></script>
+        <script src="../JS/writing.js"></script>
+        <script src="../JS/scroll.js"></script>
     </body>
 </html>

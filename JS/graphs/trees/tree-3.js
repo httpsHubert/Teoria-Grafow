@@ -3,19 +3,20 @@ var nodes = [
     { id: 2, label: 'B' },
     { id: 3, label: 'C' },
     { id: 4, label: 'D' },
+    { id: 5, label: 'E' },
+    { id: 6, label: 'F' },
 ];
 
 var edges = [
-    { from: 1, to: 2},  
-    { from: 2, to: 3},  
-    { from: 2, to: 4},
-    { from: 3, to: 1},
-    { from: 4, to: 1},  
+    { from: 1, to: 4},  
+    { from: 2, to: 4},  
+    { from: 3, to: 4},
+    { from: 5, to: 4},
+    { from: 5, to: 6},  
 ];
 
 var options = {
     edges: {
-        arrows: 'to',
         labelHighlightBold: true,
         color: {
             color: '#ffffff',  
@@ -44,7 +45,8 @@ var options = {
     physics: false,
     interaction: {
         dragView: false,
-        dragNodes: true
+        dragNodes: true,
+        zoomView: false
     },
     layout: {
         randomSeed: 3

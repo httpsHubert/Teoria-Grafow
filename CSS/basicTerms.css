@@ -28,6 +28,8 @@ body {
     scroll-behavior: smooth;
     font-family: Montserrat;
     color: var(--color-white);
+    background-color: rgba(0, 3, 14, 0.8);
+    line-height: 40px;
 }
 a {
     color: var(--color-white);
@@ -38,6 +40,18 @@ a {
 a:hover {
     color: var(--color-lighter-blue);
 }
+.typewriter {
+    flex-grow: 1;
+    padding: 15px;
+}
+.typewriter h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
 .font--bigger {
     font-size: 120%;
 }
@@ -81,11 +95,12 @@ li {
 }
 .main {
     width: 100%;
+    text-align: center;
 }
 .main__div-math-bg {
     background: url(../IMG/matma.jpg);
     background-size: cover;
-    width: 1200px;
+    width: 70%;
     height: 120px;
     box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
     border-radius: 20px;
@@ -96,11 +111,43 @@ li {
 .main__math-bg-heading {
     text-align: center;
     position: relative;
-    bottom: 100px;
+    bottom: 127px;
+    font-size: 2rem;
 }
 .container {
     margin-top: 70px;
 }
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contents__item-list {
+    list-style-type: none;
+    padding: 50px 50px;
+}
+.contents__item-list ul {
+    list-style-type: disc;
+}
+.contents__list-item {
+    margin-top: 20px;
+    padding: 20px 20px;
+    width: 600px;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+.contents__list-item:hover {
+    background-color: var(--color-light-gray);
+    transform: translateX(-20px);
+    cursor: pointer;
+}
+
 .main__h1 {
     font-weight: bold;
     font-size: var(--font-size-h1);
@@ -119,6 +166,16 @@ li {
     justify-content: space-between;
     text-align: center;
     letter-spacing: 1px;
+}
+
+.theorem {
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main__terms {
@@ -144,12 +201,19 @@ li {
     background-color: var(--color-light-gray);
     transform: translateY(-20px);
 }
+
+.main__edges {
+    line-height: 30px;
+}
+
 .main__edges ul {
     margin-top: 20px;
 }
 .main__edges ul li {
     margin: 20px 20px;
-    text-align: left;
+}
+.logic {
+    padding-right: 20px;
 }
 .space {
     padding: 20px;
@@ -162,26 +226,27 @@ li {
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
     padding: 50px;
-    background-color: rgba(0, 3, 14, 0.8);
 }
 .main__directed-graph {
-    width: 50%;
+    width: 100%;
 }
+
 .main__not-directed-graph {
-    width: 50%;
+    width: 100%;
 }
 .main__graph-types p {
     text-align: center;
-    padding: 0 150px 0 150px;
-    font-size: 150%;
+    font-size: 120%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 .main__consistent-graph {
-    width: 50%;
+    width: 100%;
 }
 .main__inconsistent-graph {
-    width: 50%;
+    width: 100%;
 }
 .main__terms-before-euler {
     display: flex;
@@ -189,7 +254,6 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 3, 14, 0.8);
     border: 2px solid var(--color-white);
     padding: 20px;
     margin: 100px;
@@ -199,14 +263,11 @@ li {
 }
 
 .divPattern {
-    background-color: rgba(0, 3, 14, 0.8);
     width: 70%;
     padding: 50px;
-    margin: 150px auto;
+    margin: 100px auto;
     font-size: 120%;
-    border: 2px solid white;
     border-radius: 20px;
-    font-size: 140%;
 }
 .divPattern ul {
     display: flex;
@@ -214,29 +275,31 @@ li {
     justify-content: space-around;
     text-align: center;
 }
+h1 {
+    line-height: 100px;
+}
 .euler-graph {
     width: 40%;
     height: 300px;
-    border: 1px solid white;
     margin: 30px;
 }
 .main__down-arrow {
     margin-top: 50px;
 }
 .graph {
-    background-color: rgba(0, 3, 14, 0.8);
     width: 65%;
-    height: 500px;
+    height: 600px;
     margin: 30px auto;
-    border: 1px solid white;
 }
 .graph-smaller {
-    background-color: rgba(0, 3, 14, 0.8);
     width: 50%;
     height: 300px;
     margin: 30px auto;
-    border: 1px solid white;
     zoom: 0.4;
+}
+
+.math-bigger {
+    font-size: 120%;
 }
 
 #particles-js {
@@ -284,5 +347,25 @@ li {
     }
     100% {
         transform: rotate(180deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-lighter-blue);
     }
 }

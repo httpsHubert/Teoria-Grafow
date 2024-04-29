@@ -21,7 +21,8 @@ body {
     scroll-behavior: smooth;
     font-family: Montserrat;
     color: var(--color-white);
-    height: 100vh;
+    background-color: rgba(0, 3, 14, 0.8);
+    line-height: 40px;
 }
 
 a {
@@ -82,9 +83,7 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     width: 50%;
-    border: 2px solid white;
     margin: 0 auto;
-    background-color: rgba(0, 3, 14, 0.8);
 }
 .contents h1 {
     font-size: 300%;
@@ -95,7 +94,7 @@ a:hover {
     padding: 50px 50px;
 }
 .contents__item-list ul{
-    list-style-type:armenian;
+    list-style-type: none;
 }
 .contents__list-item {
     margin-top: 20px;
@@ -104,15 +103,17 @@ a:hover {
     transition: all 0.5s ease-in-out;
     border-bottom: 1px solid var(--color-light-gray);
 }
+.contents__list-item:hover {
+    background-color: var(--color-light-gray);
+    transform: translateX(-20px);
+}
+
 
 .main__wrapper {
-    border: 2px solid white;
     width: 85%;
     margin: 0 auto;
-    background-color: rgba(0, 3, 14, 0.8);
     border-radius: 20px;
     margin-top: 120px;
-    /*opacity: 0.9;*/
 }
 .main--colorFix {
     background: var(--gradient-text);
@@ -123,7 +124,7 @@ a:hover {
 }
 
 .main__graph-representation-basicInfo {
-    width: 65%;
+    width: 85%;
     margin: 0 auto;
     padding: 20px;
     font-size: 120%;
@@ -191,9 +192,7 @@ a:hover {
     height: auto;
     margin: 50px auto;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 3, 14, 0.8);
     border-radius: 20px;
-    border: 2px solid #fff;
     padding: 40px;
 }
 .problem-div h1 {

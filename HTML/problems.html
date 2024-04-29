@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="../CSS/problems.css" type="text/css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
     <body>
@@ -48,19 +49,18 @@
                     <ul class="contents__item-list">
                         <li><h2>Reprezentacja grafu:<h2></li>
                         <ul>
-                            <li class="contents__list-item">Lista krawędzi <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">Lista sąsiedztwa  <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">Macierz sąsiedztwa <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__edge-list-scroll" class="contents__list-item">Lista krawędzi <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__adjacency-list-scroll" class="contents__list-item">Lista sąsiedztwa  <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__adjacency-matrix-scroll" class="contents__list-item">Macierz sąsiedztwa <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                         <li style="margin-top: 30px;"><h2>Algorytmy i Problemy:</h2></li>
                         <ul>
-                            <li class="contents__list-item">Problem kojarzenia małżeństw <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">Problem komiwojażera <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">Problem znajdywania najkrótszej ścieżki <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">BFS i DFS <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">Znajdywanie cykli <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">Sortowanie topologiczne <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li class="contents__list-item">System połączeń <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__marriage-problem-scroll" class="contents__list-item">Problem kojarzenia małżeństw <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__salesman-problem-scroll" class="contents__list-item">Problem komiwojażera <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__shortest-path-problem-scroll" class="contents__list-item">Problem znajdywania najkrótszej ścieżki <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__BFS-DFS-algo-scroll" class="contents__list-item">BFS i DFS <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__find-cycle-scroll" class="contents__list-item">Znajdywanie cykli <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__topological-sort-scroll" class="contents__list-item">Sortowanie topologiczne <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                     </ul>
                 </div>
@@ -95,7 +95,7 @@
                             grafu będzie:
                         </h2>
 
-                        <h1>Lista krawędzi</h1>
+                        <h1 class="main__edge-list-scroll">Lista krawędzi</h1>
                         <p>
                             W tym sposobie każda krawędź grafu jest
                             przedstawiana jako para wierzchołków, które są nią
@@ -151,7 +151,7 @@
                             Ciekawostka - do stworzenia grafów na tej stronie właśnie użyłem tego sposobu
                         </p>
 
-                        <h1>Lista sąsiedztwa</h1>
+                        <h1 class="main__adjacency-list-scroll">Lista sąsiedztwa</h1>
                         <p>
                             Jest to jeden z fundamentalnych sposobów
                             przedstawiania grafu. Najprościej powiemy że jest to
@@ -183,7 +183,7 @@
                             <li>Sprawdzenie sąsiedztwa: \(O(∣V∣)\)</li>
                         </ul>
 
-                        <h1>Macierz sąsiedztwa</h1>
+                        <h1 class="main__adjacency-matrix-scroll">Macierz sąsiedztwa</h1>
                         <h3>
                             Macierz - Układ (w tym przypadku) liczb zapisanych w
                             tablicy dwuwymiarowej
@@ -267,7 +267,7 @@
                 <div class="title">
 
                 </div>
-                <div class="main__inside-layout-pattern problem-div">
+                <div class="main__inside-layout-pattern problem-div main__marriage-problem-scroll">
                     <h1 class="marriage-h1"><span class="main--colorFix">Twierdzenie o kojarzeniu małrzeństw</span></h1>
                     
                     <div class="marriage-div1">
@@ -387,7 +387,7 @@
 
                 <!--TEKST NA BORDERZE-->
                 <!--BORDER 1PX WIEKSZY Z GRADIENTEM-->
-                <div class="main__inside-layout-pattern problem-div">
+                <div class="main__inside-layout-pattern problem-div main__salesman-problem-scroll">
                     <div style="flex-basis: 100%;">
                         <h1><span class="main--colorFix">Problem komiwojażera</span></h1>
                     </div>
@@ -435,25 +435,25 @@
                     </div>
                 </div>
 
-                <div class="problem-div">
+                <div class="problem-div main__shortest-path-problem-scroll">
                     <h1><span class="main--colorFix">Problem znajdywania najkrótszej ścieżki </span></h1>
 
                     <p>Autorem tego twierdzenia jest ...</p>
                 </div>
 
-                <div class="main__marriage_problem problem-div">
+                <div class="main__marriage_problem problem-div main__BFS-DFS-algo-scroll">
                     <h1><span class="main--colorFix">BFS i DFS</span></h1>
 
                     <p>Autorem tego twierdzenia jest ...</p>
                 </div>
 
-                <div class="main__marriage_problem problem-div">
+                <div class="main__marriage_problem problem-div main__find-cycle-scroll">
                     <h1><span class="main--colorFix">Znajdywanie cykli</span></h1>
 
                     <p>Autorem tego twierdzenia jest ...</p>
                 </div>
 
-                <div class="main__marriage_problem problem-div">
+                <div class="main__marriage_problem problem-div main__topological-sort-scroll">
                     <h1><span class="main--colorFix">Sortowanie topologiczne</span></h1>
 
                     <p>Autorem tego twierdzenia jest ...</p>
@@ -519,5 +519,6 @@
         <script src="../JS/graphs/representation/edgeList.js"></script>
         <script src="../JS/graphs/representation/adjacencyList.js"></script>
         <script src="../JS/graphs/representation/adjacencyMatrix.js"></script>
+        <script src="../JS/scroll.js"></script>
     </body>
 </html>

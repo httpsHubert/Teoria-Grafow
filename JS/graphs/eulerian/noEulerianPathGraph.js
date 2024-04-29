@@ -7,12 +7,12 @@ var nodes = [
 ];
 
 var edges = [
-    { from: 1, to: 2, label: '1' },
-    { from: 2, to: 3, label: '2' },
-    { from: 2, to: 4, label: '2' },
-    { from: 3, to: 4, label: '3' },
-    { from: 3, to: 5, label: '3' },
-    { from: 4, to: 5, label: '4' },
+    { from: 1, to: 2, label: '1', color: "red" },
+    { from: 2, to: 3, label: '2', color: "red" },
+    { from: 2, to: 4, label: '3' },
+    { from: 3, to: 4, label: '4'},
+    { from: 3, to: 5, label: '5', color: "red"  },
+    { from: 4, to: 5, label: '6', color: "red"  },
 ];
 
 var options = {
