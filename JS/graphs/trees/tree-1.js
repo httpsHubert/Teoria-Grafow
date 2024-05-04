@@ -35,7 +35,18 @@ var options = {
         },
         size: 10,
     },
-    physics: false,
+    physics: {
+        barnesHut: {
+            gravitationalConstant: -2000,
+            springConstant: 0.04,
+            springLength: 95
+        },
+        maxVelocity: 146,
+        solver: 'barnesHut',
+        stabilization: {
+            iterations: 150
+        }
+    },
     interaction: {
         dragView: false,
         dragNodes: true,

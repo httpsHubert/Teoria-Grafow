@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
     --font-size: 1.2rem;
     --font-size-bigger: 2.1rem;
     --font-size-h1: 4.6rem;
     --bgcolor: #00030e;
-    --color-blue: #33BBCF;
+    --color-blue: #33bbcf;
     --color-white: #fff;
     --color-lighter-blue: #03ffdc;
-    --gradient-text: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #DEF9FA 0.89%, #BEF3F5 17.23%, #9DEDF0 42.04%, #7DE7EB 55.12%, #5CE1E6 71.54%, #33BBCF 100%);
+    --gradient-text: radial-gradient(
+        64.18% 64.18% at 71.16% 35.69%,
+        #def9fa 0.89%,
+        #bef3f5 17.23%,
+        #9dedf0 42.04%,
+        #7de7eb 55.12%,
+        #5ce1e6 71.54%,
+        #33bbcf 100%
+    );
     --color-paragraph: rgba(255, 255, 255, 0.7);
+    --color-light-gray: rgba(170, 170, 170, 0.4);
 }
-html, body {
+html,
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,6 +29,7 @@ html, body {
     font-family: Montserrat;
     color: var(--color-white);
     background-color: rgba(0, 3, 14, 0.8);
+    line-height: 40px;
 }
 a {
     color: var(--color-white);
@@ -29,19 +40,27 @@ a {
 a:hover {
     color: var(--color-lighter-blue);
 }
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
 }
-.text {
+
+.typewriter {
+    padding: 0 0 0 70px;
     flex-grow: 1;
-    padding: 30px 0 0 70px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.typewriter h1 {
     overflow: hidden;
-    font-size: var(--font-size-bigger);
-    color: #fff;
+    white-space: nowrap;
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 0.15em;
 }
 
 #particles-js {
@@ -54,21 +73,30 @@ a:hover {
     z-index: -1;
     opacity: 0.98;
 }
+
+.navigation {
+    height: 100px;
+    margin: 0;
+}
+
 .navigation__item-list {
     list-style-type: none;
     display: flex;
-    padding-top: 30px;
-    padding-right: 30px;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
 }
+
 .navigation__item {
     margin-right: 20px;
 }
+
 .main {
     flex-basis: 100%;
     display: flex;
     justify-content: space-between;
-
 }
+
 .main__left-column {
     padding: 240px 0 0 140px;
 }

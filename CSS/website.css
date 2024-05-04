@@ -1,23 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
     --font-size: 1.2rem;
     --font-size-bigger: 2.1rem;
     --font-size-h1: 4.6rem;
     --bgcolor: #00030e;
-    --color-blue: #33BBCF;
+    --color-blue: #33bbcf;
     --color-white: #fff;
     --color-lighter-blue: #03ffdc;
-    --gradient-text: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #DEF9FA 0.89%, #BEF3F5 17.23%, #9DEDF0 42.04%, #7DE7EB 55.12%, #5CE1E6 71.54%, #33BBCF 100%);
+    --gradient-text: radial-gradient(
+        64.18% 64.18% at 71.16% 35.69%,
+        #def9fa 0.89%,
+        #bef3f5 17.23%,
+        #9dedf0 42.04%,
+        #7de7eb 55.12%,
+        #5ce1e6 71.54%,
+        #33bbcf 100%
+    );
     --color-paragraph: rgba(255, 255, 255, 0.7);
+    --color-light-gray: rgba(170, 170, 170, 0.4);
 }
-html, body {
+html,
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     font-family: Montserrat;
     color: var(--color-white);
+    background-color: rgba(0, 3, 14, 0.8);
+    line-height: 40px;
 }
 a {
     color: var(--color-white);
@@ -28,19 +40,31 @@ a {
 a:hover {
     color: var(--color-lighter-blue);
 }
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
 }
-.text {
+
+.container {
+    margin-top: 50px;
+}
+
+.typewriter {
+    padding: 0 0 0 70px;
     flex-grow: 1;
-    padding: 30px 0 0 70px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.typewriter h1 {
     overflow: hidden;
-    font-size: var(--font-size-bigger);
-    color: #fff;
+    white-space: nowrap;
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 0.15em;
 }
 
 #particles-js {
@@ -53,15 +77,24 @@ a:hover {
     z-index: -1;
     opacity: 0.98;
 }
+
+.navigation {
+    height: 100px;
+    margin: 0;
+}
+
 .navigation__item-list {
     list-style-type: none;
     display: flex;
-    padding-top: 30px;
-    padding-right: 30px;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
 }
+
 .navigation__item {
     margin-right: 20px;
 }
+
 .main {
     flex-basis: 100%;
 }
@@ -69,23 +102,94 @@ a:hover {
 .main__div-math-bg {
     background: url(../IMG/matma.jpg);
     background-size: cover;
-    width: 65%;
+    width: 70%;
     height: 120px;
     box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
     border-radius: 20px;
     text-align: center;
     margin: 0 auto;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 .main__math-bg-heading {
     text-align: center;
     position: relative;
     bottom: 100px;
+    font-size: 2rem;
 }
 
 .container {
-    margin-top: 70px;
+    margin-top: 50px;
+}
+
+
+.about-author {
+    width: 65%;
+    margin: 50px auto;
+    font-size: 110%;
+    background: rgba(0, 3, 14, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.about-author::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(ellipse at center, #ffffff 0%, #00030e 100%);
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.about-author::after {
+    content: "ℵ";
+    font-family: Montserrat;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    color: #2b2b2b;
+    background: var(--gradient-text);
+    background-position: 2363px;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-author h1 {
+    text-align: center;
+    font-size: 400%;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding: 10px;
+    flex-basis: 100%;
+}
+
+.about-author__informations p {
+    margin-bottom: 15px;
+}
+
+.about-author__photo {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-author img {
+    border-radius: 50%;
+    height: auto; 
+    height: 400px;
 }
 
 .footer {
@@ -139,4 +243,55 @@ canvas {
     100% {
         transform: rotate(180deg);
     }
+}
+
+
+
+
+
+
+
+
+
+/*CONTENTS SUBPAGES*/
+
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contents__item-list {
+    padding: 50px 50px;
+    list-style-type: none;
+}
+
+.contents ul {
+    list-style-type: none;
+}
+
+.contents__list-item {
+    margin-top: 20px;
+    padding: 20px 20px;
+    width: 600px;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.contents__list-item:hover {
+    background-color: var(--color-light-gray);
+    transform: translateX(-20px);
+    cursor: pointer;
+}
+
+.title-blue {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
