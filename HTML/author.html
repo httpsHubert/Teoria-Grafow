@@ -4,26 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../CSS/author.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/media.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="../IMG/logo.png">
     <title>O autorze</title>
 </head>
 
 <body>
     <div id="particles-js"></div>
     <div class="wrapper">
-        <div class="typewriter">
+        <div class="nav-left">
             <h1>Teoria Grafów</h1>
         </div>
+
         <nav class="navigation">
+            <label class="hamburger-menu">
+                <input class="disappear" type="checkbox" />
+            </label>
+            <aside class="sidebar">
+                <ul class="navigation__item-list-hamburger">
+                    <a class="navigation__item-hamburger" href="main.html"
+                        ><li>Strona Główna</li></a
+                    >
+                    <a
+                        class="navigation__item-hamburger"
+                        href="basicTerms.html"
+                        ><li>Podstawowa Terminologia</li></a
+                    >
+                    <a
+                        class="navigation__item-hamburger"
+                        href="website.html"
+                        ><li>O stronie</li></a
+                    >
+                    <a class="navigation__item-hamburger" href="author.html"
+                        ><li>O autorze</li></a
+                    >
+                    <a
+                        class="navigation__item-hamburger"
+                        href="problems.html"
+                        ><li>Problemy</li></a
+                    >
+                </ul>
+            </aside>
+
             <ul class="navigation__item-list">
-                <li class="navigation__item"><a href="main.html">Strona Główna</a></li>
-                <li class="navigation__item"><a href="basicTerms.html">Podstawowa Terminologia</a></li>
-                <li class="navigation__item"><a href="website.html">O stronie</a></li>
-                <li class="navigation__item"><a href="author.html">O autorze</a></li>
-                <li class="navigation__item"><a href="problems.html">Problemy</a></li>
+                <li class="navigation__item">
+                    <a href="main.html">Strona Główna</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="basicTerms.html">Podstawowa Terminologia</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="website.html">O stronie</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="author.html">O autorze</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="problems.html">Problemy</a>
+                </li>
             </ul>
         </nav>
+
         <main class="main">
             <div class="container">
                 <div class="main__div-math-bg"></div>
@@ -41,26 +83,16 @@
                 </div>
                 
                 <div class="about-author__photo">
-                    <img src="../IMG/hubert-placeholder.jpg">
+                    <img src="../IMG/hubert.jpg">
                 </div>
                 
             </div>
-
         </main>
         <footer class="footer">
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                </g>
-            </svg>
+            <h2>Hubert Lech</h2>
+            <p><a href="https://www.zobaczycmatematyke.agh.edu.pl/">Praca konkursowa - "Zobaczyć Matematykę"</a></p>
+            <p><a href="https://www.agh.edu.pl/">Akademia Górniczo-Hutnicza w Krakowie</a></p>
+            <img style="padding: 10px;" height="200px" src="../IMG/logo.png"> 
         </footer>
     </div>
 

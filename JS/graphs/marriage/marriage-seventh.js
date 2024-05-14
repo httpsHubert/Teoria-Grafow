@@ -24,44 +24,41 @@ var edges = [
     { from: 4, to: 8, color: "red" }  // Ewa -> Igor
 ];
 
-var groups = {
-    Panna: { color: '#FF7F50' },
-    Kawaler: { color: '#6495ED' }
-};
-
-
 var options = {
-    edges: {
-        labelHighlightBold: true,
-        color: {
-            color: '#ffffff',  
-            highlight: '#ffffff',  
-            hover: '#ffffff',
-            border: '#ffffff',
-        },
-        width: 2.5,
-        selectionWidth: 3,
-    },
     nodes: {
+        shape: 'ellipse',
+        size: 25,
         color: {
-            background: '#00030e', 
-            border: '#ffffff', 
+            background: 'rgba(0, 3, 14, 0.8)',
+            border: '#03ffdc',
             highlight: {
-                background: '#ffffff', 
-                border: '#ffffff' 
-            },
-            hover: {
-                background: '#ffffff', 
-                border: '#ffffff' 
+                background: 'black',
+                border: '#2B7CE9'
             },
         },
         font: {
-            color: '#ffffff'
-        },
-        size: 10,
+            color: 'black',
+            size: 15
+        }
     },
-    groups: groups,
-    physics: false,
+    edges: {
+        width: 2,
+        color: {
+            color: 'rgb(80, 80, 80)',
+            highlight: '#848484',
+        },
+        smooth: {
+            type: 'continuous'
+        }
+    },
+    physics: {
+        enabled: true,
+        solver: 'forceAtlas2Based'
+    },
+    groups: {
+        Panna: { color: '#FFA726' },
+        Kawaler: { color: '#42A5F5' }
+    },
     interaction: {
         dragView: false,
         dragNodes: true,

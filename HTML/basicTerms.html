@@ -3,20 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
         <link rel="stylesheet" href="../CSS/basicTerms.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/media.css" type="text/css" />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>Podstawowa Terminologia</title>
+        <link rel="icon" type="image/x-icon" href="../IMG/logo.png">
     </head>
 
     <body>
         <div id="particles-js"></div>
         <div class="wrapper">
-            <div class="typewriter">
+            <div class="nav-left">
                 <h1>Teoria Grafów</h1>
             </div>
-  
+
             <nav class="navigation">
+                <label class="hamburger-menu">
+                    <input class="disappear" type="checkbox" />
+                </label>
+                <aside class="sidebar">
+                    <ul class="navigation__item-list-hamburger">
+                        <a class="navigation__item-hamburger" href="main.html"
+                            ><li>Strona Główna</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="basicTerms.html"
+                            ><li>Podstawowa Terminologia</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="website.html"
+                            ><li>O stronie</li></a
+                        >
+                        <a class="navigation__item-hamburger" href="author.html"
+                            ><li>O autorze</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="problems.html"
+                            ><li>Problemy</li></a
+                        >
+                    </ul>
+                </aside>
+
                 <ul class="navigation__item-list">
                     <li class="navigation__item">
                         <a href="main.html">Strona Główna</a>
@@ -45,15 +75,16 @@
                 </div>
 
                 <div class="contents">
-                    <h1 style="font-size: 450%; padding: 0;">
+                    <h1 class="main__h1">
                         <span class="main__span-blue">Spis treści</span>
                     </h1>
+
                     <ul class="contents__item-list">
                         <li><h2>Podstawowe informacje: <h2></li>
 
                         <ul>
                             <li data-target="main__info" class="contents__list-item">Czym jest graf? <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li data-target="main__terms-before-euler" class="contents__list-item">Przydatne pojęcia <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            <li data-target="main__before-start" class="contents__list-item">Przydatne pojęcia <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                             <li data-target="main__edges" class="contents__list-item">Krawędzie, Wierzchołki<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                         <li style="margin-top: 30px;"><h2>Rodzaje Grafów: </h2></li>
@@ -72,15 +103,13 @@
                         <li style="margin-top: 30px;"><h2>I dodatkowo:</h2></li>
                         <ul>
                             <li data-target="main__operations" class="contents__list-item">Operacje na grafach<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li data-target="main__useof" class="contents__list-item">Zastosowania grafów<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li data-target="main__tree" class="contents__list-item">Grafowe sieci neuronowe<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                     </ul>
                 </div>
 
                 <div class="main__info">
                     <div class="divPattern">
-                        <h1 class="main__h1">
+                        <h1 class="main__h1-problem">
                             Czym jest
                             <span class="main__span-blue">graf</span> ?
                         </h1>
@@ -95,20 +124,20 @@
                             (V,E)\) gdzie:
                         </p>
                         <p>
-                            \(V\) - jest zbiorem wierzchołków, \(V = \{v_1, v_2,
+                            \(V\) lub \(V(G)\) - jest zbiorem wierzchołków, \(V = \{v_1, v_2,
                             ...v_n\}\)
                         </p>
                         <p>
-                            \(E\) - jest rodziną krawędzi, \(E = \{e_1, e_2, ...e_n\}\)
+                            \(E\) lub \(E(G)\) - jest rodziną krawędzi, \(E = \{e_1, e_2, ...e_n\}\)
                         </p>
                         <p>
                             Oprócz tych symboli w sukcesywnym eksplorowaniu tej
                             strony przyda nam się ich jeszcze parę:
                         </p>
                         <ul>
-                            <li>\(|V|\) lub \(V(G)\) - Liczba wierzchołków</li>
+                            <li>\(|V|\) - Liczba wierzchołków</li>
                             <li style="padding-bottom: 30px">
-                                \(|E|\) lub \(E(G)\) - Liczba krawędzi
+                                \(|E|\) - Liczba krawędzi
                             </li>
                             <li>
                                 \(O(n)\) - Notacja dużego O która mówi nam o
@@ -119,25 +148,19 @@
                     </div>
 
                     <div style="font-size: 110%;" class="theorem">
-                        <h1>Parę przydatnych pojęć:</h1>
+                        <h1 class="main__before-start">Zanim zaczniemy</h1>
                         <ul>
-                            <li>
-                                <b>Marszruta</b> - przejście przez wierzchołki i
-                                krawędzie
+                            <li style="max-width: 500px; margin: 10px auto;">
+                                <b>Ścieżką</b> w grafie będziemy nazywać ciąg jego wierzchołków \(\{v_1, v_2, v_3, v_n\}\) taki, że dla każdego \(k\) należącego do zbioru \(\{0, 1, 2, ..., k\}\) istnieje ich połączenie z \(v_k\) do \(v_{k + 1}\). W praktyce oznacza to tyle, że dwa kolejne wierzchołki w tym ciągu będą połączone, czyli będzie można przejść z jednego końca ścieżki do drugiego.
                             </li>
-                            <li>
-                                <b>Droga</b> - marszruta gdy wszystkie
-                                wierzchołki są różne, prócz pierwszego i
-                                ostatniego które mogą być równe
+                            <li style="max-width: 500px; margin: 10px auto;">
+                                <b>Droga</b> - ścieżka gdy wszystkie wierzchołki są różne (oprócz ewentualnego pierwszego i ostatniego, wtedy mamy doczynienia z cyklem)
                             </li>
-                            <li>
-                                <b>Ścieżka</b> - marszruta gdy wszystkie
-                                krawędzie są różne
+                            <li style="margin: 15px;">
+                                <b>Cykl</b> - droga która swój bieg kończy w wierzchołku od którego zaczęła trasę.
                             </li>
-                            <li>
-                                <b>Cykl</b> - marszruta zamknięta w której
-                                jedynym powtarzającym się wierzchołkiem jest jej
-                                początek
+                            <li style="margin: 15px;">
+                                <b>Łańcuch</b> - ścieżka w której nie powtarzają się krawędzie.
                             </li>
                         </ul>
                         <br />
@@ -147,6 +170,10 @@
                                 >Jak klikniesz na dany wierzchołek grafu
                                 zobaczysz z jakimi innymi się łączą</i
                             >
+                        </p>
+                        <p>
+                            <i>
+                                Możesz również chwycić wierzchołek i nim poruszyć aby mieć lepszy widok.</i>
                         </p>
 
                         <h1>Elementy logiki: </h1>
@@ -158,10 +185,11 @@
                             <li><span class="math-bigger logic">\</span> - \(A \) \ \(B = \{1\}\) | "różnicą zbiorów" A i B jest jednoelementowy zbiór \(\{1\}\&bsol; \)</li>
                             <li><span class="math-bigger logic">\(⇔\)</span> - \(x + 2 = 0 ⇔ x = -2\) | \(x + 2 = 0\)  "wtedy i tylko wtedy" gdy \(x = -2\)</li>
                         </ul>
+                        <p style="margin: 0 auto; max-width: 500px;">Iloczynem kartezjańskim zbiorów \(A\) i \(B\) nazywamy zbiór par uporządkowanych (\(a, b\)) w których wyraz \(a ∈ A\) i \(b ∈ B\) również.</p>
                     </div>
 
                     <div class="divPattern main__edges">
-                        <h1 class="main__h1">
+                        <h1 class="main__h1-problem">
                             <span class="main__span-blue"
                                 >Krawędzie, Wierzchołki</span
                             >
@@ -188,7 +216,7 @@
                         <p>
                             Jak i również wierzchołek może łączyć się krawędzią
                             ze samym sobą, takie coś nazywamy <i>pętlą</i>
-                            <span style="font-size: larger">\(e_9\)</span>
+                            <span style="font-size: larger">(\(e_9\))</span>
                         </p>
                         <p>
                             I wreszcie, graf posiadający takie własności
@@ -197,7 +225,7 @@
                         <p>
                             Wierzchołek nie musi być połączony krawędzią, taki
                             wierzchołek nazywamy izolowanym
-                            <span style="font-size: larger">\(v_7\)</span>
+                            <span style="font-size: larger">(\(v_7\))</span>
                         </p>
                         <div
                             style="margin: 50px auto"
@@ -282,7 +310,7 @@
 
                 <div class="main__graph-types">
                     <div class="main__directed-graph">
-                        <h1 class="main__h1 main__span-blue">Graf skierowany</h1>
+                        <h1 class="main__h1-problem main__span-blue">Graf skierowany</h1>
                         <div class="graph main__directed-graph-vis"></div>
                         <p>
                             W grafie skierownym krawędzie oznaczane strzałkami
@@ -290,11 +318,12 @@
                             poruszać się po grafie. Nazywany jest również digrafem. Jest to para: 
                         </p>
                         <p style="font-size: 140%;">$$D = (V, E)$$</p>
-                        <p>\(E ⊂ V * V\)</p>
+                        <p>\(E ⊂ V\) x \(V\)</p>
+                        <p>Gdzie \(E\) jest podzbiorem iloczynu kartezjańskiego</p>
                     </div>
 
                     <div class="main__not-directed-graph">
-                        <h1 class="main__h1">Graf nieskierowany</h1>
+                        <h1 class="main__h1-problem main__span-blue">Graf nieskierowany</h1>
                         <div class="graph main__undirected-graph-vis"></div>
                         <p>
                             Graf nieskierowany to zwykły zbiór wierzchołków i
@@ -305,32 +334,34 @@
                     </div>
 
                     <div class="main__consistent-graph">
-                        <h1 class="main__h1">Graf spójny</h1>
+                        <h1 class="main__h1-problem main__span-blue">Graf spójny</h1>
                         <div class="graph main__connected-graph-vis"></div>
                         <p>
                             Graf spójny to graf, w którym każde dwa wierzchołki
-                            są połączone drogą. Inaczej mówiąc, graf składa się
+                            są połączone krawędzią. Inaczej mówiąc, graf składa się
                             z jednego kawałka. Jeśli graf nie jest spójny, to
                             jego spójne kawałki, między którymi nie ma
-                            połączenia, nazywamy składowymi grafu.
+                            połączenia, nazywamy spójnymi składowymi grafu.
                         </p>
                     </div>
 
                     <div class="main__inconsistent-graph">
-                        <h1 class="main__h1">Graf niespójny</h1>
+                        <h1 class="main__h1-problem main__span-blue">Graf niespójny</h1>
                         <div class="graph main__disconnected-graph-vis"></div>
                         <p>
                             Graf niespójny najprościej mówiać to taki który nie
                             posiada własności grafu spójnego. W grafie spójnym
                             istnieje co najmniej jedna para wierzchołków, dla
-                            których nie istnieje ścieżka łącząca je.
+                            których nie istnieje ścieżka łącząca je. W tym grafie mamy dwie spójne składowe
                         </p>
+                        <p>\(V_1 = \{A, B, E\}\)</p>
+                        <p>\(V_2 = \{C, D, F\}\)</p>
                     </div>
                 </div>
 
                 <div class="divPattern main__eulerian-graph">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Grafy eulerowskie
                     </h1>
@@ -338,58 +369,57 @@
                     <ul>
                         <li>
                             <p>
-                                Ścieżka(Łańcuch) Eulera - ścieżka w grafie która
+                                <b>Ścieżka Eulera</b> - ścieżka w grafie która
                                 przechodzi przez każdą jego krawędź dokładnie
                                 jeden raz. Jeżeli w danym grafie możliwe jest
                                 utworzenie takiej drogi, to jest on nazywany
-                                grafem półeulerowskim.
+                                grafem półeulerowskim lub semi-eulerowskim. Po lewej widzimy graf który zawiera w sobie ścieżkę eulera, a po prawej stronie graf który nie zawiera. Dla widoczności ostatni krok nie jest pokolorowany.
                             </p>
                         </li>
-                        <div class="euler-graph main__eulerian-path">
-                            Graf posiadający ścieżkę eulera:
-                        </div>
-                        <div class="euler-graph main__no-eulerian-path">
-                            Graf nieposiadający ścieżki eulera:
-                        </div>
                         <li>
                             <p>
-                                Cykl Eulera - ścieżka w grafie która przechodzi
+                                Kolejne kroki ścieżki eulera są przedstawione w tej tablicy <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle;"> \([A, B, C, E, D, C]\)
+                            </p>
+                        </li>
+                        <div class="euler-graph main__eulerian-path"></div>
+                        <div class="euler-graph main__no-eulerian-path"></div>
+                        <li>
+                            <p>Za to gdy spojżymy ja drugi graf to tam przy wierzchołku \(D\) jest rozgałęźienie którego ścieżka eulera nie przerobi, również z definicji ten graf nie mógłby być ani eulerowski ani semieulerowski ponieważ tylko jeden jego wierzchołek ma stopień parzysty.</p>
+                        </li>
+                        <li style="margin-top: 20px;">
+                            <p>
+                                <b>Cykl Eulera</b> - ścieżka w grafie która przechodzi
                                 przez każdą jedną krawędź i kończy się w miejscu
                                 zaczęcia podróży. Jeżeli w danym grafie możliwe
                                 jest utworzenie takiego cyklu, to jest on
-                                nazywany grafem eulerowskim.
+                                nazywany grafem eulerowskim. Mamy tutaj to samo ułożenie, tylko po lewej tym razem z cyklem, a po prawej bez.
                             </p>
                         </li>
-                        <div class="euler-graph main__eulerian-cycle">
-                            Graf posiadający cykl eulera:
-                        </div>
-                        <div class="euler-graph main__no-eulerian-cycle">
-                            Graf nieposiadający cyklu eulera:
-                        </div>
+                        <li>
+                            <p>Kolejne przejścia cyklu dla tego grafu będą wyglądały następująco <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle;"> \([A, B, D, C, E, D, A]\)</p>
+                        </li>
+                        <div class="euler-graph main__eulerian-cycle"></div>
+                        <div class="euler-graph main__no-eulerian-cycle"></div>
+                        <li>
+                            <p>W drugim grafie natomiast skonstruowanie cyklu eulera jest niemożliwe ze względu na to, że ma on tylko dwa wierzchołki parzyste</p>
+                        </li>
                     </ul>
-                    <div style="text-align: center; border: 2px solid white">
+                    <div class="theorem">
                         <h1>Twierdzenie</h1>
                         <p style="line-height: 50px; padding: 20px">
-                            Graf \(G = (V, E)\) jest eulerowski wtedy i tylko
-                            wtedy gdy jest spójny i stopień każdego wierzchołka
+                            \(a)\) Graf \(G = (V, E)\) jest eulerowski \(\leftrightarrow\) gdy jest spójny i stopień każdego wierzchołka
                             jest parzysty
                         </p>
+                        <p>
+                            \(b)\) Graf \(G = (V, E)\) jest półeulerowski \(\leftrightarrow\) gdy jest spójny i stopień każdego wierzchołka oprócz dwóch
+                            jest parzysty 
+                        </p>
                     </div>
-                    <p
-                        style="
-                            padding: 25px;
-                            font-weight: bold;
-                            text-align: center;
-                        ">
-                        O znajdywaniu cyklu Eulera w grafie więcej dowiesz się w
-                        podstronie Problemy w sekcji poświęconej Algorytmowi
-                        Fleury’ego
-                    </p>
                 </div>
 
                 <div class="divPattern">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Grafy Hamiltonowskie
                     </h1>
@@ -401,15 +431,26 @@
                                 Ścieżka Hamiltona - ścieżka w grafie która
                                 przechodzi przez wszystkie wierzchołki grafu
                                 dokładnie jeden raz. Graf zawierający w sobie
-                                taką ścieżkę nazwiemy Grafem Półhamiltonowskim.
+                                taką drogę nazwiemy Grafem półhamiltonowskim lub semi-hamiltonowskim.
                             </p>
                         </li>
-                        <div class="euler-graph main__hamiltonian-path">
-                            Graf posiadający ścieżkę hamiltona:
-                        </div>
-                        <div class="euler-graph main__no-hamiltonian-path">
-                            Graf nieposiadający ścieżki hamiltona:
-                        </div>
+                        <li>
+                            <p>
+                                Tak jak w przypadku grafów eulerowskich graf po lewej będzie tym który zawiera ścieżkę/cykl
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Dla grafu po lewej stronie ścieżka Hamiltona będzie wyglądać następująco <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle;"> \([A, B, C, D]\)
+                            </p>
+                        </li>
+                        <div class="euler-graph main__hamiltonian-path"></div>
+                        <div class="euler-graph main__no-hamiltonian-path"></div>
+                        <li>
+                            <p>
+                                Dla grafu po prawej stronie nie jest spełniona nierówność \(\text{deg}v + \text{deg}w \geq n - 1\) dlatego, nie jest w nim możliwe utworzenie ścieżki Hamiltona
+                            </p>
+                        </li>
                         <li>
                             <p>
                                 Cykl Hamiltona - cykl przechodzący przez
@@ -419,44 +460,50 @@
                                 Grafem Hamiltonowskim.
                             </p>
                         </li>
-                        <div class="euler-graph main__hamiltonian-cycle">
-                            Graf posiadający cykl hamiltona:
-                        </div>
-                        <div class="euler-graph main__no-hamiltonian-cycle">
-                            Graf nieposiadający cyklu hamiltona:
-                        </div>
+                        <li>
+                            <p>
+                                Dla grafu po prawej stronie kolejne kroki cyklu Hamiltona wyglądają następująco <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle;"> \([A, B, D, E, F, C]\) 
+                            </p>
+                        </li>
+                        <div class="euler-graph main__hamiltonian-cycle"></div>
+                        <div class="euler-graph main__no-hamiltonian-cycle"></div>
+                        <li>
+                            <p>
+                                Dla grafu widocznego po prawej stronie niestety nie będzie możliwości utworzenia cyklu Hamiltona, ale możemy znaleźć ulgę w tym że jest on chociaż semi-hamiltonowski
+                            </p>
+                        </li>
                     </ul>
-                    <div style="text-align: center; border: 2px solid white">
-                        <h1>Twierdzenie Orego</h1>
+                    <div class="theorem">
+                        <h1>Twierdzenie Orego (Øystein Ore)</h1>
                         <p style="line-height: 50px; padding: 20px">
                             Jeśli w grafie prostym \(G = (V, E)\) o conajmniej 3
-                            wierzchołkach \((n > 3)\) dowolne 2 niesąsiednie
+                            wierzchołkach \((n > 3)\) dowolne 2 niesąsiednie (przez sąsiedztwo rozumiemy połączenie krawędzią)
                             wierzchołki \(v\) i \(w\) spełniają \( \text{deg} v
                             + \text{deg} w \geq |V| \) to Graf G jest
                             Hamiltonowski
                         </p>
-                    </div>
 
-                    <p
-                        style="
-                            padding: 25px;
-                            font-weight: bold;
-                            text-align: center;
-                        ">
-                        O znajdywaniu cyklu hamiltona w grafie dowiesz się
-                        więcej w sekcji tak właśnie nazwanej na podstronie z
-                        problemami
-                    </p>
+                        <h2>Wersja z drogą Hamiltona</h2>
+                        <p>Jeżeli mamy dany graf \(G\) o conajmniej 3 wierzchołkach (\(n > 2\)) zachodzi nierówność \(\text{deg}v + \text{deg}w \geq n - 1\) dla każdej pary niesąsiadujących ze sobą wierzchołków, to graf posiada drogę Hamiltona</p>
+                    </div>
+                    
+
+                    <div class="theorem">
+                        <h1>Twierdzenie Diraca (Gabriel Andrew Dirac)</h1>
+                        <p style="line-height: 50px; padding: 20px">
+                            Jeśli graf \(G\) jest grafem prostym i \(|V(G)| \geq 3\) oraz jeśli   \( \text{deg}(v)\) \( \geq \) \({|V(G)|}\over{2}\) dla każdego wierzchołka w \(G\) to jest on Hamiltonowski i spełnia założenia twierdzenia Orego
+                        </p>
+                    </div>
                 </div>
 
                 <div class="divPattern main__bipartite-graph">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Graf dwudzielny
                     </h1>
-                    <div style="display: flex; width: 100%">
-                        <div style="flex-basis: 70%; padding: 30px">
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div style="padding: 30px">
                             <p>
                                 Grafem dwudzielnym będziemy nazywać graf \(G =
                                 (V, E)\) w którym zbiór wierzchołków da się
@@ -466,21 +513,23 @@
                                 sąsiadami których łaczy krawędź, będziemy go
                                 oznaczać jako \((V_1 ∪ V_2, E)\)
                             </p>
-                            <p>
-                                Twierdzenie: Graf jest dwudzielny wtedy i tylko
-                                wtedy gdy każdy cykl ma w nim parzystą długość
-                            </p>
+                            <div class="theorem">
+                                <h1>Twierdzenie</h1>
+                                <p>
+                                    Graf jest dwudzielny wtedy i tylko
+                                    wtedy gdy każdy cykl ma w nim parzystą długość
+                                </p>
+                            </div>
+                            
                         </div>
 
-                        <div
-                            style="flex-basis: 30%"
-                            class="main__bipartite-graph-vis graph"></div>
+                        <div class="main__bipartite-graph-vis graph"></div>
                     </div>
                 </div>
 
                 <div class="divPattern main__complete-graph">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Graf pełny
                     </h1>
@@ -519,7 +568,7 @@
 
                 <div class="divPattern main__bipartite-complete-graph">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Graf pełny dwudzielny
                     </h1>
@@ -557,7 +606,7 @@
 
                 <div class="divPattern main__planar-graph">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Graf planarny
                     </h1>
@@ -571,6 +620,7 @@
                         Graficzną reprezentację grafu planarnego będziemy
                         nazywali <i>grafem płaskim</i>
                     </p>
+                    <p>Krawędzie pierwszego grafu rzeczywiście się nie przecinają, ale co z drugim? To ułożenie coś faktycznie nie pasuje, ale spróbujmy chwycić wierzchołek D i przesunąć go lekko w prawą stronę, na tym przykładzie widzimy, że nawet jeśli na pierwszy rzut oka może się wydawać że graf nie jest planarny, nadal istnieje szansa.</p>
                     <div style="display: flex; justify-content: center">
                         <div class="main__planar-graph1 euler-graph"></div>
                         <div class="main__planar-graph2 euler-graph"></div>
@@ -649,37 +699,40 @@
                             łańcuchami prostymi
                         </p>
                     </div>
-                    <div style="text-align: center; padding-top: 20px">
-                        <h1>Twierdzenie Kuratowskiego</h1>
-                        <p>
-                            Graf \(G\) jest
-                            <i>planarny</i> \(\leftrightarrow\) gdy nie zawiera
-                            podgrafu homeomorficznego z \(K_5\) ani \(K_{3,3}\)
-                        </p>
-                    </div>
-                    <div style="text-align: center; padding-top: 20px">
-                        <h1>Grafy Kuratowskiego</h1>
-                        <p style="line-height: 50px">
-                            Czyli właśnie te o których mowa była wyżej czyli
-                            \(K_5\) oraz \(K_{3,3}\) (graficznie przedstawiony w
-                            sekcji grafów pełnych dwudzielnych)
-                        </p>
-                        <div
-                            style="
-                                display: flex;
-                                justify-content: space-around;
-                            ">
+                    <div class="theorem">
+                        <div style="text-align: center; padding-top: 20px">
+                            <h1>Twierdzenie Kuratowskiego</h1>
+                            <p>
+                                Graf \(G\) jest
+                                <i>planarny</i> \(\leftrightarrow\) gdy nie zawiera
+                                podgrafu homeomorficznego z \(K_5\) ani \(K_{3,3}\)
+                            </p>
+                        </div>
+                        <div style="text-align: center; padding-top: 20px">
+                            <h1>Grafy Kuratowskiego</h1>
+                            <p style="line-height: 50px">
+                                Czyli właśnie te o których mowa była wyżej czyli
+                                \(K_5\) oraz \(K_{3,3}\) (graficznie przedstawiony w
+                                sekcji grafów pełnych dwudzielnych)
+                            </p>
                             <div
-                                class="euler-graph main__kuratowski-graph1"></div>
-                            <div
-                                class="euler-graph main__kuratowski-graph2"></div>
+                                style="
+                                    display: flex;
+                                    justify-content: space-around;
+                                ">
+                                <div
+                                    class="euler-graph main__kuratowski-graph1"></div>
+                                <div
+                                    class="euler-graph main__kuratowski-graph2"></div>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
 
                 <div class="divPattern main__isomorphic-graph">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Graf izomorficzny
                     </h1>
@@ -752,7 +805,7 @@
                 </div>
                 <div class="divPattern main__tree">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Drzewo
                     </h1>
@@ -820,7 +873,6 @@
                         Każdy węzeł znajdujący się o jedną krawędź grafu więcej
                         od danego węzła nazywany jest dzieckiem
                     </p>
-                    <!--TUTAJ BEDZIE DRZEWO HIERARCHICZNE I WYTLUMACZENIE POTOMKOW DZIECI LEPIEJ, POTEM WAGI Z TYM WZOREM, DRZEWO BINARNE, I NA KONCU DRZEWO ROZPINAJACE I SPINAJACE-->
                     <div class="graph tree__graph-4"></div>
                     <p style="color: #999999; text-align: center">
                         *Każdy wierzchołek poza korzeniem ma dokładnie jednego
@@ -836,7 +888,7 @@
                         Drzewo z wagami jest strukturą gdzie każdemu liściowi
                         drzewa przypisuję się wagę
                     </p>
-                    <div style="text-align: center; margin-top: 70px">
+                    <div class="theorem">
                         <h1>Definicja</h1>
                         <p style="padding: 20px">
                             Powiedzmy, że drzewo \(T\) ma \(t\) liści oraz ich
@@ -860,27 +912,45 @@
                     </div>
 
                     <h1 style="text-align: center;">Drzewo binarne</h1>
-                    <p style="padding: 3px;">Jest to specjalny rodzaj drzewa które ma maksymalny stopień wierzchołka 2, dodatkowo wszystkie liście mają ten sam numer poziomu równy wysokości drzewa. ????????</p>
+                    <p style="padding: 3px;">Jest to specjalny rodzaj drzewa które ma maksymalny stopień wierzchołka 2, dodatkowo wszystkie liście mają ten sam numer poziomu równy wysokości drzewa. </p>
                     <p style="padding: 3px;">Maksymalna liczba wierzchołków w drzewie binarnym o \(k\) poziomach wynosi: </p>
-                    <p style="padding: 3px;">$$n_{max} = 2^0 + 2^1 + ... + 2^k = 2^{k+1} - 1$$</p>
                     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;"">
-                        <div class="graph tree__graph-7" style="height: 400px""></div>
+                        <div class="graph tree__graph-7" style="height: 350px"></div>
+                        <p>$$n_{max} = 2^0 + 2^1 + ... + 2^k = 2^{k+1} - 1$$</p>
                         <p>\(n_{max} = 2^0 + 2^1 + 2^2 + 2^3 = 1 + 2 + 4 + 8 = 15\)</p>
                     </div>
                 </div>
 
-                <div class="divPattern main__useof">
+                <div class="divPattern">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
-                        Graf regularny
+                        Graf n-regularny
                     </h1>
 
+                    <p>Jest to graf który posiada wszystkie wierzchołki jednego i tego samego stopnia - \(n\), czyli z każdego wierzchołka wychodzi dokładnie \(n\) krawędzi</p>
+                    <div style="display: flex;gap: 10px;align-items: center; justify-content: space-around;">
+                        <div style="width: 40%;">
+                            <div class="graph regularGraph1"></div>
+                            \(0-regularny\)
+                        </div>
+                        <div style="width: 40%;">
+                            <div class="graph regularGraph2"></div>
+                            \(1-regularny\)
+                        </div>
+                        <div style="width: 40%;">
+                            <div class="graph regularGraph3"></div>
+                            \(2-regularny\)
+                        </div>
+                    </div>
+                    <h1 style="margin-top: 100px;">Graf kubiczny</h1>
+                    <p>Jest on szczególnym przypadkiem grafu regularnego o stopniu \(3\)</p>
+                    <div class="graph regularGraph4"></div>
                 </div>
 
                 <div class="divPattern main__operations">
                     <h1
-                        class="main__h1 main__span-blue"
+                        class="main__h1-problem main__span-blue"
                         style="text-align: center">
                         Operacje na grafach
                     </h1>
@@ -891,58 +961,19 @@
                         <span class="math-bigger">$$G_1 ∪ G_2 = (V_1 ∪ V_2, E_1 ∪ E_2)$$</span>
                         <li><b>Przecięcie grafów</b> jest definiowane jako iloczyn zbiorów krawędzi i wierzchołków z obu grafów. Jeżeli mamy dwa grafy \(G_1\) oraz \(G_2\), to ich przecięciem będzie graf którego wierzchołki i krawędzie wchodzą w skład obu grafów. </li>
                         <span class="math-bigger">$$G_1 ∩ G_2 = (V_1 ∩ V_2, E_1 ∩ E_2)$$</span>
-                        <li><b>????????Zespolenie grafów</b> jest definiowane jako operacja mająca na celu połączenie krawędziami wierzchołków \(G_1\) i \(G_2\)</li>
-                        <span class="math-bigger">$$G_1 + G_2 = (V_1 ∪ V_2, E_1 ∪ E_2 ∪ \{\{v_1, v_2\} : v_1 ∈ V_1, v_2 ∈ V_2\})$$</span>
+                        <li><b>Różnica grafów</b> - rozumiemy ją tak, że graf powstały z tej różnicy jest uboższy o wierzchołki należące do grafu drugiego i krawędzi do nich incydentnych</li>
+                        <span class="math-bigger">\(G_1\) \ \(G_2 = (V_1\) \ \(V_2, E_1\) \ \(E_2)\)</span>
                     </ul>
                 </div>
 
-                <div class="divPattern main__useof">
-                    <h1
-                        class="main__h1 main__span-blue"
-                        style="text-align: center">
-                        Zastosowania grafów
-                    </h1>
-
-                </div>
-
+                <a href="problems.html"><img src="../IMG/right-arrow-svgrepo-com.svg"></a>
                 
             </main>
             <footer class="footer">
-                <svg
-                    class="waves"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 24 150 28"
-                    preserveAspectRatio="none"
-                    shape-rendering="auto">
-                    <defs>
-                        <path
-                            id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="0"
-                            fill="rgba(255,255,255,0.7)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="3"
-                            fill="rgba(255,255,255,0.5)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="5"
-                            fill="rgba(255,255,255,0.3)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="7"
-                            fill="#fff" />
-                    </g>
-                </svg>
+                <h2>Hubert Lech</h2>
+                <p><a href="https://www.zobaczycmatematyke.agh.edu.pl/">Praca konkursowa - "Zobaczyć Matematykę"</a></p>
+                <p><a href="https://www.agh.edu.pl/">Akademia Górniczo-Hutnicza w Krakowie</a></p>
+                <img style="padding: 10px;" height="200px" src="../IMG/logo.png"> 
             </footer>
         </div>
 
@@ -955,10 +986,10 @@
         <script src="../JS/graphs/edges/graph-nodes-info.js"></script>
         <script src="../JS/particles.js"></script>
         <script src="../JS/app.js"></script>
-        <script src="../JS/graphs/directededGraph.js"></script>
-        <script src="../JS/graphs/undirectedGraph.js"></script>
-        <script src="../JS/graphs/connectedGraph.js"></script>
-        <script src="../JS/graphs/disconnectedGraph.js"></script>
+        <script src="../JS/graphs/directed/directededGraph.js"></script>
+        <script src="../JS/graphs/directed/undirectedGraph.js"></script>
+        <script src="../JS/graphs/connected/connectedGraph.js"></script>
+        <script src="../JS/graphs/connected/disconnectedGraph.js"></script>
         <script src="../JS/graphs/eulerian/eulerianCycleGraph.js"></script>
         <script src="../JS/graphs/eulerian/noEulerianCycleGraph.js"></script>
         <script src="../JS/graphs/eulerian/eulerianPathGraph.js"></script>
@@ -967,16 +998,17 @@
         <script src="../JS/graphs/hamiltonian/noHamiltonianCycleGraph.js"></script>
         <script src="../JS/graphs/hamiltonian/hamiltonianPathGraph.js"></script>
         <script src="../JS/graphs/hamiltonian/noHamiltonianPathGraph.js"></script>
-        <script src="../JS/graphs/bipartiteGraph.js"></script>
-        <script src="../JS/graphs/completeGraph1.js"></script>
-        <script src="../JS/graphs/completeGraph2.js"></script>
-        <script src="../JS/graphs/completeGraph3.js"></script>
-        <script src="../JS/graphs/bipartiteCompleteGraph1.js"></script>
-        <script src="../JS/graphs/bipartiteCompleteGraph2.js"></script>
+        <script src="../JS/graphs/bipartite/bipartiteGraph.js"></script>
+        <script src="../JS/graphs/bipartite/bipartiteCompleteGraph1.js"></script>
+        <script src="../JS/graphs/bipartite/bipartiteCompleteGraph2.js"></script>
+        <script src="../JS/graphs/complete/completeGraph1.js"></script>
+        <script src="../JS/graphs/complete/completeGraph2.js"></script>
+        <script src="../JS/graphs/complete/completeGraph3.js"></script>
+        <script src="../JS/graphs/complete/kuratowskiGraph.js"></script>
+        <script src="../JS/graphs/complete/kuratowskiGraph2.js"></script>
         <script src="../JS/graphs/planar/planarGraph1.js"></script>
         <script src="../JS/graphs/planar/planarGraph2.js"></script>
         <script src="../JS/graphs/planar/planarGraphEulerF.js"></script>
-        <script src="../JS/graphs/complete/kuratowskiGraph.js"></script>
         <script src="../JS/graphs/isomorphic/isomorphicGraph.js"></script>
         <script src="../JS/graphs/trees/tree-1.js"></script>
         <script src="../JS/graphs/trees/tree-2.js"></script>
@@ -985,7 +1017,14 @@
         <script src="../JS/graphs/trees/tree-5.js"></script>
         <script src="../JS/graphs/trees/tree-6.js"></script>
         <script src="../JS/graphs/trees/tree-7.js"></script>
+        <script src="../JS/graphs/regular/regularGraph1.js"></script>
+        <script src="../JS/graphs/regular/regularGraph2.js"></script>
+        <script src="../JS/graphs/regular/regularGraph3.js"></script>
+        <script src="../JS/graphs/regular/regularGraph4.js"></script>
+        <script src="../JS/graphs/regular/regularGraph5.js"></script>
+        <script src="../JS/graphs/regular/regularGraph6.js"></script>
         <script src="../JS/writing.js"></script>
         <script src="../JS/scroll.js"></script>
+        <script src="../JS/graphs/disappear.js"></script>
     </body>
 </html>

@@ -3,18 +3,49 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
         <link rel="stylesheet" href="../CSS/website.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/media.css" type="text/css">
         <title>Źródła</title>
+        <link rel="icon" type="image/x-icon" href="../IMG/logo.png">
     </head>
 
     <body>
         <div id="particles-js"></div>
         <div class="wrapper">
-            <div class="typewriter">
+            <div class="nav-left">
                 <h1>Teoria Grafów</h1>
             </div>
+
             <nav class="navigation">
+                <label class="hamburger-menu">
+                    <input class="disappear" type="checkbox" />
+                </label>
+                <aside class="sidebar">
+                    <ul class="navigation__item-list-hamburger">
+                        <a class="navigation__item-hamburger" href="main.html"
+                            ><li>Strona Główna</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="basicTerms.html"
+                            ><li>Podstawowa Terminologia</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="website.html"
+                            ><li>O stronie</li></a
+                        >
+                        <a class="navigation__item-hamburger" href="author.html"
+                            ><li>O autorze</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="problems.html"
+                            ><li>Problemy</li></a
+                        >
+                    </ul>
+                </aside>
+
                 <ul class="navigation__item-list">
                     <li class="navigation__item">
                         <a href="main.html">Strona Główna</a>
@@ -33,17 +64,18 @@
                     </li>
                 </ul>
             </nav>
+
             <main class="main">
                 <div class="container">
                     <div class="main__div-math-bg"></div>
-                    <h1 class="main__math-bg-heading">Informacje o stronie</h1>
+                    <h1 class="main__math-bg-heading">Informacje o źródłach</h1>
                 </div>
 
                 <div class="contents">
-                    <h1 style="font-size: 450%; padding: 0">
-                        <span class="title-blue">Spis źródeł</span>
+                    <h1 style="font-size: 350%; padding: 0">
+                        Spis źródeł
                     </h1>
-                    <ul>
+                    <ul class="contents__item-list">
                         <h2 style="margin-top: 30px">
                             <li>Problem komiwojażera</li>
                         </h2>
@@ -85,6 +117,106 @@
                                 <li class="contents__list-item">
                                     I-LO Tarnów
                                     <img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                        </ul>
+                        <h2 style="margin-top: 30px">
+                            <li>BFS DFS</li>
+                        </h2>
+                        <ul>
+                            <a
+                                href="https://www.algorytm.edu.pl/grafy/bfs.html"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Algorytm.edu<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                            <a
+                                href="https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    GeeksForGeeks<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                        </ul>
+                        <h2>Najkrótsza ścieżka</h2>
+                        <ul>
+                            <a
+                                href="http://algorytmy.ency.pl/artykul/wyznaczanie_najkrotszej_sciezki"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Encyklopedia Algorymtów<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                        </ul>
+                        <h2>BigO</h2>
+                        <ul>
+                            <a
+                                href="https://www.bigocheatsheet.com/"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Big O Cheet Sheet<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                            <a
+                                href="https://www.algorytm.edu.pl/matura-informatyka/zlozonosc-algorytmu"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Algorytm.edu<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                        </ul>
+                        <h2>
+                            Problemy NP
+                        </h2>
+                        <ul>
+                            <a
+                                href="https://www.cyber.mil.pl/problem-obliczeniowy/"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Cyber.mil<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                            <a
+                                href="https://pl.wikipedia.org/wiki/Problem_NP"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Wikipedia<img
                                         src="../IMG/right-arrow-svgrepo-com.svg"
                                         height="30px"
                                         style="
@@ -226,46 +358,51 @@
                                             margin-left: 20px;
                                         " /></li
                             ></a>
+                            <a
+                                href="https://pl.wikipedia.org/wiki/Twierdzenie_Diraca"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Wikipedia<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                            <a
+                                href="https://pl.wikipedia.org/wiki/Sp%C3%B3jna_sk%C5%82adowa_grafu"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    Wikipedia<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
+                            <a
+                                href="https://eduinf.waw.pl/inf/alg/001_search/0134.php"
+                                target="_blank">
+                                <li class="contents__list-item">
+                                    I LO Tarnów<img
+                                        src="../IMG/right-arrow-svgrepo-com.svg"
+                                        height="30px"
+                                        style="
+                                            vertical-align: middle;
+                                            margin-left: 20px;
+                                        " /></li
+                            ></a>
                         </ul>
                     </ul>
                 </div>
             </main>
             <footer class="footer">
-                <svg
-                    class="waves"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 24 150 28"
-                    preserveAspectRatio="none"
-                    shape-rendering="auto">
-                    <defs>
-                        <path
-                            id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="0"
-                            fill="rgba(255,255,255,0.7" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="3"
-                            fill="rgba(255,255,255,0.5)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="5"
-                            fill="rgba(255,255,255,0.3)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="7"
-                            fill="#fff" />
-                    </g>
-                </svg>
+                <h2>Hubert Lech</h2>
+                <p><a href="https://www.zobaczycmatematyke.agh.edu.pl/">Praca konkursowa - "Zobaczyć Matematykę"</a></p>
+                <p><a href="https://www.agh.edu.pl/">Akademia Górniczo-Hutnicza w Krakowie</a></p>
+                <img style="padding: 10px;" height="200px" src="../IMG/logo.png"> 
             </footer>
         </div>
 

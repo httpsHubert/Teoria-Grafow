@@ -3,20 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
         <link rel="stylesheet" href="../CSS/problems.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/media.css" type="text/css" />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>Problemy</title>
+        <link rel="icon" type="image/x-icon" href="../IMG/logo.png">
     </head>
 
     <body>
         <div id="particles-js"></div>
         <div class="wrapper">
-            <div class="typewriter">
+            <div class="nav-left">
                 <h1>Teoria Grafów</h1>
             </div>
 
             <nav class="navigation">
+                <label class="hamburger-menu">
+                    <input class="disappear" type="checkbox" />
+                </label>
+                <aside class="sidebar">
+                    <ul class="navigation__item-list-hamburger">
+                        <a class="navigation__item-hamburger" href="main.html"
+                            ><li>Strona Główna</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="basicTerms.html"
+                            ><li>Podstawowa Terminologia</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="website.html"
+                            ><li>O stronie</li></a
+                        >
+                        <a class="navigation__item-hamburger" href="author.html"
+                            ><li>O autorze</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="problems.html"
+                            ><li>Problemy</li></a
+                        >
+                    </ul>
+                </aside>
+
                 <ul class="navigation__item-list">
                     <li class="navigation__item">
                         <a href="main.html">Strona Główna</a>
@@ -45,11 +75,16 @@
                 </div>
 
                 <div class="contents">
-                    <h1 style="font-size: 450%;">
+                    <h1 class="main__h1">
                         <span class="main__span-blue">Spis treści</span>
                     </h1>
                     <ul class="contents__item-list">
-                        <li><h2>Reprezentacja grafu:<h2></li>
+                        <h2><li>Informacje wstępne</li><h2>
+                            <ul>
+                                <li data-target="main__big-o" class="contents__list-item">Złożoność obliczeniowa<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                                <li data-target="main__edge-list-scroll" class="contents__list-item">Problemy NP-x<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
+                            </ul>
+                        <h2><li>Reprezentacja grafu:</li><h2>
                         <ul>
                             <li data-target="main__edge-list-scroll" class="contents__list-item">Lista krawędzi <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                             <li data-target="main__adjacency-list-scroll" class="contents__list-item">Lista sąsiedztwa  <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
@@ -61,16 +96,65 @@
                             <li data-target="main__salesman-problem-scroll" class="contents__list-item">Problem komiwojażera <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                             <li data-target="main__shortest-path-problem-scroll" class="contents__list-item">Problem znajdywania najkrótszej ścieżki <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                             <li data-target="main__BFS-DFS-algo-scroll" class="contents__list-item">BFS i DFS <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li data-target="main__find-cycle-scroll" class="contents__list-item">Znajdywanie cykli <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
-                            <li data-target="main__topological-sort-scroll" class="contents__list-item">Sortowanie topologiczne <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"></li>
                         </ul>
                     </ul>
-                    
                 </div>
 
+                
+
                 <div class="main__wrapper">
+                    <div class="divPattern main__big-o">
+                        <h1 class="main__h1-problem">
+                            <span class="main--colorFix">Złożoność obliczeniowa algorytmu</span>
+                        </h1>
+
+                        <p>Wraz z pojęciem złożoności obliczeniowej dochodzi nam pojęcie skalowalności algorytmu/programu.</p>
+                        <p>Znaczy to tyle, że podczas pisania jakiegoś fragmentu kodu musimy zastanowić się w jaki sposób go piszemy, parę razy przemyśleć czy to co napisałem nie zajmuję za dużo pamięci, lub za dużo czasu, oraz czy nadaje się do przetworzenia dużej ilości danych.</p>
+                        <p>Wracając do złożoności, określamy ją notacją tak zwanego dużego \(O\) (ang. Big O notaton)</p>
+                        <p>Kiedy mówimy o dużym \(O\) mamy na myśli to, jak dobrze nasz algorytm działa lub jak bardzo spowalnia przez wprowadzenie przez nas coraz większą i większą ilość danych.</p>
+                        <p>Jest bardzo ciężko omówić cały koncept dużego \(O\) mając do dyspozycji nie za dużo czasu, tak aby nie przysłonić głównej tematyki poruszanej na tej stronie, dlatego będzie po krótce</p>
+                        
+                        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
+                            <p style="transform: rotate(-90deg);">operacje</p>
+                            <img class="bigO" src="../IMG/bigO.png">
+                            <p style="text-align: center; flex-basis: 100%;">elementy</p>
+                        </div>
+                        
+                        <p>Powyżej znajduję się tabelka, jak liczba elementów wpływa na ilość danych operacji, najlepiej będzie zobaczyć na przykładzie, więc załóżmy, że nasza funkcja musi przerobić \(100\) elementów, jaka będzie ilość operacji z wykorzystaniem każdej złożoności?</p>
+                        <ul>
+                            <li>\(O(1)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> stała (od jednej do paru operacji)</li>
+                            <li>\(O(\text{log}n)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> logarytmiczna (\(7\) operacji)</li>
+                            <li>\(O(n)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> liniowa (\(100\) operacji)</li>
+                            <li>\(O(n\text{log}n)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> logarytmiczno-liniowa (\(700\) operacji)</li>
+                            <li>\(O(n^2)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> kwadratowa (\(10 000\) operacji)</li>
+                            <li>\(O(n^3)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> sześcienna (\(1 000 000\) operacji)</li>
+                            <li>\(O(2^n)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> wykładnicza (\(1.267 * 10^{30}\) operacji)</li>
+                            <li>\(O(n!)\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 20px;"> silnia (\(~9,332 621 544 · 10^{157}\) operacji)</li>  
+                        </ul>
+                        <p>Podczas przeglądania tej podstrony możesz natrafić na przeróżne złożoności np. \(O(|V| + |E|)\) lub \(O(|V|)\) patrząc na to możemy czuć się skołowani, lecz ta druga jest równoważna z \(O(n)\) zastąpiłem \(|V|\) inną zmienną aby pokazać zależność. W taki sam sposób zamieniłem pierwszy przykład lecz z dwoma zmiennymi.</p>
+                    </div>
+
                     <div class="divPattern">
-                        <h1 class="main__h1-graph-representation">
+                        <h1 class="main__h1-problem"><span class="main__span-blue">Klasa problemów NP</span></h1>
+                        <p>Klasy złożoności typu NP są sposobem na określenie złożoności i trudności w rozwiązywaniu lub samego istnienia rozwiązania danego problemu. </p>
+                        <p>Same pojęcia są dość prostę do przetworzenia, jednak gdy chcielibyśmy przestudiować ich istotę i bardziej je prześwietlić byłaby to bardzo długa sekcja obejmująca m.in maszynę Turinga, która już sama w sobie jest dość skomplikowana.</p>
+                        <ul>
+                            <p>
+                                <li><b>Problem P </b>(ang. polynomial time) - problem decyzyjny dla którego rozwiązanie możemy znaleźć (i również zweryfikować poprawność) w czasie wielomianowym.</li>
+                                <li><b>Problem NP</b> (ang. nondeterministic polynomial time) - nazywamy tak problem decyzyjny dla którego poprawność danego algorytmu jesteśmy w stanie sprawdzić w wielomianowej złożoności czasowej.</li>
+                                <ul>
+                                    <p><li>Dla znalezienia rozwiązania wymagany jest algorytm o złożoności co najmniej wielomianowej</li></p>
+                                </ul>
+                                <li><b>Problem NP-zupełny</b> (ang. NP-complete) - problem decyzyjny który należy do klasy NP oraz spełnia zależność: jeżeli znaleźlibyśmy rozwiązanie danego problemu NP-zupełnego w czasie wielomianowym to bylibyśmy w stanie rozwiązać każdy problem NP również w czasie wielomianowym.</li>    
+                                <li><b>Problem NP-trudny</b> (ang. NP-hard) - problem obliczeniowy dla którego rozwiązanie nie jest możliwe w czasie wielomianowym, i jest tożsame z rozwiązaniem wszystkich problemów klasy NP.</li>    
+                            </p>
+                        </ul>
+                        <p>Na koniec sekcji zostawiam małą ciekawostkę. Zależność pomiędzy Problemami P a NP jest jedną z najsłynniejszych zagadek matematycznych, aż tak, że udowodnienie iż \(P = NP\) lub \(P \neq NP\) jest nagradzane milionem dolarów z racji, że właśnie to zagadnienie jest tematyką jednego z siedmiu <b>Problemów Milenijnych</b></p>
+                    </div>
+
+                
+                    <div class="divPattern">
+                        <h1 class="main__h1-problem">
                             Reprezentacja
                             <span class="main--colorFix">grafu</span>
                         </h1>
@@ -78,8 +162,8 @@
                             Istnieje kilka sposobów reprezentowania grafów,
                             każde z nich ma swoje wady i zalety, tutaj
                             przedstawię trzy z nich. Każdą z nich opisze za
-                            pomocą paru kryteriów biorąc pod uwagę kwestie pamięciowe i
-                            obliczeniowe:
+                            pomocą paru kryteriów biorąc pod uwagę kwestie
+                            pamięciowe i obliczeniowe:
                         </p>
                         <ul>
                             <li>Zajęta ilość pamięci</li>
@@ -98,29 +182,45 @@
                             grafu będzie:
                         </h2>
 
-                        <h1 class="main__edge-list-scroll representation-type">Lista krawędzi</h1>
+                        <h1 class="main__edge-list-scroll representation-type">
+                            Lista krawędzi
+                        </h1>
                         <p>
                             W tym sposobie każda krawędź grafu jest
                             przedstawiana jako para wierzchołków, które są nią
                             połączone. Cały graf jest zatem reprezentowany jako
                             lista takich par.
                         </p>
-                        <p>Na przykład rozważmy graf skierowany(ten sam graf będzie w każdym przykładzie reprezentacji aby pokazać jego wady i zalety oraz podobieństwa i różnice):</p>
-                        
-                        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;">
-                            <div
-                            class="graph-representation-visualisation-list graph-smaller"></div>
+                        <p>
+                            Na przykład rozważmy graf skierowany(ten sam graf
+                            będzie w każdym przykładzie reprezentacji aby
+                            pokazać wady, zalety oraz podobieństwa, różnice każdego sposobu):
+                        </p>
 
-                            <ul style="text-align: center; font-size: larger; list-style-type: none;">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-around;
+                                align-items: center;
+                            ">
+                            <div
+                                class="graph-representation-visualisation-list graph-smaller"></div>
+
+                            <ul
+                                style="
+                                    text-align: center;
+                                    font-size: larger;
+                                    list-style-type: none;
+                                ">
                                 <li>\((A, B)\)</li>
-                                <li style="margin-top: 15px;">\((B, C)\)</li>
-                                <li style="margin-top: 15px;">\((B, D)\)</li>
-                                <li style="margin-top: 15px;">\((C, A)\)</li>
-                                <li style="margin-top: 15px;">\((D, A)\)</li>
+                                <li style="margin-top: 15px">\((B, C)\)</li>
+                                <li style="margin-top: 15px">\((B, D)\)</li>
+                                <li style="margin-top: 15px">\((C, A)\)</li>
+                                <li style="margin-top: 15px">\((D, A)\)</li>
                             </ul>
                         </div>
-                        
-                        
+
                         <h5>
                             W kwestii wydajności pamięciowej i obliczeniowej
                             sposób ten wygląda następująco:
@@ -128,57 +228,60 @@
                         <ul>
                             <li>Zajęta ilość pamięci: \(O(∣E∣)\).</li>
                             <li>
-                                Dodanie krawędzi: \(O(1)\), w najgorszym
-                                przypadku \(O(∣E∣)\)
+                                Dodanie krawędzi: \(O(1)\)
                             </li>
                             <li>
-                                Dodanie wierzchołka: brak możliwości zapisania
-                                wierzchołka niepołączonego żadną krawędzią.
+                                Dodanie wierzchołka: nie jest możliwe pobranie wierzchołka nieposiadającego żadnej krawędzi
                             </li>
                             <li>Usunięcie krawędzi: \(O(∣E∣)\).</li>
                             <li>
-                                Usunięcie wierzchołka: \(O(∣E∣)\) — należy
-                                przejść przez wszystkie krawędzie i usunąć te, w
-                                których występuje wierzchołek.
+                                Usunięcie wierzchołka: \(O(∣E∣)\) - wymagane przejście przez wszystkie krawędzie w celu znalezienia danego wierzchołka
                             </li>
                             <li>Sprawdzenie sąsiedztwa: \(O(∣E∣)\)</li>
                         </ul>
                         <p>
-                            Reprezentacja grafu za pomocą listy krawędzi jest prosta i
-                            ma zastosowanie chociażby w wizualizacji danych
-                            poprzez możliwość dodania więcej niż jednego
-                            wierzchołka do danej krawędzi. Posiada jednak jedną
-                            kluczową wadę - wydajnościowo bez optymalizacji w
-                            najgorszym przypadku musimy przebrnąć przez
-                            \(O(∣E∣)\) operacji przez co nie najlepiej wpisuję
-                            się w miano szybkiego sposobu.
-                        </p>
-                        <p>
-                            Ciekawostka - do stworzenia grafów na tej stronie właśnie użyłem tego sposobu
+                            Ciekawostka - do stworzenia grafów na tej stronie
+                            właśnie użyłem tego sposobu, i gorąco go polecam pod kątem prostoty w użyciu
                         </p>
 
-                        <h1 class="main__adjacency-list-scroll representation-type">Lista sąsiedztwa</h1>
+                        <h1
+                            class="main__adjacency-list-scroll representation-type">
+                            Lista sąsiedztwa
+                        </h1>
                         <p>
                             Jest to jeden z fundamentalnych sposobów
                             przedstawiania grafu. Najprościej powiemy że jest to
-                            połączenie macierzy sąsiedztwa i listy krawędzi w
+                            połączenie macierzy i listy krawędzi w
                             którym dla każdego wierzchołka przechowywana jest
                             lista jego sąsiadów.
                         </p>
-                        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-around;
+                                align-items: center;
+                            ">
                             <div
-                            class="graph-representation-visualisation-adjacency-list graph-smaller"></div>
-                        
+                                class="graph-representation-visualisation-adjacency-list graph-smaller"></div>
 
-                            <ul style="margin-top: 50px; margin-bottom: 50px; text-align: center; font-size: larger; list-style-type: none;">
-                                <li style="margin-top: 5px;">\(A ---> [B] \)</li>
-                                <li style="margin-top: 5px;">\(B ---> [C, D]\)</li>
-                                <li style="margin-top: 5px;">\(C ---> [A]\)</li>
-                                <li style="margin-top: 5px;">\(D ---> [A]\)</li>
+                            <ul
+                                style="
+                                    margin-top: 50px;
+                                    margin-bottom: 50px;
+                                    text-align: center;
+                                    font-size: larger;
+                                    list-style-type: none;
+                                ">
+                                <li style="margin-top: 5px">\(A ---> [B] \)</li>
+                                <li style="margin-top: 5px">
+                                    \(B ---> [C, D]\)
+                                </li>
+                                <li style="margin-top: 5px">\(C ---> [A]\)</li>
+                                <li style="margin-top: 5px">\(D ---> [A]\)</li>
                             </ul>
                         </div>
-                        
-                        
+
                         <h5>
                             W kwestii wydajności pamięciowej i obliczeniowej
                             sposób ten wygląda następująco:
@@ -192,47 +295,70 @@
                             <li>Sprawdzenie sąsiedztwa: \(O(∣V∣)\)</li>
                         </ul>
 
-                        <h1 class="main__adjacency-matrix-scroll representation-type">Macierz sąsiedztwa</h1>
-                        <h3>
-                            Macierz - Układ (w tym przypadku) liczb zapisanych w
-                            tablicy dwuwymiarowej
-                        </h3>
-                        <h3>
-                            Macierzą sąsiedztwa grafu nazywamy macierz \(A\) w
-                            którym przedstawiamy liczbę krawędzi łączących
+                        <h1
+                            class="main__adjacency-matrix-scroll representation-type">
+                            Macierz sąsiedztwa
+                        </h1>
+                        <p>
+                            <b>Macierz</b> - Układ liczb zapisany w postaci prostokątnej tablicy której rozmiar będzie zależał od grafu jaki będziemy badać <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle"> \(|V| * |V|\)
+                        </p>
+                        <p>
+                            <b>Macierzą sąsiedztwa</b> grafu nazywamy macierz kwadratową \(A\) w
+                            której przedstawiamy liczbę krawędzi łączących
                             poszczególne wierzchołki.
-                        </h3>
-                        <p>Wymiary takiego macierza to \(|V| * |V|\).</p>
+                        </p>
                         <p>
                             Rozpatrzmy taką sytuację - mamy graf skierowany i
-                            chcemy przedstawić go w macierzy sąsiedztwa, jakie
+                            chcemy przedstawić za pomocą macierzy sąsiedztwa, jakie
                             są kolejne kroki?
                         </p>
                         <ol>
-                            <li>Wybieramy jeden dowolny wierzchołek i oznaczamy go sobie jako pierwszy i patrzymy czy łączy się z następnymi.</li>
+                            <li>
+                                Wybieramy jeden dowolny wierzchołek, oznaczamy
+                                go jako pierwszy i patrzymy czy łączy się
+                                z następnymi. W naszym przypadku będzie to wierzchołek \(A\)
+                            </li>
                             <ul>
-                                <li>Wierzchołek pierwszy z pierwszym się nie łączy więc dajemy 0 (żeby dać tutaj 1 musiałaby być w danym wierzchołku pętla)</li>
-                                <li>Wierzchołek pierwszy łączy się z drugim więc obok 0 dajemy 1</li>
-                                <li>Wierzchołek pierwszy nie łączy się z trzecim więc obok 1 dajemy 0</li>
-                                <li>Wierzchołek pierwszy nie łączy się z czwartym więc obok 0 dajemy znów 0</li>
+                                <li>
+                                    Wierzchołek pierwszy z samym sobą się nie
+                                    łączy więc dajemy 0 (żeby dać tutaj 1
+                                    musiałaby być w nim pętla)
+                                </li>
+                                <li>
+                                    Wierzchołek pierwszy z drugim się łączy więc
+                                    obok 0 dajemy 1
+                                </li>
+                                <li>
+                                    Wierzchołek pierwszy z trzecim się nie łączy
+                                    więc obok 1 dajemy 0
+                                </li>
+                                <li>
+                                    I finalnie wierzchołek pierwszy z
+                                    czwartym nie łączy się również, więc obok 0 dajemy znów 0
+                                </li>
                             </ul>
-                            <li>Gdy skończymy porównywać pierwszy wierzchołek z kolejnymi powtarzamy czynność dopóki nie skończą nam się możliwe wierzchołki</li>
+                            <li>
+                                Gdy skończymy porównywać pierwszy wierzchołek z
+                                kolejnymi powtarzamy czynność przechodząc na kolejny wierzchołek, w tym przypadku \(B\) dopóki nie skończą
+                                nam się możliwe wierzchołki
+                            </li>
                         </ol>
-                        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;">
-                            <div class="graph-representation-visualisation-adjacency-matrix graph-smaller"></div>
-                            <p style="padding: 20px;">
-                                \[ A = \begin{bmatrix} 
-                                   0 & 1 & 0 & 0
-                                \\ 0 & 0 & 1 & 1
-                                \\ 1 & 0 & 0 & 0
-                                \\ 1 & 0 & 0 & 0
-                                \\ \end{bmatrix}
-                                \]
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-around;
+                                align-items: center;
+                            ">
+                            <div
+                                class="graph-representation-visualisation-adjacency-matrix graph-smaller"></div>
+                            <p style="padding: 20px">
+                                \[ A = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 &
+                                1 & 1 \\ 1 & 0 & 0 & 0 \\ 1 & 0 & 0 & 0 \\
+                                \end{bmatrix} \]
                             </p>
                         </div>
-                        
 
-                        
                         <h5>
                             W kwestii wydajności pamięciowej i obliczeniowej
                             sposób ten wygląda następująco:
@@ -246,195 +372,118 @@
                             <li>Sprawdzenie sąsiedztwa: \(O(1)\)</li>
                         </ul>
                     </div>
-                </div>
 
-                <div class="main__algo_start">
-                    <h1 class="main__h1-graph-representation"><span class="main--colorFix">Algorytmy</span> i <span class="main--colorFix">problemy</span></h1>
-                </div>
-
-                <div class="main__div-algorithm-about-wrapper">
-                    <div class="main__div-algorithm-about">
-                        <h1 class="main__div-algorithm-about-heading">
-                            Ale czym tak naprawdę jest algorytm?
-                        </h1>
-                        <p class="main__div-algorithm-about-paragraph">
-                            Najprościej możemy powiedzieć że jest to sposób
-                            rozwiązania danego problemu
-                        </p>
+                
+                    <div class="divPattern">
+                        <h1 class="main__h1-problem"><span class="main__span-blue">Algorytmy i problemy</span></h1>
+                        <p style="text-align: center;">Płynnie po reprezentacji i informacjach wstępnych przechodzimy do algorytmów grafowych</p>
                     </div>
-
-                    <img
-                        class="arrow"
-                        src="../SVG/down-arrow-svgrepo-com.svg" />
-
-                    <div class="main__div-algorithm-about">
-                        <p class="main__div-algorithm-about-paragraph">
-                            Co za tym idzie, algorytm grafowy będzie
-                            rozwiązaniem danego problemu za pomocą grafu.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="divPattern main__marriage-problem-scroll">
-                    <h1
-                    class="main__h1 main__span-blue"
-                    style="text-align: center;">
-                    Kojarzenie małżeństw
-                </h1>
-                    
-                    
-                        <p>Twierdzenie to przypisywane jest Phillipowi Hallowi, który sformułował je w 1935r. </p>
-                        <p>Problem polega na tym, że mamy: \(n\) panien i \(n\) kawalerów których chcemy dobrać w pary małżeńskie</p>
-                        <h4>Warunkiem koniecznym oraz wystarczającym aby istniało takie skojarzenie jest to że dla dowolnej grupy chłopców \(k ∈ \{1, 2, . . . , n\}\) oni wspólnie znają co najmniej \(k\) dziewczyn</h4>
-                    
-
-                    <div class="marriage-div2">
-                        <img src="../IMG/philip.jpg">
-                        <p><b>Philip Hall</b> - brytyjski matematyk</p>
-                    </div>
-
-                    <div class="marriage-div3">
-                        <h3>Problem będziemy rozwiązywali na życiowym przykładzie takim jaki przedstawiłem poyżej czyli:</h3>
-                        
-                            <div style="display: flex; justify-content: space-evenly;">
-                                <div>
-                                    <p style="text-align: center;">Mamy 5 panien: </p>
-                                    <ul>
-                                        <!--<li>Aleksandra</li>
-                                        <li>Zosia</li>
-                                        <li>Melania</li>
-                                        <li>Barbara</li>
-                                        <li>Asia</li>-->
-                                        <li>Anna - 0</li>
-                                        <li>Beata - 1</li>
-                                        <li>Celina - 2</li>
-                                        <li>Dorota - 3</li>
-                                        <li>Ewa - 4</li>
-                                    </ul>
-                                </div>
-                                
-
-                                <div>
-                                    <p style="text-align: center;">I 5 kawalerów</p>
-                                    <ul>
-                                        <!--<li>Piotrek</li>
-                                        <li>Bartek</li>
-                                        <li>Timothee</li>
-                                        <li>Zbyszek</li>
-                                        <li>Mateusz</li>-->
-                                        <li>Fryderyk - 5</li>
-                                        <li>Grzegorz - 6</li>
-                                        <li>Henryk - 7</li>
-                                        <li>Igor - 8</li>
-                                        <li>Jan - 9</li>
-                                    </ul>
-                                </div>
-                               
-                            </div>
-                        
-
-                        <h4>Używając listy sąsiedztwa wytłumaczonej w sekcji interpretacji przedstawię teraz wygląd grafu</h4>
-                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
-                            <ul>
-                                <!--<li>Aleksandra   Timothee, Zbyszek</li>
-                                <li>Zosia ->  Piotrek, Bartek, Zbyszek</li>
-                                <li>Melania ->  Piotrek</li>
-                                <li>Barbara ->  Bartek, Zbyszek, Mateusz</li>
-                                <li>Asia ->  Zbyszek, Mateusz</li>-->
-                                <li>Anna ---->   Henryk, Igor</li>
-                                <li>Beata ---->  Fryderyk, Grzegorz, Igor</li>
-                                <li>Celina ---->  Fryderyk</li>
-                                <li>Dorota ---->  Grzegorz, Igor, Jan</li>
-                                <li>Ewa ---->  Henryk, Igor</li>
-                            </ul>
-    
-                            <img height="200px" src="../IMG/right-arrow-svgrepo-com.svg">
-    
-                            <ul>
-                                <li>\(0 -> 7,8\)</li>
-                                <li>\(1 -> 5,6,8\)</li>
-                                <li>\(2 -> 5\)</li>
-                                <li>\(3 -> 6,8,9\)</li>
-                                <li>\(4 -> 7,8\)</li>
-                            </ul>
-                        </div>
-                        
-                        <h3 style="text-align: center;">Na podstawie tej listy tworzymy graf dwudzielny</h3>
-                       
-                        <div style="text-align: center;">
-                            <div class="graph-smaller graph-marriage-first-step"></div>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Pierwszym naszym krokiem będzie połączenie pierwszej panny (Anny) z pierwszym akceptowanym przez nią kawalerem (Henrykiem), i tak naprawdę ten krok będzie naszą podstawą którą wykonujemy do momentu napotkania problemu</p>
-                            <div class="graph-smaller graph-marriage-second-step"></div>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Następnie bierzemy kolejną pannę (Beatę) i łączymy ją z akceptowanym przez nią kawalerem (Fryderykiem)</p>
-                            <div class="graph-smaller graph-marriage-third-step"></div>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Gdy spróbujemy połaczyć Celinę z Fryderykiem, okaże się, że jest on już zajęty. Lecz nic straconego, Beata lubi również Grzegorza i Igora. Więc jak się okazuję istnieje dla Celiny szansa. W tym celu zastosujemy <i>ścieżkę naprzemienną</i> - a jest to taka któa w grafie dwudzielnym przebiega naprzemian przez krawędzie skojarzone i nieskojarzone. Ścieżkę rozpoczynamy zawsze od krawędzi nieskojarzonej</p>
-                            <div class="graph-smaller graph-marriage-fourth-step"></div>
-                            <p>Ścieżka (czerwona linia) idzię od Celiny do Grzegorza przez Fryderyka oraz Beatę. Krawędzie czerwone są wolne, a zielone skojarzone</p>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Ścieżkę naprzemienną gdzie występują krawędzie wolne nazywamy ścieżką rozszerzającą, ponieważ za ich pomocą będziemy mogli rozszerzyć graf o kolejne skojarzenia. Aby to zrobić usuwamy krawędzie skojarzone w ścieżce rozszerzającej, a krawędzie wolne czynimy krawędziami skojarzonymi. W ten sposób Celina została zeswatana z Fryderykiem który wcześniej był już zajęty.</p>
-                            <div class="graph-smaller graph-marriage-fifth-step"></div>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Wracamy do naszego początkowego algorytmu, patrzymy na następną pannę, Dorotę i widzimiy że lubi Igora który wciąż jest wolny, więc bez problemów łączymy </p>
-                            <div class="graph-smaller graph-marriage-sixth-step"></div>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Pozostała jedynie para Ewa -> Igor jednak ewa nie chce za niego wyjść. Szukamy i tworzymy więc ścieżkę rozszerzającą od Ewy do Jana.</p>
-                            <div class="graph-smaller graph-marriage-seventh-step"></div>
-                            <img src="../IMG/down-arrow-svgrepo-com.svg">
-                            <p>Ścieżka przebiega przez Igora oraz Dorotę. Teraz musimy tylko zamienić krawędzie wolne na skojarzone i skojarzone na wolne</p>
-                            <div class="graph-smaller graph-marriage-eighth-step"></div>
-                            <h2>Tak wygląda skojarzenie pełne w tym grafie dwudzielnym</h3>
-                        </div>
-                        
-                    </div>
-
-                </div>
-
+                
 
                 <div class="divPattern main__salesman-problem-scroll">
                     <h1
-                    class="main__h1 main__span-blue"
-                    style="text-align: center">
-                    Problem komiwojażera
-                </h1>
-                    
+                        class="main__h1-problem main__span-blue"
+                        style="text-align: center">
+                        Problem komiwojażera
+                    </h1>
+
                     <div>
-                        <p>Jest to zagadnienie polegające na optymalizacji drogi pod względem odległości, ceny, czasu podróży. Problem mówi o sprzedawcy który podróżuje od miasta do miasta, wyrusza ze swojej miejscowości rodzinnej, na swojej handlowej drodze przechodzi przez każde miasto dokładnie jeden raz, zależy mu na tym aby droga którą pójdzie była najkrótszą możliwą. Na koniec wędrówki wraca do miasta rodzinnego.</p>
-                        <p>Eksplorując ten problem będziemy chcieli znaleźć odpowiedź na pytanie: Jaka jest najkrótsza droga która przechodzi przez każde miasto i wraca do punktu wyjścia.</p>
-                        <p>Tłumacząc wstęp na język matematyki: miasta to wierzchołki, a szlak po którym wędruje sprzedawca to krawędzie z wagami. Jak na początku wspomniałem, drogę możemy zoptymalizować pod wieloma względami, za to będa odpowiedzialne wagi.</p>
+                        <p>
+                            Jest to zagadnienie polegające na optymalizacji
+                            drogi pod względem odległości, ceny lub czasu podróży.
+                            Problem mówi o sprzedawcy który podróżuje od miasta
+                            do miasta, wyrusza ze swojej miejscowości rodzinnej,
+                            na swojej handlowej drodze przechodzi przez każde
+                            miasto dokładnie jeden raz, zależy mu na tym aby
+                            droga którą pójdzie była najkrótszą możliwą. Na
+                            koniec wędrówki wraca do miasta rodzinnego.
+                        </p>
+                        <p>
+                            Eksplorując ten problem będziemy chcieli znaleźć
+                            odpowiedź na pytanie: Jaka jest najkrótsza droga
+                            która przechodzi przez każde miasto i wraca do
+                            punktu wyjścia.
+                        </p>
+                        <p>
+                            Tłumacząc wstęp na język matematyki: miasta to
+                            wierzchołki, a szlak po którym wędruje sprzedawca to
+                            krawędzie z wagami. Jak na początku wspomniałem,
+                            drogę możemy zoptymalizować pod wieloma względami,
+                            za to będa odpowiedzialne wagi.
+                        </p>
                         <div class="theorem">
-                            <h1>Finalnie...</h1>
-                            <p>Jak znaleźć minimalny cykl Hamiltona w pełnym(jeżeli mówimy o np modelu budowy dróg między miastami nie musimy brać pod uwagę grafu pełnego, w założeniu jest to podejście najbardziej pesymistyczne) grafie ważonym.</p>
+                            <h1>Finalnie... Czyli?</h1>
+                            <p>
+                                Jak znaleźć minimalny cykl Hamiltona w
+                                pełnym(jest to podejście
+                                najbardziej pesymistyczne, lecz nie zawsze takie jest) grafie ważonym.
+                            </p>
                         </div>
-                        <p>Problem podróży sprzedawców po miastach był już rozważany w pierwszej połowie XIX w. przez Williama Rowana Hamilltona jednak wtedy problem nie zawierał żadnych matematycznych uzasadnień. Problem szczegółowo został opisany dopiero w 1930r. przez austriackiego matematyka Karla Mengera. Zdawał on sobie wtedy również sprawę ze złożoności tego problemu</p>
+                        <p>
+                            Problem podróży sprzedawców po miastach był już
+                            rozważany w pierwszej połowie XIX w. przez Williama
+                            Rowana Hamilltona jednak wtedy problem nie zawierał
+                            żadnych matematycznych uzasadnień. Problem
+                            szczegółowo został opisany dopiero w 1930r. przez
+                            austriackiego matematyka Karla Mengera. Zdawał on
+                            sobie wtedy również sprawę ze złożoności tego
+                            problemu
+                        </p>
                     </div>
 
-                    <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
-                        <div style="text-align: center;">
-                            <img height="250px" src="../IMG/menger.jpg">
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            flex-wrap: wrap;
+                        ">
+                        <div style="text-align: center">
+                            <img height="250px" src="../IMG/menger.jpg" />
                             <p><b>Karl Menger</b></p>
                         </div>
-                        <div style="text-align: center;">
+                        <div style="text-align: center">
                             <img height="250px" src="../IMG/hamillton.jpeg"">
                             <p><b>William Rowan Hamillton</b></p>
                         </div>
                     </div>
-                        
-                    <div style="margin-top: 50px;">
+
+                    <div style="margin-top: 50px">
                         <div class="theorem">
-                            <p>Zagadnienie należy do typu problemów NP-trudnych czyli - nie istnieje dla niego rozwiązanie ze złożonością wielomianową i niestety nie istnieje dla niego ogólny i efektywny algorytm dający optymalne rozwiązanie. </p>
-                            <p>Jednakże mamy jeszczę wersję decyzyjną tego problemu, wtedy mamy daną liczbę \(x\) i graf, mamy odpowiedzieć na pytanie czy istnieje trasa komiwojażera czyli cykl krótszy od \(x\)</p>
+                            <p>
+                                Zagadnienie należy do typu problemów NP-trudnych
+                                czyli - nie istnieje dla niego rozwiązanie ze
+                                złożonością wielomianową i niestety nie istnieje
+                                dla niego ogólny i efektywny algorytm dający
+                                optymalne rozwiązanie.
+                            </p>
+                            <p>
+                                Jednakże mamy jeszczę wersję decyzyjną tego
+                                problemu, wtedy mamy daną liczbę \(x\) i graf,
+                                musimy odpowiedzieć na pytanie czy istnieje trasa
+                                komiwojażera czyli cykl krótszy od \(x\), wtedy ten problem jest już NP-zupełny
+                            </p>
                         </div>
-                        
-                        <p style="text-align: center; margin-top: 60px;">Dla n miast liczba kombinacji wynosi</p>
-                        <p style="text-align: center; font-size: xx-large">\({{(n-1)!} \over 2}\)</p>
 
-                        <p style="text-align: center; margin-top: 60px;">Dla 20 miast liczba cykli hamilltona wynosi</p>
-                        <p style="text-align: center; font-size: xx-large">\({{(20-1)!} \over 2} = {19! \over 2} = 6 * 10^{16}\)</p>
+                        <p style="text-align: center; margin-top: 60px">
+                            By zrozumieć z czym tak na prawdę się mierzymy, wprowadźmy wzór określający liczbę kombinacji w zależności od liczby \(n\) czyli miast.
+                        </p>
+                        <p style="text-align: center; font-size: xx-large">
+                            \(Ilosc\) \(kombinacji = {{(n-1)!} \over 2}\)
+                        </p>
 
-                        <h2 style="text-align: center; margin-top: 100px;">Sposoby rozwiązywania problemu komiwojażera</h2>
+                        <p style="text-align: center; margin-top: 60px">
+                            Dla 20 miast liczba cykli hamilltona wynosi
+                        </p>
+                        <p style="text-align: center; font-size: xx-large">
+                            \({{(20-1)!} \over 2} = {19! \over 2} = 6 *
+                            10^{16}\)
+                        </p>
+                        <p style="text-align: center;">Co by nie mówić jest to dość duża liczba</p>
+
+                        <h2 style="text-align: center; margin-top: 100px">
+                            Sposoby rozwiązywania problemu komiwojażera
+                        </h2>
                         <ul>
                             <li>Algorytm Helda-Karpa</li>
                             <li>Algorytm najbliższego sąsiada:</li>
@@ -442,72 +491,329 @@
                             <li>Symulowane wyżarzanie</li>
                             <li>Algorytm Christofidesa</li>
                         </ul>
-                        
-                        <h2>Poniżej znajduję się algorytm w pseudokodzie odpowiedzialny za rozwiązanie problemu komiwojażera ale tylko dla grafów o ograniczonej ilości węzłów.</h2>
-                        
                     </div>
                 </div>
 
-                <div class="problem-div main__shortest-path-problem-scroll">
-                    <h1><span class="main--colorFix">Problem znajdywania najkrótszej ścieżki </span></h1>
+                <div class="divPattern main__shortest-path-problem-scroll">
+                    <h1 class="main__h1-problem">
+                        <span class="main--colorFix"
+                            >Problem znajdywania najkrótszej ścieżki
+                        </span>
+                    </h1>
 
-                    <p>Autorem tego twierdzenia jest ...</p>
+                    <p>
+                        Zagadnienie polega na znalezieniu w grafie ważonym
+                        ścieżki łączącej dane wierzchołki o najmniejszej sumie
+                        wag.
+                    </p>
+                    <p>Problem możemy podzielić na dwa szczególne przypadki:</p>
+                    <ul style="list-style-type: none;">
+                        <li style="list-style-type: disc;">
+                            Wyznaczenie najkrótszej ścieżki między dwoma
+                            dowolnymi wierzchołkami \(v_1\) i \(v_2\), wtedy w
+                            najgorszym przypadku konieczne jest wyznaczenie
+                            najkrótszych ścieżek od \(v_1\) do wszystkich
+                            wierzchołków w grafie. W tym przypadku graf możemy sobie zobrazować jako miasto, \(v_1\) jako nasz dom, a \(v_2\) jako np. sklep spożywczy. Wierzchołek jest skrzyżowaniem, a krawędź zwykłą ulicą której długość uzależniona jest od wagi. Mamy mało paliwa i musimy tam dojechać jak najkrótszą ścieżką.
+                        </li>
+                        <h2><li>Do rozwiązania tego zagadnienia wykorzystamy takie algorymty: </li></h2>
+                        <ul>
+                            <li>Algorytm Dijkstry o złożoności czasowej \(O(|V|^2)\) czyli \(O(n^2)\)</li>
+                            <li>Algorytm Bellmana-Forda o złożoności czasowej \(O(|V|^3)\) czyli \(O(n^3)\)</li>
+                        </ul>
+                        <li style="margin-top: 50px; list-style-type: disc;">
+                            Wyznaczanie najkrótszej ścieżki pomiędzy każdą parą
+                            wierzchołków w grafie. Do znalezienia jej istnieje możliwość zmodyfikowania powyższych w taki sposób, aby za każdym razem przyjmowały inny wierzchołek, lub wykorzystanie konkretnych, już do tego przystosowanych
+                        </li>
+                        <h2><li>Takich jak:</li></h2>
+                        <ul>
+                            <li>Algorytm Floyda-Warshalla o złożoności czasowej \(O(|V|^3)\)</li>
+                            <li>Algorytm Johnsona o monstrualnie wyglądającej złożoności czasowej \(O(|V|^2  \text{log}|V| + |V||E|)\), po zastosowaniu zmiennych wygląda nieco lepiej - \(O(n^2  \text{log}n + ne)\)</li>
+                        </ul>
+                    </ul>
+
+                    <!--
+                    <h2 style="text-align: center;">Poniżej znajduję się implementacja w pseudokodzie najpopularniejszego z nich - Dijkstry wykorzystywanego powszechnie np. w sieciach komputerowych przy trasowaniu</h2>
+                    
+                    <code style="position: relative; right: 200px">
+                        <pre class="language-cpp">
+                            -- Dopóki zbiór Q nie jest pusty
+                                -- Wybierz ze zbioru "Q" wierzchołek o najmniejszym koszcie dotarcia, oznacz jako "v" i usuń ze zbioru "Q"
+                                -- Dla każdej krawędzi "i" wychodzącej z wierzchołka "v":
+                                    -- Oznacz wierzchołek znajdujący się na drugim końcu krawędzi jako "w"
+                                    -- Jeżeli koszt dotarcia do wierzchołka "w" przez krawędź "i" jest mniejszy od obecnego kosztu dotarcia do "w": 
+                                        -- Wyznacz nowy koszt dotarcia do wierzchołka "w" poprzez dodanie do obecnego, 
+                                        koszt dotarcia do wierzchołka "w" powiększony o wagę krawędzi "i"
+                                        -- Uczyń wierzchołek "v" poprzednikiem wierzchołka "w"
+
+                        </pre>
+                    </code>-->
+                
                 </div>
 
-                <div class="main__marriage_problem problem-div main__BFS-DFS-algo-scroll">
-                    <h1><span class="main--colorFix">BFS i DFS</span></h1>
+                <div
+                    class="divPattern main__BFS-DFS-algo-scroll">
+                    <h1 class="main__h1-problem">
+                        <span class="main--colorFix">
+                            BFS
+                        </span>
+                    </h1>
 
-                    <p>Autorem tego twierdzenia jest ...</p>
+                    <p>Jest to jeden z dwóch powszechnie używanych algorytmów przeszukiwania grafu. Poprzez słowo przeszukiwanie będziemy rozumieli jako usystematyzowaną w jakiś sposób czynność która będzie polegała na odwiedzeniu wszystkich wierzchołków grafu.</p>
+                    <p>Algorytm realizuję pojęcie kolejki FIFO (ang. First In First Out) - struktury danych w której dane są dodawane zawsze na koniec a pobierane z początku.</p>
+                
+                    <div class="graph BFSGraph"></div>
+                    <P>Mając taki graf jak by wyglądało krok po kroku przeszukanie i kolejka FIFO?</P>
+                    <ul>
+                        <p><li>Zaczniemy od wierzchołka \(A\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;">  \( Q = \begin{bmatrix} A \end{bmatrix} \) </li></p>
+                        <p><li>Patrzymy które wierzchołki są z nim połączone i dodajemy je do kolejki.<img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;">  \( Q = \begin{bmatrix} A & B & E & I \end{bmatrix} \) </li></p>
+                        <p><li>Cała operacja będzie się opierać na porównaniu następnych wierzchołków z iloma i czy w ogóle są połączone, jeśli są dodajemy je do kolejki. Porównaliśmy już wierzchołek \(A\) no to zostawiamy go i jedziemy dalej. <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;">  \( Q = \begin{bmatrix} B & E & I \end{bmatrix} \) </li></p>
+                        <p><li>Następny w kolejce do inspekcji jest wierzchołek \(B\), czy z czymś się łączy?</li></p>
+                        <p><li>Patrząc po obrazku widzimy połączenie pomiędzy nim a wierzchołkami \(C\) oraz \(D\), więc robimy to co powyżej <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;">  \( Q = \begin{bmatrix} B & E & I & C & D \end{bmatrix} \) </li></p>
+                        <P><li>I znowu, przechodzimy na następny w kolejce wierzchołek czyli \(E\) usuwając \(B\) i dodajemy wierzchołki połączone z nim, ale co ważne tylko te które nie są już w kolecje <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;">  \( Q = \begin{bmatrix} E & I & C & D & F & G & H \end{bmatrix} \) </li></P>
+                        <p><li>Bez zawahania usuwamy wierzchołek \(E\) i dodajemy jedyne połączenie czyli \(J\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;">  \( Q = \begin{bmatrix} I & C & D & F & G & H & J \end{bmatrix} \) </li></p>
+                        <p style="text-align: center; margin-top: 40px;">Pozostało jeszcze parę ruchów ale dalsze czynności są analogiczne</p>
+                    </ul>
+                    <div class="theorem">
+                        <h1>Złożoność</h1>
+                        <p>Pod względem złożoności czasowej ten algorytm nie wypada najgorzej bo ma on ją na poziomie \(O(|V| + |E|)\)</p>
+                    </div>
+                    
+                </div>
+                
+                <div
+                    class="divPattern main__BFS-DFS-algo-scroll">
+                    <h1 class="main__h1-problem"><span class="main--colorFix">DFS</span></h1>
+
+                    <p>Jest to drugi powszechnie używany algorytm przeszukiwania grafu.</p>
+                    <p>Pierwszy sposób przeszukiwania realizował pojęcie kolejki FIFO a ten sposób realizuję pojęcie stosu LIFO (ang. Last In First Out). Znaczy to tyle, że jak wkładamy element \(n\) na stos \( \begin{bmatrix} x \\ y \\ z \end{bmatrix} \) to jedynym elementem jaki będziemy mogli ściągnąć ze stosu to jest właśnie \(n\), gdyby to była kolejka to moglibyśmy wyłącznie zdjąć pierwszy element, w tym przypadku byłby to \(z\). Zdjęcie \(n\) ze stosu <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;"> \( \begin{bmatrix} n \\ x \\ y \\ z  \end{bmatrix} \) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;"> \( \begin{bmatrix} x \\ y \\ z \end{bmatrix} \)</p>
+                    <div class="graph DFSGraph"></div>
+                    <p>Mamy dany taki graf, jak będą wyglądały kolejne kroki przeszukania DFS i stos LIFO? </p>
+                    <ul>
+                        <p><li>Zaczynamy od wierzchołka \(A\), dodajemy go do listy wierzchołków odwiedzonych, a na stos dodajemy wierzchołki które łączą się z nim krawędzią</li></p>
+                        <div class="flex-standard-row">
+                            <p><li style="list-style-type: none;">\( Stos =  \begin{bmatrix} B \\ C \\ D \end{bmatrix}\)</li></p>
+                            <p><li style="list-style-type: none;">\(Odwiedzone = \begin{bmatrix} A \end{bmatrix}\)</li></p>
+                        </div>
+                        <p><li>Następnym krokiem będzie pójście do pierwszego wierzchołka na stosie. Pierwszym jest \(B\) więc: usuwamy go ze stosu i dodamy do listy wierzchołków odwiedzonych. Sytuacja się prezentuję w sposób następujący: </li></p>
+                        <div class="flex-standard-row">
+                            <p><li style="list-style-type: none;">\( Stos =  \begin{bmatrix} C \\ D \end{bmatrix}\)</li></p>
+                            <p><li style="list-style-type: none;">\(Odwiedzone = \begin{bmatrix} A & B \end{bmatrix}\)</li></p>
+                        </div>
+                        <p><li>Teraz znów pójdziemy do pierwszego wierzchołka na stosie. Pierwszym jest \(C\) więc: usuwamy go ze stosu i dodamy do listy wierzchołków odwiedzonych. Na grafie będzie wyglądało to tak, że po prostu cofniemy się do \(A\) i pójdziemy przez krawędź do \(C\). Po przejściu zauważamy iż wierzchołek \(C\) łączy się również z \(E\) więc dodajemy go na stos.</li></p>
+                        <div class="flex-standard-row">
+                            <p><li style="list-style-type: none;">\( Stos =  \begin{bmatrix} D \end{bmatrix}\) <img src="../IMG/right-arrow-svgrepo-com.svg" height="30px" style="vertical-align: middle; margin-left: 9px; margin-right: 3px;"> \( Stos =  \begin{bmatrix} E \\ D \end{bmatrix}\)</li></p>
+                            <p><li style="list-style-type: none;">\(Odwiedzone = \begin{bmatrix} A & B & C \end{bmatrix}\)</li></p>
+                        </div>
+                        <p><li>Teraz pierwszy na stosie jest \(E\), więc do niego zmierzamy. Po dotarciu dodajemy go do listy wierzchołków odwiedzonych. </li></p>
+                        <div class="flex-standard-row">
+                            <p><li style="list-style-type: none;">\( Stos =  \begin{bmatrix} D \end{bmatrix}\)</li></p>
+                            <p><li style="list-style-type: none;">\(Odwiedzone = \begin{bmatrix} A & B & C & E \end{bmatrix}\)</li></p>
+                        </div>
+                        <p><li>No i został nam ostatni na stosie, nie pozostaje nic innego jak się tam wybrać. Droga do niego nie jest prosta bo musimy się cofnąć do \(C\) i dopiero wtedy do \(D\). Takim sposobem opróźniamy stos i wypełniamy listę wierzchołków odwiedzonych.<b> Tak wygląda gotowy DFS</b></li></p>
+                        <div class="flex-standard-row">
+                            <p><li style="list-style-type: none;">\( Stos =  \begin{bmatrix} \end{bmatrix}\)</li></p>
+                            <p><li style="list-style-type: none;">\(Odwiedzone = \begin{bmatrix} A & B & C & E & D \end{bmatrix}\)</li></p>
+                        </div>
+                    </ul>
+
+                    <div class="theorem">
+                        <h1>Złożoność</h1>
+                        <p>Pod względem złożoności czasowej ten algorytm wypada jak jego kolega z branży - BFS czyli \(O(|V| + |E|)\)</p>
+                    </div>
                 </div>
 
-                <div class="main__marriage_problem problem-div main__find-cycle-scroll">
-                    <h1><span class="main--colorFix">Znajdywanie cykli</span></h1>
+                <div class="divPattern main__marriage-problem-scroll">
+                    <h1
+                        class="main__h1-problem main__span-blue"
+                        style="text-align: center">
+                        Kojarzenie małżeństw
+                    </h1>
 
-                    <p>Autorem tego twierdzenia jest ...</p>
+                    <p>
+                        Twierdzenie to przypisywane jest Phillipowi Hallowi,
+                        który sformułował je w 1935r.
+                    </p>
+                    <p>
+                        Problem polega na tym, że mamy: \(n\) panien i \(n\)
+                        kawalerów których chcemy dobrać w pary małżeńskie
+                    </p>
+                    <h4>
+                        Warunkiem koniecznym oraz wystarczającym aby istniało
+                        takie skojarzenie jest to że dla dowolnej grupy chłopców
+                        \(k ∈ \{1, 2, . . . , n\}\) oni wspólnie znają co
+                        najmniej \(k\) dziewczyn
+                    </h4>
+
+                    <div class="marriage-div2">
+                        <img src="../IMG/philip.jpg" />
+                        <p><b>Philip Hall</b> - brytyjski matematyk</p>
+                    </div>
+
+                    <div class="marriage-div3">
+                        <h3>
+                            Problem będziemy rozwiązywali na życiowym
+                            przykładzie takim jaki przedstawiłem poyżej czyli:
+                        </h3>
+
+                        <div
+                            style="
+                                display: flex;
+                                justify-content: space-evenly;
+                            ">
+                            <div>
+                                <p style="text-align: center">Mamy 5 panien:</p>
+                                <ul>
+                                    <li>Anna - 0</li>
+                                    <li>Beata - 1</li>
+                                    <li>Celina - 2</li>
+                                    <li>Dorota - 3</li>
+                                    <li>Ewa - 4</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p style="text-align: center">I 5 kawalerów</p>
+                                <ul>
+                                    <li>Fryderyk - 5</li>
+                                    <li>Grzegorz - 6</li>
+                                    <li>Henryk - 7</li>
+                                    <li>Igor - 8</li>
+                                    <li>Jan - 9</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4>
+                            Używając listy sąsiedztwa wytłumaczonej w sekcji
+                            reprezentacji przedstawię teraz wygląd grafu
+                        </h4>
+                        <div
+                            style="
+                                display: flex;
+                                justify-content: space-evenly;
+                                align-items: center;
+                            ">
+                            <ul>
+                                <li>Anna ----> Henryk, Igor</li>
+                                <li>Beata ----> Fryderyk, Grzegorz, Igor</li>
+                                <li>Celina ----> Fryderyk</li>
+                                <li>Dorota ----> Grzegorz, Igor, Jan</li>
+                                <li>Ewa ----> Henryk, Igor</li>
+                            </ul>
+
+                            <img
+                                height="200px"
+                                src="../IMG/right-arrow-svgrepo-com.svg" />
+
+                            <ul>
+                                <li>\(0 --> 7,8\)</li>
+                                <li>\(1 --> 5,6,8\)</li>
+                                <li>\(2 --> 5\)</li>
+                                <li>\(3 --> 6,8,9\)</li>
+                                <li>\(4 --> 7,8\)</li>
+                            </ul>
+                        </div>
+
+                        <h3 style="text-align: center">
+                            Na podstawie tej listy tworzymy graf dwudzielny
+                        </h3>
+
+                        <div style="text-align: center">
+                            <div
+                                class="graph-smaller graph-marriage-first-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Pierwszym naszym krokiem będzie połączenie
+                                pierwszej panny (Anny) z pierwszym akceptowanym
+                                przez nią kawalerem (Henrykiem), i tak naprawdę
+                                ten krok będzie naszą podstawą którą wykonujemy
+                                do momentu napotkania problemu
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-second-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Następnie bierzemy kolejną pannę (Beatę) i
+                                łączymy ją z akceptowanym przez nią kawalerem
+                                (Fryderykiem)
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-third-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Gdy spróbujemy połaczyć Celinę z Fryderykiem,
+                                okaże się, że jest on już zajęty. Lecz nic
+                                straconego, Beata lubi również Grzegorza i
+                                Igora. Więc jak się okazuję, istnieje dla Celiny
+                                szansa. W tym celu zastosujemy
+                                <i>ścieżkę naprzemienną</i> - a jest to taka
+                                która w grafie dwudzielnym przebiega naprzemian
+                                przez krawędzie skojarzone i nieskojarzone.
+                                Ścieżkę rozpoczynamy zawsze od krawędzi
+                                nieskojarzonej
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-fourth-step"></div>
+                            <p>
+                                Ścieżka (czerwona linia, i zielona do Beaty) idzię od Celiny do
+                                Grzegorza przez Fryderyka oraz Beatę. Krawędzie
+                                czerwone są wolne, a zielone skojarzone
+                            </p>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Ścieżkę naprzemienną gdzie występują krawędzie
+                                wolne nazywamy ścieżką rozszerzającą, ponieważ
+                                za ich pomocą będziemy mogli rozszerzyć graf o
+                                kolejne skojarzenia. Aby to zrobić usuwamy
+                                krawędzie skojarzone w ścieżce rozszerzającej, a
+                                krawędzie wolne czynimy krawędziami
+                                skojarzonymi. W ten sposób Celina została
+                                zeswatana z Fryderykiem który wcześniej był już
+                                zajęty.
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-fifth-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Wracamy do naszego początkowego algorytmu,
+                                patrzymy na następną pannę - Dorotę, i widzimiy że
+                                lubi Igora który wciąż jest wolny, więc bez
+                                problemów łączymy ich ze sobą
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-sixth-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Pozostała jedynie para Ewa -> Igor, jednak Igor ma już swoją drugą połówkę i jest nią Dorota. Szukamy i tworzymy więc
+                                ścieżkę rozszerzającą od Ewy do Jana.
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-seventh-step"></div>
+                            <img src="../IMG/down-arrow-svgrepo-com.svg" />
+                            <p>
+                                Ścieżka przebiega przez Igora oraz Dorotę. Teraz
+                                musimy tylko zamienić krawędzie wolne na
+                                skojarzone i skojarzone na wolne
+                            </p>
+                            <div
+                                class="graph-smaller graph-marriage-eighth-step"></div>
+                            <h2>
+                                Tak wygląda skojarzenie pełne w tym grafie
+                                dwudzielnym
+                            </h2>
+                        </div>
+                    </div>
+                </div>
                 </div>
 
-                <div class="main__marriage_problem problem-div main__topological-sort-scroll">
-                    <h1><span class="main--colorFix">Sortowanie topologiczne</span></h1>
+                <a style="display: flex; justify-content: center;" href="website.html"><img src="../IMG/right-arrow-svgrepo-com.svg"></a>
 
-                    <p>Autorem tego twierdzenia jest ...</p>
-                </div>
             </main>
             <footer class="footer">
-                <svg
-                    class="waves"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 24 150 28"
-                    preserveAspectRatio="none"
-                    shape-rendering="auto">
-                    <defs>
-                        <path
-                            id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="0"
-                            fill="rgba(255,255,255,0.7)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="3"
-                            fill="rgba(255,255,255,0.5)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="5"
-                            fill="rgba(255,255,255,0.3)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="7"
-                            fill="#fff" />
-                    </g>
-                </svg>
+                <h2>Hubert Lech</h2>
+                <p><a href="https://www.zobaczycmatematyke.agh.edu.pl/">Praca konkursowa - "Zobaczyć Matematykę"</a></p>
+                <p><a href="https://www.agh.edu.pl/">Akademia Górniczo-Hutnicza w Krakowie</a></p>
+                <img style="padding: 10px;" height="200px" src="../IMG/logo.png"> 
             </footer>
         </div>
 
@@ -532,6 +838,9 @@
         <script src="../JS/graphs/representation/edgeList.js"></script>
         <script src="../JS/graphs/representation/adjacencyList.js"></script>
         <script src="../JS/graphs/representation/adjacencyMatrix.js"></script>
+        <script src="../JS/graphs/BFS,DFS/BFSGraph.js"></script>
+        <script src="../JS/graphs/BFS,DFS/DFSGraph.js"></script>
         <script src="../JS/scroll.js"></script>
+        <script src="../JS/graphs/disappear.js"></script>
     </body>
 </html>

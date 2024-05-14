@@ -3,18 +3,49 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
         <link rel="stylesheet" href="../CSS/website.css" type="text/css" />
         <title>O stronie</title>
+        <link rel="stylesheet" href="../CSS/media.css" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="../IMG/logo.png" />
     </head>
 
     <body>
         <div id="particles-js"></div>
         <div class="wrapper">
-            <div class="typewriter">
+            <div class="nav-left">
                 <h1>Teoria Grafów</h1>
             </div>
+
             <nav class="navigation">
+                <label class="hamburger-menu">
+                    <input class="disappear" type="checkbox" />
+                </label>
+                <aside class="sidebar">
+                    <ul class="navigation__item-list-hamburger">
+                        <a class="navigation__item-hamburger" href="main.html"
+                            ><li>Strona Główna</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="basicTerms.html"
+                            ><li>Podstawowa Terminologia</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="website.html"
+                            ><li>O stronie</li></a
+                        >
+                        <a class="navigation__item-hamburger" href="author.html"
+                            ><li>O autorze</li></a
+                        >
+                        <a
+                            class="navigation__item-hamburger"
+                            href="problems.html"
+                            ><li>Problemy</li></a
+                        >
+                    </ul>
+                </aside>
+
                 <ul class="navigation__item-list">
                     <li class="navigation__item">
                         <a href="main.html">Strona Główna</a>
@@ -33,23 +64,32 @@
                     </li>
                 </ul>
             </nav>
+
             <main class="main">
                 <div class="container">
                     <div class="main__div-math-bg"></div>
-                    <h1 class="main__math-bg-heading">
-                        Informacje o stronie
-                    </h1>
+                    <h1 class="main__math-bg-heading">Informacje o stronie</h1>
                 </div>
 
                 <div class="about-author">
                     <h1>Strona</h1>
                     <div class="about-author__informations">
-                        <p>została stworzona przeze mnie na rzecz konkursu "<a target="_blank" href="https://www.zobaczycmatematyke.agh.edu.pl/"><i>Zobaczyć Matematykę</i></a>" organizowanego przez <a target="_blank" href="https://www.agh.edu.pl/"><i>Akademię Górniczo-Hutniczą w Krakowie</i></a></p>
-                        <p>Ilość napisanego kodu: </p>
+                        <p>
+                            Została stworzona przeze mnie na rzecz konkursu "<a
+                                target="_blank"
+                                href="https://www.zobaczycmatematyke.agh.edu.pl/"
+                                ><i>Zobaczyć Matematykę</i></a
+                            >" organizowanego przez
+                            <a target="_blank" href="https://www.agh.edu.pl/"
+                                ><i>Akademię Górniczo-Hutniczą w Krakowie</i></a
+                            >
+                        </p>
+                        <p>Proces produkcji obejmował wyszukiwanie informacji w internecie oraz książkach, porównywanie informacji w celu zweryfikowania autentyczności oraz umieszczenie ich na stronie</p>
+                        <p>Ilość napisanego kodu:</p>
                         <ul>
-                            <li>CSS - 1453 linijki</li>
-                            <li>HTML - 1453 linijki</li>
-                            <li>JS - 1453 linijki</li>
+                            <li>CSS - 1522 linijki</li>
+                            <li>HTML - 2633 linijki</li>
+                            <li>JS - 2655 linijek</li>
                         </ul>
                         <p></p>
                     </div>
@@ -58,43 +98,22 @@
                     <a href="./sources.html"><p>Spis źródeł</p></a>
                 </div>
 
+                <a style="display: flex; justify-content: center;" href="author.html"><img src="../IMG/right-arrow-svgrepo-com.svg"></a>
+
             </main>
             <footer class="footer">
-                <svg
-                    class="waves"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 24 150 28"
-                    preserveAspectRatio="none"
-                    shape-rendering="auto">
-                    <defs>
-                        <path
-                            id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="0"
-                            fill="rgba(255,255,255,0.7" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="3"
-                            fill="rgba(255,255,255,0.5)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="5"
-                            fill="rgba(255,255,255,0.3)" />
-                        <use
-                            xlink:href="#gentle-wave"
-                            x="48"
-                            y="7"
-                            fill="#fff" />
-                    </g>
-                </svg>
+                <h2>Hubert Lech</h2>
+                <p>
+                    <a href="https://www.zobaczycmatematyke.agh.edu.pl/"
+                        >Praca konkursowa - "Zobaczyć Matematykę"</a
+                    >
+                </p>
+                <p>
+                    <a href="https://www.agh.edu.pl/"
+                        >Akademia Górniczo-Hutnicza w Krakowie</a
+                    >
+                </p>
+                <img height="200px" src="../IMG/logo.png" />
             </footer>
         </div>
 

@@ -5,15 +5,15 @@ var nodes = [
     { id: 4, label: 'D' },
     { id: 5, label: 'E' },
     { id: 6, label: 'F' },
-    { id: 7, label: 'F' },
-    { id: 8, label: 'F' },
-    { id: 9, label: 'F' },
-    { id: 10, label: 'F' },
-    { id: 11, label: 'F' },
-    { id: 12, label: 'F' },
-    { id: 13, label: 'F' },
-    { id: 14, label: 'F' },
-    { id: 15, label: 'F' },
+    { id: 7, label: 'G' },
+    { id: 8, label: 'H' },
+    { id: 9, label: 'I' },
+    { id: 10, label: 'J' },
+    { id: 11, label: 'K' },
+    { id: 12, label: 'L' },
+    { id: 13, label: 'M' },
+    { id: 14, label: 'N' },
+    { id: 15, label: 'O' },
 ];
 
 var edges = [
@@ -34,51 +34,40 @@ var edges = [
 ];
 
 var options = {
-    edges: {
-        labelHighlightBold: true,
-        color: {
-            color: '#ffffff',  
-            highlight: '#ffffff',  
-            hover: '#ffffff',  
-        }
-    },
     nodes: {
+        shape: 'ellipse',
+        size: 25,
         color: {
-            background: '#00030e', 
-            border: '#ffffff', 
+            background: 'rgba(0, 3, 14, 0.8)',
+            border: '#03ffdc',
             highlight: {
-                background: '#ffffff', 
-                border: '#ffffff' 
-            },
-            hover: {
-                background: '#ffffff', 
-                border: '#ffffff' 
+                background: 'black',
+                border: '#2B7CE9'
             },
         },
         font: {
-            color: '#ffffff'
+            color: '#FFFFFF',
+            size: 15
+        }
+    },
+    edges: {
+        width: 2,
+        color: {
+            color: 'rgb(80, 80, 80)',
+            highlight: '#848484',
         },
-        size: 10,
+        smooth: {
+            type: 'continuous'
+        }
     },
     physics: {
-        barnesHut: {
-            gravitationalConstant: -2000,
-            springConstant: 0.04,
-            springLength: 95
-        },
-        maxVelocity: 146,
-        solver: 'barnesHut',
-        stabilization: {
-            iterations: 150
-        }
+        enabled: true,
+        solver: 'forceAtlas2Based'
     },
     interaction: {
         dragView: false,
         dragNodes: true,
         zoomView: false
-    },
-    layout: {
-        randomSeed: 3765765212999
     }
 };
 
